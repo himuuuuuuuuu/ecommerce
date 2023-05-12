@@ -1,0 +1,10 @@
+.trending_section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.trending_head {
+  font-size: 32px;
+  color: #fcaf17;
+}
