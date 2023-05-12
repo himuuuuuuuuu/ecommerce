@@ -9,9 +9,7 @@ import Sidebar from "../../Component/Layout/Sidebar";
 function Home() {
   return (
     <PageContainer>
-      <SectionContainer>
-        <Sidebar />
-      </SectionContainer>
+      <SectionContainer></SectionContainer>
     </PageContainer>
   );
 }

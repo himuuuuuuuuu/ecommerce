@@ -21,4 +21,5 @@ html {
 body {
   font-family: "Noto Sans", sans-serif;
   background: var(--primary-color);
+  position: relative;
 }

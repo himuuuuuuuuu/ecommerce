@@ -6,6 +6,14 @@
   border-bottom: 0.5px solid #ddd;
 }
 
+.header_hamburger {
+  padding: 8px 12px;
+}
+
+.header_hamburger svg {
+  font-size: 28px;
+}
+
 .header_img {
   width: 32px;
   height: 32px;

@@ -1,5 +1,5 @@
 .nav {
-  display: flex;
+  display: none;
   padding: 1em;
 }
 
@@ -51,4 +51,10 @@
 .active {
   background-color: #fcaf17;
   color: #000;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
 }

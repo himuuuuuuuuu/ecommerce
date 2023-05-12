@@ -3,17 +3,33 @@ import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 
 import {
-  Inbox,
-  InboxOutlined,
+  Home,
+  HomeOutlined,
   Report,
   ReportGmailerrorred,
-  Delete,
-  DeleteOutlined,
+  ShoppingCart,
+  ShoppingCartOutlined,
+  FeaturedPlayListOutlined,
+  FeaturedPlayList,
+  Close,
 } from "@mui/icons-material";
+import ActionButton from "../../Action/ActionButton";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
-    <nav className="sidebar">
+    <nav
+      className={
+        props.isActive ? "sidebar sidebar_active" : "sidebar sidebar_deactivate"
+      }
+    >
+      <div className="sidebar_btn_wrap">
+        <ActionButton
+          className="sidebar_close_btn"
+          handleClick={() => props.handleClose(false)}
+        >
+          <Close />
+        </ActionButton>
+      </div>
       <ul className="sidebar_list">
         <li className="sidebar_item">
           <NavLink to="/">
@@ -21,15 +37,15 @@ function Sidebar() {
               return isActive ? (
                 <div className="sidebar_content">
                   <div className="sidebar_icon">
-                    <Inbox />
-                    Inbox
+                    <Home />
+                    Home
                   </div>
                 </div>
               ) : (
                 <div className="sidebar_content">
                   <div className="sidebar_icon">
-                    <InboxOutlined />
-                    Inbox
+                    <HomeOutlined />
+                    Home
                   </div>
                 </div>
               );
@@ -37,20 +53,20 @@ function Sidebar() {
           </NavLink>
         </li>
         <li className="sidebar_item">
-          <NavLink to="/spam">
+          <NavLink to="/store">
             {({ isActive }) => {
               return isActive ? (
                 <div className="sidebar_content">
                   <div className="sidebar_icon">
                     <Report />
-                    Spam
+                    Store
                   </div>
                 </div>
               ) : (
                 <div className="sidebar_content">
                   <div className="sidebar_icon">
                     <ReportGmailerrorred />
-                    Spam
+                    Store
                   </div>
                 </div>
               );
@@ -58,20 +74,41 @@ function Sidebar() {
           </NavLink>
         </li>
         <li className="sidebar_item">
-          <NavLink to="/trash">
+          <NavLink to="/cart">
             {({ isActive }) => {
               return isActive ? (
                 <div className="sidebar_content">
                   <div className="sidebar_icon">
-                    <Delete />
-                    Trash
+                    <ShoppingCart />
+                    Cart
                   </div>
                 </div>
               ) : (
                 <div className="sidebar_content">
                   <div className="sidebar_icon">
-                    <DeleteOutlined />
-                    Trash
+                    <ShoppingCartOutlined />
+                    Cart
+                  </div>
+                </div>
+              );
+            }}
+          </NavLink>
+        </li>
+        <li className="sidebar_item">
+          <NavLink to="/wishList">
+            {({ isActive }) => {
+              return isActive ? (
+                <div className="sidebar_content">
+                  <div className="sidebar_icon">
+                    <FeaturedPlayList />
+                    WishList
+                  </div>
+                </div>
+              ) : (
+                <div className="sidebar_content">
+                  <div className="sidebar_icon">
+                    <FeaturedPlayListOutlined />
+                    WishList
                   </div>
                 </div>
               );
