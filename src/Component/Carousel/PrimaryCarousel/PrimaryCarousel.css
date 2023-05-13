@@ -3,7 +3,7 @@
   grid-template-columns: 300px 1fr;
 }
 
-.slider {
+.primary_carousel_slider {
   width: 100%;
   max-width: 300px;
   height: 350px;
@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.slide {
+.primary_carousel_slide {
   width: 100%;
   max-width: 800px;
   height: 350px;
@@ -19,13 +19,13 @@
   transition: all 0.5s;
 }
 
-.slide img {
+.primary_carousel_slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.btn {
+.primary_carousal_btn {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -40,21 +40,21 @@
   color: #000;
 }
 
-.btn:active {
+.primary_carousal_btn:active {
   transform: scale(1.1);
 }
 
-.btn-prev {
+.primary_carousal_prev_btn {
   top: 45%;
   left: 2%;
 }
 
-.btn-next {
+.primary_carousal_next_btn {
   top: 45%;
   right: 2%;
 }
 
-.slider_action_wrap {
+.primary_carousal_slider_action_wrap {
   display: flex;
   gap: 8px;
   position: absolute;
@@ -64,7 +64,7 @@
   transform: translateX(-50%);
 }
 
-.slider_action {
+.primary_carousal_slider_action {
   border: none;
   background: transparent;
   cursor: pointer;

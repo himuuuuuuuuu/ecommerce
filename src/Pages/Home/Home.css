@@ -8,3 +8,14 @@
   font-size: 32px;
   color: #fcaf17;
 }
+
+.category_section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.category_head {
+  font-size: 32px;
+  color: #fcaf17;
+}

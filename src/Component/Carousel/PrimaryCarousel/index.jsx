@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import "./Carousel.css";
+import "./PrimaryCarousel.css";
 import { Circle } from "@mui/icons-material";
-import ActionButton from "../Action/ActionButton";
+import ActionButton from "../../Action/ActionButton";
 
-function Carousel() {
+function PrimaryCarousel() {
   const [activeSlide, setActiveSlide] = useState(0);
   const carouselData = [
     {
@@ -33,7 +33,6 @@ function Carousel() {
     },
   ];
 
-  //   const [carouselList, setCarouselList] = useState();
   const maxSlide = carouselData.length - 1;
 
   const incrementSlide = () => {
@@ -42,8 +41,6 @@ function Carousel() {
     }
     setActiveSlide(activeSlide + 1);
   };
-
-  console.log(activeSlide);
 
   const decrementSlide = () => {
     if (activeSlide === 0) {
@@ -60,11 +57,11 @@ function Carousel() {
 
   return (
     <div className="primary_carousel">
-      <div className="slider">
+      <div className="primary_carousel_slider">
         {carouselData.map((currentSlide, index) => {
           return (
             <div
-              className="slide"
+              className="primary_carousel_slide"
               key={currentSlide.id}
               style={{
                 transform: `translateX(${(index - activeSlide) * 100}%)`,
@@ -75,19 +72,25 @@ function Carousel() {
           );
         })}
 
-        <button className="btn btn-next" onClick={() => incrementSlide()}>
+        <button
+          className="primary_carousal_btn primary_carousal_next_btn"
+          onClick={() => incrementSlide()}
+        >
           +
         </button>
-        <button className="btn btn-prev" onClick={() => decrementSlide()}>
+        <button
+          className="primary_carousal_btn primary_carousal_prev_btn"
+          onClick={() => decrementSlide()}
+        >
           -
         </button>
 
-        <div className="slider_action_wrap">
+        <div className="primary_carousal_slider_action_wrap">
           {carouselData.map((current, index) => {
             return (
               <button
-                className="slider_action"
-                key={index}
+                className="primary_carousal_slider_action"
+                key={current.id}
                 onClick={() => setActiveSlide(index)}
               >
                 <Circle />
@@ -114,4 +117,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default PrimaryCarousel;

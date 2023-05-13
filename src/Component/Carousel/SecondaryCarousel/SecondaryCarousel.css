@@ -1,0 +1,85 @@
+.second_carousel_wrap {
+  position: relative;
+}
+
+.second_carousel {
+  white-space: nowrap;
+  max-width: 1280px;
+  overflow: hidden;
+  cursor: pointer;
+  scroll-behavior: smooth;
+}
+
+.second_carousel_slide {
+  display: inline-block;
+  height: 280px;
+  width: 100%;
+}
+
+.second_carousel_slide:not(:last-child) {
+  margin-right: 16px;
+}
+
+.second_carousel_slide img {
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BUTTON => PREV & NEXT */
+
+.second_carousel_btn {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fcaf17;
+  transition: transform 0.2s;
+  position: absolute;
+}
+
+.second_carousel_prev {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.second_carousel_next {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.second_carousel_btn svg {
+  font-size: 20px;
+}
+
+.second_carousel_prev:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.second_carousel_prev:active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.second_carousel_next:hover {
+  transform: translate(50%, -50%) scale(1.05);
+}
+
+.second_carousel_next:active {
+  transform: translate(50%, -50%) scale(1);
+}
+
+/* ------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  .second_carousel_slide {
+    height: 280px;
+    width: calc(100% / 6);
+  }
+}
