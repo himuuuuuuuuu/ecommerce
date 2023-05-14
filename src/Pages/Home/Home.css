@@ -15,7 +15,78 @@
   gap: 32px;
 }
 
+.fame_section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .category_head {
   font-size: 32px;
   color: #fcaf17;
+}
+
+.fame_head {
+  font-size: 32px;
+  color: #fcaf17;
+}
+
+.fame_item img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.fame_body {
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 16px;
+}
+
+@media (min-width: 1280px) {
+  .fame_body {
+    grid-template-columns: 40% 20% 20% 20%;
+    grid-template-rows: repeat(2, minmax(200px, 1fr));
+    grid-template-areas:
+      "A B C D"
+      "A E F G";
+    row-gap: 0;
+  }
+
+  .fame_item {
+    opacity: 0.5;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+  .fame_item:hover {
+    opacity: 1;
+  }
+
+  .fame_item_0 {
+    grid-area: A;
+  }
+
+  .fame_item_1 {
+    grid-area: B;
+  }
+
+  .fame_item_2 {
+    grid-area: C;
+  }
+
+  .fame_item_3 {
+    grid-area: D;
+  }
+
+  .fame_item_4 {
+    grid-area: E;
+  }
+
+  .fame_item_5 {
+    grid-area: F;
+  }
+
+  .fame_item_6 {
+    grid-area: G;
+  }
 }
