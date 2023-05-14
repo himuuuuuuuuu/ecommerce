@@ -1,18 +1,18 @@
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
-import ActionButton from "./Component/Action/ActionButton/index";
-import ActionLink from "./Component/Action/ActionLink";
-import Header from "./Component/Layout/Header";
-import Home from "./Pages/Home";
-import MockMan from "mockman-js";
+import { Home, ProductList, Cart, WishList, ProductDetail } from "./Pages";
 
 function App() {
   return (
     <>
-      <Home />
-      {/* <ActionButton>WATCH NOW</ActionButton> */}
-      {/* <ActionLink reach="/">View More</ActionLink> */}
-      {/* <Header /> */}
-      {/* <MockMan /> */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/productList" element={<ProductList />} />
+        <Route path="/wishList" element={<WishList />} />
+        <Route path="/productDetail" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
     </>
   );
 }

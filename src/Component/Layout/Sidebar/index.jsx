@@ -53,7 +53,7 @@ function Sidebar(props) {
           </NavLink>
         </li>
         <li className="sidebar_item">
-          <NavLink to="/store">
+          <NavLink to="/productList">
             {({ isActive }) => {
               return isActive ? (
                 <div className="sidebar_content">

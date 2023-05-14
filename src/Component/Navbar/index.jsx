@@ -13,7 +13,7 @@ function Navbar() {
           </NavLink>
         </li>
         <li className="nav_item">
-          <NavLink to="/store" className="nav_link">
+          <NavLink to="/productList" className="nav_link">
             Store
           </NavLink>
         </li>
