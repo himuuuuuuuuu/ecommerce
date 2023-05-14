@@ -14,6 +14,202 @@
   display: inline-block;
   height: 280px;
   width: 100%;
+  position: relative;
+}
+
+/* CARD ONE */
+
+.second_carousel_slide_0::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 139) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_0:hover::before {
+  opacity: 1;
+}
+
+/* CARD TWO */
+
+.second_carousel_slide_1::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(233, 140, 0) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_1:hover::before {
+  opacity: 1;
+}
+
+/* CARD THREE */
+
+.second_carousel_slide_2::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 0) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_2:hover::before {
+  opacity: 1;
+}
+
+/* CARD FOUR */
+
+.second_carousel_slide_3::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 139) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_3:hover::before {
+  opacity: 1;
+}
+
+/* CARD FIVE */
+
+.second_carousel_slide_4::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 100, 0) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_4:hover::before {
+  opacity: 1;
+}
+
+/* CARD SIX */
+
+.second_carousel_slide_5::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 139, 139) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_5:hover::before {
+  opacity: 1;
+}
+
+/* CARD SEVEN */
+
+.second_carousel_slide_6::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 139) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_6:hover::before {
+  opacity: 1;
+}
+
+/* CARD EIGHT */
+
+.second_carousel_slide_7::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(233, 140, 0) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_7:hover::before {
+  opacity: 1;
+}
+
+/* CARD NINE */
+
+.second_carousel_slide_8::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 139, 139) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_8:hover::before {
+  opacity: 1;
+}
+
+/* CARD TEN */
+
+.second_carousel_slide_9::before {
+  content: "";
+  background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 0) 100%);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+.second_carousel_slide_9:hover::before {
+  opacity: 1;
+}
+
+.second_carousel_slide_label {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  bottom: 20%;
+  text-align: center;
+  color: #fff;
+}
+
+.second_carousel_slide_label span {
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .second_carousel_slide:not(:last-child) {
@@ -41,6 +237,7 @@
   background-color: #fcaf17;
   transition: transform 0.2s;
   position: absolute;
+  z-index: 7;
 }
 
 .second_carousel_prev {

@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./SecondaryCarousel.css";
 import { KeyboardArrowRight, KeyboardArrowLeft } from "@mui/icons-material";
@@ -7,62 +8,62 @@ function SecondaryCarousel() {
   const carouselData = [
     {
       id: 0,
-      title: "Read Dead Redemption 2",
+      title: "Action",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption2.jpg",
     },
     {
       id: 1,
-      title: "GTA: 3",
+      title: "Anime",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/grandtheftauto3.jpg",
     },
     {
       id: 2,
-      title: "GTA: Vicecity",
+      title: "Racing",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/vicecity.jpg",
     },
     {
       id: 3,
-      title: "Read Dead Redemption",
+      title: "Horror",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption.jpg",
     },
 
     {
       id: 4,
-      title: "Max Payne",
+      title: "Sports",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/maxpayne.jpg",
     },
     {
       id: 5,
-      title: "Max Payne 2",
+      title: "Adventure",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/maxpayne2.jpg",
     },
     {
       id: 6,
-      title: "Max Payne 3",
+      title: "Strategy",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/maxpayne3.jpg",
     },
     {
       id: 7,
-      title: "Bully",
+      title: "Open World",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/bully.jpg",
     },
     {
       id: 8,
-      title: "The Warrior",
+      title: "survival",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/thewarriors.jpg",
     },
     {
       id: 9,
-      title: "Man Hunt 2",
+      title: "Simulation",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/manhunt2.jpg",
     },
@@ -90,9 +91,9 @@ function SecondaryCarousel() {
       <div className="second_carousel" ref={carouselRef}>
         {carouselData.map((current) => {
           return (
-            <div
+            <Link
               key={current.id}
-              className="second_carousel_slide"
+              className={`second_carousel_slide second_carousel_slide_${current.id}`}
               ref={carouselCardRef}
             >
               <img
@@ -100,7 +101,10 @@ function SecondaryCarousel() {
                 alt="carousel_img"
                 className="secondary_carousel_img"
               />
-            </div>
+              <div className="second_carousel_slide_label">
+                <span>{current.title}</span>
+              </div>
+            </Link>
           );
         })}
       </div>
