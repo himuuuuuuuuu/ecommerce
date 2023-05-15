@@ -49,6 +49,8 @@ function ProductDetail() {
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/GTAOnline.jpg",
       imageList: [],
       logo: "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fgrand-theft-auto-v%2Fhome%2FGTAV_EGS_Artwork_400x400_GameLogo-1000x1000-f6c47a98454049a5e63959f7b6f898c4fc22829c.png?h=270&quality=medium&resize=1&w=480",
+      description:
+        "The Grand Theft Auto V: Premium Edition includes the complete GTAV story, Grand Theft Auto Online and all existing gameplay upgrades and content. You’ll also get the Criminal Enterprise Starter Pack, the fastest way to jumpstart your criminal empire in GTA Online.",
     },
   ];
   return (
@@ -57,8 +59,35 @@ function ProductDetail() {
         <div className="detail_content">
           <div className="detail_content_intro">
             <h1 className="detail_content_intro_head">{gameList[0].title}</h1>
-            <div className="detail_content_intro_thumbnail">
-              <img src={gameList[0].thumbnail} alt={gameList[0].title} />
+            <div className="detail_content_intro_body">
+              <div className="detail_content_intro_thumbnail">
+                <img src={gameList[0].thumbnail} alt={gameList[0].title} />
+              </div>
+              <div className="detail_content_intro_text">
+                <p>{gameList[0].description}</p>
+                <div className="detail_content_bread">
+                  <div className="detail_content_bread_item">
+                    <span>Rating</span>
+                    <strong>{gameList[0].rating}</strong>
+                  </div>
+                  <div className="detail_content_bread_item">
+                    <span>Rating</span>
+                    <strong>{gameList[0].rating}</strong>
+                  </div>
+                  <div className="detail_content_bread_item">
+                    <span>Rating</span>
+                    <strong>{gameList[0].rating}</strong>
+                  </div>
+                  <div className="detail_content_bread_item">
+                    <span>Rating</span>
+                    <strong>{gameList[0].rating}</strong>
+                  </div>
+                  <div className="detail_content_bread_item">
+                    <span>Rating</span>
+                    <strong>{gameList[0].rating}</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="detail_content_specs">
