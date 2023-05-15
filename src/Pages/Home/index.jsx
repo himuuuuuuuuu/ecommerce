@@ -59,15 +59,15 @@ function Home() {
   return (
     <PageContainer>
       <SectionContainer className="trending_section">
-        <h2 className="trending_head">#TRENDING</h2>
+        <h2 className="section_head trending_head">#TRENDING</h2>
         <PrimaryCarousel />
       </SectionContainer>
       <SectionContainer className="category_section">
-        <h2 className="category_head">#BROWSE BY CATEGORY</h2>
+        <h2 className="section_head category_head">#BROWSE BY CATEGORY</h2>
         <SecondaryCarousel />
       </SectionContainer>
       <SectionContainer className="fame_section">
-        <h2 className="fame_head">#WALL OF FAME</h2>
+        <h2 className="section_head fame_head">#WALL OF FAME</h2>
         <div className="fame_body">
           {carouselData.map((current) => {
             return (

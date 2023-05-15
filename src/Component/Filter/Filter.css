@@ -1,0 +1,22 @@
+fieldset {
+  border: none;
+}
+
+.filter_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #2b2b2b;
+  padding: 16px 24px;
+  border-radius: 4px;
+}
+
+.filter_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter_legend {
+  color: #fff;
+  margin-bottom: 8px;
+}
