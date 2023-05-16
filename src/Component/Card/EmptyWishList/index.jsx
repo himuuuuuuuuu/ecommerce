@@ -7,8 +7,10 @@ function EmptyWishList() {
   return (
     <div className="empty_wish">
       <div className="empty_wish_head">
-        <h3 className="empty_wish_title">Your cart is empty!</h3>
-        <p className="empty_wish_description">Add items to it now.</p>
+        <h3 className="empty_wish_title">Empty Wishlist</h3>
+        <p className="empty_wish_description">
+          You have no items in your wishlist. Start adding!
+        </p>
       </div>
       <ActionLink reach="/productList">Shop for Games & Apps</ActionLink>
     </div>
