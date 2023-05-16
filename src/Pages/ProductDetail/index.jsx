@@ -6,6 +6,7 @@ import SectionContainer from "../../Component/Layout/SectionContainer";
 import ActionButton from "../../Component/Action/ActionButton";
 
 function ProductDetail() {
+  const starList = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
   const gameList = [
     // {
     //   id: "0",
@@ -25,10 +26,14 @@ function ProductDetail() {
       title: "Grand Theft Auto V",
       rating: "5",
       price: "₹2,321",
-      genre: ["Action", "Adventure"],
+      genre: "Adventure",
       developer: "Rockstar Games",
       publisher: "Rockstar Games",
       release: "05/14/20",
+      downloads: "175",
+      esrb: "R",
+      status: "online",
+      age: "18+",
       requirement: {
         minimum: {
           memory: "4",
@@ -68,23 +73,31 @@ function ProductDetail() {
                 <div className="detail_content_bread">
                   <div className="detail_content_bread_item">
                     <span>Rating</span>
-                    <strong>{gameList[0].rating}</strong>
+                    <strong>
+                      {starList.find((currentStar, index) => {
+                        return index + 1 == gameList[0].rating;
+                      })}
+                    </strong>
                   </div>
                   <div className="detail_content_bread_item">
-                    <span>Rating</span>
-                    <strong>{gameList[0].rating}</strong>
+                    <span>Genre</span>
+                    <strong>{gameList[0].genre}</strong>
                   </div>
                   <div className="detail_content_bread_item">
-                    <span>Rating</span>
-                    <strong>{gameList[0].rating}</strong>
+                    <span>ESRB</span>
+                    <strong>{gameList[0].esrb}</strong>
                   </div>
                   <div className="detail_content_bread_item">
-                    <span>Rating</span>
-                    <strong>{gameList[0].rating}</strong>
+                    <span>Downloads</span>
+                    <strong>{gameList[0].downloads} Million</strong>
                   </div>
                   <div className="detail_content_bread_item">
-                    <span>Rating</span>
-                    <strong>{gameList[0].rating}</strong>
+                    <span>Status</span>
+                    <strong>{gameList[0].status}</strong>
+                  </div>
+                  <div className="detail_content_bread_item">
+                    <span>Age</span>
+                    <strong>{gameList[0].age}</strong>
                   </div>
                 </div>
               </div>
@@ -114,19 +127,19 @@ function ProductDetail() {
               <span className="detail_content_specs_column_head">Maximum</span>
               <div className="detail_content_specs_column_item">
                 <span>PROCESSOR</span>
-                <p>{gameList[0].requirement.minimum.cpu}</p>
+                <p>{gameList[0].requirement.recommended.cpu}</p>
               </div>
               <div className="detail_content_specs_column_item">
                 <span>HDD SPACE</span>
-                <p>{gameList[0].requirement.minimum.storage} GB </p>
+                <p>{gameList[0].requirement.recommended.storage} GB </p>
               </div>
               <div className="detail_content_specs_column_item">
                 <span>VIDEO CARD</span>
-                <p>{gameList[0].requirement.minimum.gpu}</p>
+                <p>{gameList[0].requirement.recommended.gpu}</p>
               </div>
               <div className="detail_content_specs_column_item">
                 <span>MEMORY</span>
-                <p>{gameList[0].requirement.minimum.memory} GB RAM</p>
+                <p>{gameList[0].requirement.recommended.memory} GB RAM</p>
               </div>
             </div>
           </div>
