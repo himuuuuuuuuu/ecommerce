@@ -282,7 +282,7 @@ function ProductList() {
         "The Sims 4 is free to download! Unleash your imagination and create a unique world of Sims that’s an expression of you. Choose how Sims look, act, and dress, then manage the ups and downs of their everyday lives.",
     },
     {
-      id: "0",
+      id: "7",
       title: "",
       rating: "",
       price: "",
