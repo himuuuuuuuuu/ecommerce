@@ -95,3 +95,13 @@
   color: #fcaf17;
   font-weight: 600;
 }
+
+.primary_card_view {
+  display: flex;
+  justify-content: center;
+}
+
+.primary_card_view_btn {
+  border: 1px solid #000;
+  color: #000;
+}

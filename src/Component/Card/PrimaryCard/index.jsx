@@ -67,6 +67,9 @@ function PrimaryCard(props) {
               </span>
             </p>
           </div>
+          <div className="primary_card_view">
+            <ActionButton className="primary_card_view_btn">View</ActionButton>
+          </div>
         </div>
       </div>
     </article>
