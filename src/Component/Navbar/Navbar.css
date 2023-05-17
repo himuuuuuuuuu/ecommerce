@@ -58,3 +58,6 @@
     display: flex;
   }
 }
+
+@media (min: 1280px) {
+}
