@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./PrimaryCard.css";
-import ActionLink from "../../Action/ActionLink";
+
 import ActionButton from "../../Action/ActionButton";
 
 import { ShoppingCart, Favorite } from "@mui/icons-material";
@@ -69,12 +71,9 @@ function PrimaryCard(props) {
             </p>
           </div>
           <div className="primary_card_view">
-            <ActionLink
-              className="primary_card_view_btn"
-              reach={`/productList/${id}`}
-            >
+            <Link className="primary_card_view_btn" to={`/productList/${id}`}>
               View
-            </ActionLink>
+            </Link>
           </div>
         </div>
       </div>
