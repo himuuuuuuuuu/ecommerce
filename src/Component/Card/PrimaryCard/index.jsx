@@ -5,7 +5,7 @@ import "./PrimaryCard.css";
 
 import ActionButton from "../../Action/ActionButton";
 
-import { ShoppingCart, Favorite } from "@mui/icons-material";
+import { ShoppingCart, Favorite, Delete } from "@mui/icons-material";
 
 function PrimaryCard(props) {
   const {
@@ -26,6 +26,7 @@ function PrimaryCard(props) {
     thumbnail,
     logo,
     description,
+    isWishList,
   } = props;
 
   const starList = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
@@ -38,9 +39,16 @@ function PrimaryCard(props) {
           <ActionButton className="primary_card_action">
             <ShoppingCart />
           </ActionButton>
-          <ActionButton className="primary_card_action">
-            <Favorite />
-          </ActionButton>
+          {!isWishList && (
+            <ActionButton className="primary_card_action">
+              <Favorite />
+            </ActionButton>
+          )}
+          {isWishList && (
+            <ActionButton className="primary_card_action">
+              <Delete />
+            </ActionButton>
+          )}
         </div>
         <div className="primary_card_text">
           <h3 className="primary_card_title">{title}</h3>
