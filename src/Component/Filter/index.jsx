@@ -1,8 +1,18 @@
 import React from "react";
 
-import { FormControlLabel, Checkbox, RadioGroup, Radio } from "@mui/material";
+import {
+  FormControlLabel,
+  Checkbox,
+  RadioGroup,
+  Radio,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Slider, { SliderThumb } from "@mui/material/Slider";
+import { ExpandMore } from "@mui/icons-material";
 
 import "./Filter.css";
 
@@ -61,262 +71,220 @@ function Filter() {
     },
   });
 
+  // function valuetext(value: number) {
+  //   return `${value}°C`;
+  // }
+
   return (
     <div className="filter">
       <div className="filter_wrap">
-        <fieldset className="filter_field filter_genre">
-          <legend className="filter_legend">GENRE</legend>
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+        {/* CATEGORY */}
+        <Accordion sx={{ backgroundColor: "#000" }}>
+          <AccordionSummary
+            expandIcon={<ExpandMore sx={{ color: "#fff" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <legend className="filter_legend">GENRE</legend>
+          </AccordionSummary>
+          <AccordionDetails>
+            <fieldset className="filter_field filter_genre">
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Action"
               />
-            }
-            label="Action"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Anime"
               />
-            }
-            label="Anime"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Racing"
               />
-            }
-            label="Racing"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Horror"
               />
-            }
-            label="Horror"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Sports"
               />
-            }
-            label="Sports"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Adventure"
               />
-            }
-            label="Adventure"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Strategy"
               />
-            }
-            label="Strategy"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Open World"
               />
-            }
-            label="Open World"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Survival"
               />
-            }
-            label="Survival"
-          />
-          <FormControlLabel
-            sx={{ color: "#fff" }}
-            control={
-              <Checkbox
-                sx={{
-                  color: "#fcaf17",
-                  "&.Mui-checked": {
-                    color: "#fcaf17",
-                  },
-                }}
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Checkbox
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Simulation"
               />
-            }
-            label="Simulation"
-          />
-        </fieldset>
+            </fieldset>
+          </AccordionDetails>
+        </Accordion>
+
+        {/* SORT */}
+        <Accordion sx={{ backgroundColor: "#000" }}>
+          <AccordionSummary
+            expandIcon={<ExpandMore sx={{ color: "#fff" }} />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <legend className="filter_legend">SORT</legend>
+          </AccordionSummary>
+          <AccordionDetails>
+            <fieldset className="filter_field filter_sort">
+              <RadioGroup defaultValue="female" name="radio-buttons-group">
+                <FormControlLabel
+                  value="four"
+                  sx={{ color: "#fff" }}
+                  control={
+                    <Radio
+                      sx={{
+                        color: "#fcaf17",
+                        "&.Mui-checked": {
+                          color: "#fcaf17",
+                        },
+                      }}
+                    />
+                  }
+                  label="Price: Low to High"
+                />
+
+                <FormControlLabel
+                  value="one"
+                  sx={{ color: "#fff" }}
+                  control={
+                    <Radio
+                      sx={{
+                        color: "#fcaf17",
+                        "&.Mui-checked": {
+                          color: "#fcaf17",
+                        },
+                      }}
+                    />
+                  }
+                  label="Price: High to Low"
+                />
+              </RadioGroup>
+            </fieldset>
+          </AccordionDetails>
+        </Accordion>
+
+        {/* RATING */}
         <fieldset className="filter_field filter_rating">
           <legend className="filter_legend">RATING</legend>
-          <RadioGroup defaultValue="female" name="radio-buttons-group">
-            <FormControlLabel
-              value="one"
-              control={
-                <Radio
-                  sx={{
-                    color: "#fcaf17",
-                    "&.Mui-checked": {
-                      color: "#fcaf17",
-                    },
-                  }}
-                />
-              }
-              label="⭐"
-            />
-            <FormControlLabel
-              value="two"
-              control={
-                <Radio
-                  sx={{
-                    color: "#fcaf17",
-                    "&.Mui-checked": {
-                      color: "#fcaf17",
-                    },
-                  }}
-                />
-              }
-              label="⭐⭐"
-            />
-            <FormControlLabel
-              value="three"
-              control={
-                <Radio
-                  sx={{
-                    color: "#fcaf17",
-                    "&.Mui-checked": {
-                      color: "#fcaf17",
-                    },
-                  }}
-                />
-              }
-              label="⭐⭐⭐"
-            />
-            <FormControlLabel
-              value="four"
-              control={
-                <Radio
-                  sx={{
-                    color: "#fcaf17",
-                    "&.Mui-checked": {
-                      color: "#fcaf17",
-                    },
-                  }}
-                />
-              }
-              label="⭐⭐⭐⭐"
-            />
-            <FormControlLabel
-              value="five"
-              control={
-                <Radio
-                  sx={{
-                    color: "#fcaf17",
-                    "&.Mui-checked": {
-                      color: "#fcaf17",
-                    },
-                  }}
-                />
-              }
-              label="⭐⭐⭐⭐⭐"
-            />
-          </RadioGroup>
-        </fieldset>
-        <fieldset className="filter_field filter_sort">
-          <legend className="filter_legend">SORT</legend>
-          <RadioGroup defaultValue="female" name="radio-buttons-group">
-            <FormControlLabel
-              value="four"
-              sx={{ color: "#fff" }}
-              control={
-                <Radio
-                  sx={{
-                    color: "#fcaf17",
-                    "&.Mui-checked": {
-                      color: "#fcaf17",
-                    },
-                  }}
-                />
-              }
-              label="Price: Low to High"
-            />
-
-            <FormControlLabel
-              value="one"
-              sx={{ color: "#fff" }}
-              control={
-                <Radio
-                  sx={{
-                    color: "#fcaf17",
-                    "&.Mui-checked": {
-                      color: "#fcaf17",
-                    },
-                  }}
-                />
-              }
-              label="Price: High to Low"
-            />
-          </RadioGroup>
+          <Slider defaultValue={1} step={5} marks min={1} max={5} />
         </fieldset>
 
         <fieldset className="filter_field filter_price">
