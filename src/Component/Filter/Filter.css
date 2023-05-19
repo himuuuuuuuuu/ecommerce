@@ -2,13 +2,19 @@ fieldset {
   border: none;
 }
 
+.filter {
+  background: #2b2b2b;
+  padding: 16px 24px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .filter_wrap {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background: #2b2b2b;
-  padding: 16px 24px;
-  border-radius: 4px;
 }
 
 .filter_field {
@@ -18,4 +24,23 @@ fieldset {
 
 .filter_legend {
   color: #fff;
+}
+
+.filter_head {
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .filter {
+    width: 450px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  .filter {
+    width: auto;
+    margin: unset;
+    align-self: flex-start;
+  }
 }

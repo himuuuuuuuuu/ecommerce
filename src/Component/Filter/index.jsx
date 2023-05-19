@@ -13,70 +13,20 @@ import {
 import { styled } from "@mui/material/styles";
 import Slider, { SliderThumb } from "@mui/material/Slider";
 import { ExpandMore } from "@mui/icons-material";
+import { gameList } from "../../Data";
 
 import "./Filter.css";
 
 function Filter() {
-  const marks = [
-    {
-      value: 0,
-    },
-    {
-      value: 20,
-    },
-    {
-      value: 37,
-    },
-    {
-      value: 100,
-    },
-  ];
-
-  const PrettoSlider = styled(Slider)({
-    color: "#fcaf17",
-    height: 8,
-    "& .MuiSlider-track": {
-      border: "none",
-    },
-    "& .MuiSlider-thumb": {
-      height: 24,
-      width: 24,
-      backgroundColor: "#fff",
-      border: "2px solid currentColor",
-      "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
-        boxShadow: "inherit",
-      },
-      "&:before": {
-        display: "none",
-      },
-    },
-    "& .MuiSlider-valueLabel": {
-      lineHeight: 1.2,
-      fontSize: 12,
-      background: "unset",
-      padding: 0,
-      width: 32,
-      height: 32,
-      borderRadius: "50% 50% 50% 0",
-      backgroundColor: "#fcaf17",
-      transformOrigin: "bottom left",
-      transform: "translate(50%, -100%) rotate(-45deg) scale(0)",
-      "&:before": { display: "none" },
-      "&.MuiSlider-valueLabelOpen": {
-        transform: "translate(50%, -100%) rotate(-45deg) scale(1)",
-      },
-      "& > *": {
-        transform: "rotate(45deg)",
-      },
-    },
-  });
-
-  // function valuetext(value: number) {
-  //   return `${value}°C`;
-  // }
+  const genreList = gameList.reduce((list, currentGame) => {
+    return list.includes(currentGame.genre)
+      ? list
+      : [...list, currentGame.genre];
+  }, []);
 
   return (
     <div className="filter">
+      <h2 className="filter_head">FILTER</h2>
       <div className="filter_wrap">
         {/* CATEGORY */}
         <Accordion sx={{ backgroundColor: "#000" }}>
@@ -89,146 +39,24 @@ function Filter() {
           </AccordionSummary>
           <AccordionDetails>
             <fieldset className="filter_field filter_genre">
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
+              {genreList.map((currentGenre) => {
+                return (
+                  <FormControlLabel
+                    sx={{ color: "#fff" }}
+                    control={
+                      <Checkbox
+                        sx={{
+                          color: "#fcaf17",
+                          "&.Mui-checked": {
+                            color: "#fcaf17",
+                          },
+                        }}
+                      />
+                    }
+                    label={currentGenre}
                   />
-                }
-                label="Action"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Anime"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Racing"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Horror"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Sports"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Adventure"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Strategy"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Open World"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Survival"
-              />
-              <FormControlLabel
-                sx={{ color: "#fff" }}
-                control={
-                  <Checkbox
-                    sx={{
-                      color: "#fcaf17",
-                      "&.Mui-checked": {
-                        color: "#fcaf17",
-                      },
-                    }}
-                  />
-                }
-                label="Simulation"
-              />
+                );
+              })}
             </fieldset>
           </AccordionDetails>
         </Accordion>
@@ -282,19 +110,10 @@ function Filter() {
         </Accordion>
 
         {/* RATING */}
-        <fieldset className="filter_field filter_rating">
+        {/* <fieldset className="filter_field filter_rating">
           <legend className="filter_legend">RATING</legend>
-          <Slider defaultValue={1} step={5} marks min={1} max={5} />
-        </fieldset>
-
-        <fieldset className="filter_field filter_price">
-          <legend className="filter_legend">PRICE</legend>
-          <PrettoSlider
-            valueLabelDisplay="auto"
-            aria-label="pretto slider"
-            defaultValue={20}
-          />
-        </fieldset>
+          <Slider defaultValue={30} step={10} marks min={10} max={110} />
+        </fieldset> */}
       </div>
     </div>
   );

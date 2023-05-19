@@ -5,6 +5,7 @@
   overflow: hidden;
   position: relative;
   transition: all 0.5s;
+  justify-self: center;
 }
 
 .primary_card_img {
