@@ -1,7 +1,7 @@
 import React from "react";
 import "./CartCard.css";
 import ActionButton from "../../Action/ActionButton";
-import { Add, Remove, Delete } from "@mui/icons-material";
+import { Add, Remove, Delete, Favorite } from "@mui/icons-material";
 
 function CartCard(props) {
   const {
@@ -52,7 +52,7 @@ function CartCard(props) {
               <Delete />
             </ActionButton>
             <ActionButton className="cart_card_wish_btn">
-              Move to Wishlist
+              <Favorite />
             </ActionButton>
           </div>
         </div>
