@@ -12,24 +12,32 @@ function PrimaryCarousel() {
       title: "Read Dead Redemption 2",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption2.jpg",
+      landscape:
+        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/screens/912-1.jpg",
     },
     {
       id: 1,
       title: "GTA: 3",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/grandtheftauto3.jpg",
+      landscape:
+        "https://media-rockstargames-com.akamaized.net/mfe4/__common/img/afa2de9642866521f4d2.jpg",
     },
     {
       id: 2,
       title: "GTA: Vicecity",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/vicecity.jpg",
+      landscape:
+        "https://media-rockstargames-com.akamaized.net/mfe4/__common/img/5038478f256b924725ac.jpg",
     },
     {
       id: 3,
       title: "Read Dead Redemption",
       thumbnail:
         "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption.jpg",
+      landscape:
+        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/screens/912-4.jpg",
     },
   ];
 
@@ -67,12 +75,21 @@ function PrimaryCarousel() {
                 transform: `translateX(${(index - activeSlide) * 100}%)`,
               }}
             >
-              <img src={currentSlide.thumbnail} alt="" />
+              <img
+                className="primary_carousel_img"
+                src={currentSlide.thumbnail}
+                alt=""
+              />
+              <img
+                className="primary_carousel_tab_img"
+                src={currentSlide.landscape}
+                alt=""
+              />
             </div>
           );
         })}
 
-        <button
+        {/* <button
           className="primary_carousal_btn primary_carousal_next_btn"
           onClick={() => incrementSlide()}
         >
@@ -83,9 +100,9 @@ function PrimaryCarousel() {
           onClick={() => decrementSlide()}
         >
           -
-        </button>
+        </button> */}
 
-        <div className="primary_carousal_slider_action_wrap">
+        {/* <div className="primary_carousal_slider_action_wrap">
           {carouselData.map((current, index) => {
             return (
               <button
@@ -97,7 +114,7 @@ function PrimaryCarousel() {
               </button>
             );
           })}
-        </div>
+        </div> */}
       </div>
       <div className="primary_carousel_detail_wrap">
         {carouselData

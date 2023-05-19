@@ -72,7 +72,12 @@ function SecondaryCarousel() {
   const carouselRef = useRef();
   const carouselCardRef = useRef();
   const arrowClick = (arrowType) => {
-    const cardWidth = carouselCardRef.current.clientWidth + 16;
+    let cardWidth;
+    if (window.innerWidth > 780) {
+      cardWidth = carouselCardRef.current.clientWidth + 16;
+    } else {
+      cardWidth = carouselCardRef.current.clientWidth;
+    }
 
     if (arrowType === "left") {
       carouselRef.current.scrollLeft -= cardWidth;
