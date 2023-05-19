@@ -1,9 +1,13 @@
 .header {
+  border-bottom: 0.5px solid #ddd;
+}
+
+.header_wrap {
   display: flex;
   gap: 32px;
-  padding: 1em;
-  border-bottom: 0.5px solid #ddd;
+  padding: 1em 1.5em;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header_primary {
@@ -28,9 +32,8 @@
 .nav_btns {
   display: flex;
   gap: 16px;
-}
-
-.nav_btn {
+  display: flex;
+  align-items: center;
   font-size: 12px;
   padding: 0.5em;
 }
@@ -115,4 +118,17 @@
 
 .form_head h2 {
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .header_hamburger {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header_wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }

@@ -180,11 +180,11 @@
 }
 
 .second_carousel_prev:active {
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(0, -50%) scale(1);
 }
 
 .second_carousel_next:active {
-  transform: translate(50%, -50%) scale(1);
+  transform: translate(0, -50%) scale(1);
 }
 
 .second_carousel_slide img {
@@ -213,20 +213,20 @@
   .second_carousel_prev {
     left: 0;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(0, -50%);
   }
 
   .second_carousel_prev:hover {
-    transform: translate(-50%, -50%) scale(1.05);
+    transform: translate(0, -50%) scale(1.05);
   }
 
   .second_carousel_next {
     right: 0;
     top: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(0, -50%);
   }
 
   .second_carousel_next:hover {
-    transform: translate(50%, -50%) scale(1.05);
+    transform: translate(0, -50%) scale(1.05);
   }
 }
