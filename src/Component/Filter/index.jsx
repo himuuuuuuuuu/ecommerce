@@ -17,7 +17,10 @@ import { gameList } from "../../Data";
 
 import "./Filter.css";
 
-function Filter() {
+function Filter(props) {
+  const { className } = props;
+
+  const classes = className + " filter";
   const genreList = gameList.reduce((list, currentGame) => {
     return list.includes(currentGame.genre)
       ? list
@@ -25,7 +28,7 @@ function Filter() {
   }, []);
 
   return (
-    <div className="filter">
+    <div className={classes}>
       <h2 className="filter_head">FILTER</h2>
       <div className="filter_wrap">
         {/* CATEGORY */}
