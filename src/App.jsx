@@ -1,7 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import { Home, ProductList, Cart, WishList, ProductDetail } from "./Pages";
+import {
+  Home,
+  ProductList,
+  Cart,
+  WishList,
+  ProductDetail,
+  PageNotFound,
+} from "./Pages";
 import MockMan from "mockman-js";
 
 function App() {
@@ -14,6 +21,7 @@ function App() {
         <Route path="/productList/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/mock" element={<MockMan />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
   );
