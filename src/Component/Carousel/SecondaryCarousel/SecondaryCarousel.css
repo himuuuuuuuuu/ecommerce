@@ -10,6 +10,10 @@
   scroll-behavior: smooth;
 }
 
+/* ----------------------------------------------------------------------------------- */
+
+/* CAROUSEL SLIDE */
+
 .second_carousel_slide {
   display: inline-block;
   height: 350px;
@@ -18,6 +22,8 @@
   border-radius: 4px;
   overflow: hidden;
 }
+
+/* CAROUSEL SLIDE => PSEUDO ELEMENT */
 
 .second_carousel_slide_0::before,
 .second_carousel_slide_1::before,
@@ -38,6 +44,8 @@
   transition: opacity 0.5s;
 }
 
+/* CAROUSEL SLIDE => PSEUDO ELEMENT => HOVER*/
+
 .second_carousel_slide_0:hover::before,
 .second_carousel_slide_1:hover::before,
 .second_carousel_slide_2:hover::before,
@@ -51,65 +59,67 @@
   opacity: 1;
 }
 
-/* CARD ONE */
+/* CAROUSEL SLIDE (CARD ONE) => PSEUDO ELEMENT */
 
 .second_carousel_slide_0::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 139) 100%);
 }
 
-/* CARD TWO */
+/* CAROUSEL SLIDE (CARD TWO) => PSEUDO ELEMENT */
 
 .second_carousel_slide_1::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(233, 140, 0) 100%);
 }
 
-/* CARD THREE */
+/* CAROUSEL SLIDE (CARD THREE) => PSEUDO ELEMENT */
 
 .second_carousel_slide_2::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 0) 100%);
 }
 
-/* CARD FOUR */
+/* CAROUSEL SLIDE (CARD FOUR) => PSEUDO ELEMENT */
 
 .second_carousel_slide_3::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 139) 100%);
 }
 
-/* CARD FIVE */
+/* CAROUSEL SLIDE (CARD FIVE) => PSEUDO ELEMENT */
 
 .second_carousel_slide_4::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 100, 0) 100%);
 }
 
-/* CARD SIX */
+/* CAROUSEL SLIDE (CARD SIX) => PSEUDO ELEMENT */
 
 .second_carousel_slide_5::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 139, 139) 100%);
 }
 
-/* CARD SEVEN */
+/* CAROUSEL SLIDE (CARD SEVEN) => PSEUDO ELEMENT */
 
 .second_carousel_slide_6::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 139) 100%);
 }
 
-/* CARD EIGHT */
+/* CAROUSEL SLIDE (CARD EIGHT) => PSEUDO ELEMENT */
 
 .second_carousel_slide_7::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(233, 140, 0) 100%);
 }
 
-/* CARD NINE */
+/* CAROUSEL SLIDE (CARD NINE) => PSEUDO ELEMENT */
 
 .second_carousel_slide_8::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 139, 139) 100%);
 }
 
-/* CARD TEN */
+/* CAROUSEL SLIDE (CARD TEN) => PSEUDO ELEMENT */
 
 .second_carousel_slide_9::before {
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(139, 0, 0) 100%);
 }
+
+/* CAROUSEL LABEL*/
 
 .second_carousel_slide_label {
   position: absolute;
@@ -125,6 +135,8 @@
   text-transform: uppercase;
   font-weight: 800;
 }
+
+/* ----------------------------------------------------------------------------------- */
 
 /* BUTTON => PREV & NEXT */
 
@@ -144,32 +156,31 @@
   user-select: none;
 }
 
+.second_carousel_prev,
+.second_carousel_next {
+  transform: translate(0, -50%);
+  top: 50%;
+}
+
 .second_carousel_prev {
   left: 0;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 .second_carousel_next {
   right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
 }
 
 .second_carousel_btn svg {
   font-size: 20px;
 }
 
-.second_carousel_prev:hover {
+.second_carousel_prev:hover,
+.second_carousel_next:hover {
   transform: translate(0, -50%) scale(1.05);
 }
 
 .second_carousel_prev:active {
   transform: translate(-50%, -50%) scale(1);
-}
-
-.second_carousel_next:hover {
-  transform: translate(0, -50%) scale(1.05);
 }
 
 .second_carousel_next:active {
