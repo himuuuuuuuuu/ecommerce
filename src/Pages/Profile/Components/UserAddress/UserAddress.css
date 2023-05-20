@@ -15,58 +15,13 @@ textarea {
   font-family: inherit;
   padding: 12px;
   font-size: 12px;
-}
-
-.name_input {
-  grid-area: a;
-}
-
-.contact_input {
-  grid-area: b;
-}
-
-.pin_input {
-  grid-area: c;
-}
-
-.city_input {
-  grid-area: d;
-}
-
-.address_input {
-  grid-area: e;
-}
-
-.alternate_input {
-  grid-area: f;
-}
-
-.state_input {
-  grid-area: g;
-}
-
-.address_form_actions {
-  grid-area: h;
-  display: flex;
-  gap: 8px;
-}
-
-.address_form_actions button {
-  flex-basis: 25%;
+  margin: 0;
 }
 
 .address_form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1em;
-  row-gap: 0.5em;
-  grid-template-rows: 40px 40px 140px 40px 40px;
-  grid-template-areas:
-    "a b"
-    "c d"
-    "e e"
-    "f g"
-    "h h";
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .address_form_add_btn,
@@ -114,4 +69,65 @@ textarea {
 .address_form_cancel_btn:hover {
   background: red;
   color: #fff;
+}
+
+.address_form_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .address_form_actions button {
+    flex-basis: 25%;
+  }
+
+  .name_input {
+    grid-area: a;
+  }
+
+  .contact_input {
+    grid-area: b;
+  }
+
+  .pin_input {
+    grid-area: c;
+  }
+
+  .city_input {
+    grid-area: d;
+  }
+
+  .address_input {
+    grid-area: e;
+  }
+
+  .alternate_input {
+    grid-area: f;
+  }
+
+  .state_input {
+    grid-area: g;
+  }
+
+  .address_form_actions {
+    grid-area: h;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .address_form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 0.5em;
+    grid-template-rows: 40px 40px 140px 40px 40px;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e e"
+      "f g"
+      "h h";
+  }
 }
