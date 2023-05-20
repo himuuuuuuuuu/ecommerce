@@ -19,14 +19,19 @@ const style = {
 };
 
 export default function BasicModal(props) {
-  const { actionIcon, children } = props;
+  const { actionIcon, children, bgColor } = props;
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <ActionButton handleClick={handleOpen}>{actionIcon}</ActionButton>
+      <ActionButton
+        handleClick={handleOpen}
+        style={{ backgroundColor: bgColor }}
+      >
+        {actionIcon}
+      </ActionButton>
       <Modal open={open} onClose={handleClose}>
         <div className="modal_content">
           <div className="modal_close">

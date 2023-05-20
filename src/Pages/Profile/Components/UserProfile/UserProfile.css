@@ -1,0 +1,37 @@
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.user_item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.user_item_key {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.user_item_value {
+  font-size: 16px;
+}
+
+.user_logout_btn {
+  background: lightcoral;
+  border: none;
+}
+
+.user_logout_btn:hover {
+  background: red;
+  border: none;
+  color: #fff;
+}
+
+.user_logout_btn:active {
+  transform: scale(0.99);
+}

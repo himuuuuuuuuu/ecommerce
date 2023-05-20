@@ -1,0 +1,117 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+input {
+  padding: 12px;
+  font-family: inherit;
+}
+
+textarea {
+  height: auto;
+  font-family: inherit;
+  padding: 12px;
+  font-size: 12px;
+}
+
+.name_input {
+  grid-area: a;
+}
+
+.contact_input {
+  grid-area: b;
+}
+
+.pin_input {
+  grid-area: c;
+}
+
+.city_input {
+  grid-area: d;
+}
+
+.address_input {
+  grid-area: e;
+}
+
+.alternate_input {
+  grid-area: f;
+}
+
+.state_input {
+  grid-area: g;
+}
+
+.address_form_actions {
+  grid-area: h;
+  display: flex;
+  gap: 8px;
+}
+
+.address_form_actions button {
+  flex-basis: 25%;
+}
+
+.address_form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1em;
+  row-gap: 0.5em;
+  grid-template-rows: 40px 40px 140px 40px 40px;
+  grid-template-areas:
+    "a b"
+    "c d"
+    "e e"
+    "f g"
+    "h h";
+}
+
+.address_form_add_btn,
+.address_form_add_btn:hover,
+.address_form_reset_btn,
+.address_form_reset_btn:hover,
+.address_form_random_btn,
+.address_form_random_btn:hover,
+.address_form_cancel_btn,
+.address_form_cancel_btn:hover {
+  border: none;
+}
+
+.address_form_add_btn {
+  background: lightgreen;
+}
+
+.address_form_add_btn:hover {
+  background: green;
+  color: #fff;
+}
+
+.address_form_reset_btn {
+  background: #252525;
+}
+
+.address_form_reset_btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.address_form_random_btn {
+  background: #ddd;
+  color: #000;
+}
+
+.address_form_random_btn:hover {
+  background: #aaa;
+}
+
+.address_form_cancel_btn {
+  background: lightcoral;
+}
+
+.address_form_cancel_btn:hover {
+  background: red;
+  color: #fff;
+}

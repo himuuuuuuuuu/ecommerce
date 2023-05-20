@@ -1,0 +1,10 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.orders h3 {
+  font-size: 16px;
+  text-align: center;
+}
