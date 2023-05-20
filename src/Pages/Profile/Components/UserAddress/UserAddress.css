@@ -77,6 +77,10 @@ textarea {
   gap: 8px;
 }
 
+.address_list {
+  width: 100%;
+}
+
 @media (min-width: 768px) {
   .address_form_actions button {
     flex-basis: 25%;
