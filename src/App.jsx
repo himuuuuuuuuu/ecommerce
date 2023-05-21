@@ -9,6 +9,7 @@ import {
   ProductDetail,
   PageNotFound,
   Profile,
+  Login,
 } from "./Pages";
 import {
   UserProfile,
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/productList/:productId" element={<ProductDetail />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/mock" element={<MockMan />} />
         <Route path="/profile" element={<Profile />}>
           <Route path="user" element={<UserProfile />} />
