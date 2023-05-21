@@ -27,11 +27,11 @@ function App() {
         <Route path="/productList/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/mock" element={<MockMan />} />
-        <Route path="/profile" element={<Profile />} />
-        {/* <Route path="user" element={<UserProfile />} />
+        <Route path="/profile" element={<Profile />}>
+          <Route path="user" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
           <Route path="orders" element={<UserOrders />} />
-        </Route> */}
+        </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
