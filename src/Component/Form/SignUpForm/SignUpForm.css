@@ -1,0 +1,52 @@
+.sign_up_form_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form_head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.form_head img {
+  width: 40px;
+  height: 40px;
+}
+
+.form_head h2 {
+  color: #fff;
+}
+
+.sign_up_form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sign_up_form input {
+  padding: 8px;
+  width: 100%;
+  font-family: inherit;
+}
+
+.sign_up_meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.is_sign_in {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.is_sign_in a {
+  color: #fff;
+}

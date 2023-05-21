@@ -5,6 +5,7 @@ import Cart from "./Cart";
 import WishList from "./WishList";
 import PageNotFound from "./PageNotFound";
 import Profile from "./Profile";
+import Login from "./Login";
 
 export {
   Home,
@@ -14,4 +15,5 @@ export {
   WishList,
   PageNotFound,
   Profile,
+  Login,
 };

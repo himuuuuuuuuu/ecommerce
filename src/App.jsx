@@ -16,6 +16,7 @@ import {
   UserOrders,
 } from "./Pages/Profile/Components";
 import MockMan from "mockman-js";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -23,9 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productList" element={<ProductList />} />
-        <Route path="/wishList" element={<WishList />} />
         <Route path="/productList/:productId" element={<ProductDetail />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/mock" element={<MockMan />} />
         <Route path="/profile" element={<Profile />}>
           <Route path="user" element={<UserProfile />} />
@@ -33,6 +32,22 @@ function App() {
           <Route path="orders" element={<UserOrders />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
+        <Route
+          path="/cart"
+          element={
+            <PrivateRoute>
+              <Cart />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/wishList"
+          element={
+            <PrivateRoute>
+              <WishList />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </>
   );
