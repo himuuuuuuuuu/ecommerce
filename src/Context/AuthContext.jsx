@@ -10,12 +10,13 @@ function AuthProvider({ children }) {
 
   // SIGN UP HANDLER:
 
-  const signUpHandler = async (email, password, name) => {
+  const signUpHandler = async (email, password, firstName, lastName) => {
     try {
       const {
         status,
         data: { createdUser, encodedToken },
-      } = await SignUpService({ email, password, name });
+      } = await SignUpService({ email, password, firstName, lastName });
+      console.log(status);
       if (status == 200 || status == 201) {
         localStorage.setItem(
           "loginItems",
