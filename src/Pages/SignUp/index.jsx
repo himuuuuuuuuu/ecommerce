@@ -16,10 +16,7 @@ function SignUp() {
             <img src={LoginImg} alt="login_img" />
           </h1>
           <div className="signup_body">
-            <div className="signup_dialog">
-              <h3 className="signup_dialog_title">You are not logged in!</h3>
-              <SignUpForm />
-            </div>
+            <SignUpForm />
           </div>
         </div>
       </SectionContainer>
