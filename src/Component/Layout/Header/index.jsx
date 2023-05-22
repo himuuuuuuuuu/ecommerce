@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../../Context/AuthContext";
 
 import "./Header.css";
 import Navbar from "../../Navbar";
 import Sidebar from "../Sidebar";
 import NavLogo from "../../../Asset/Navbar/NavLogo.png";
-import { Menu } from "@mui/icons-material";
+import { Menu, AccountCircle } from "@mui/icons-material";
 import ActionButton from "../../Action/ActionButton";
 
 function Header() {
   const navigate = useNavigate();
+  const { token } = useAuth();
 
   const [isSideActive, setIsSideActive] = useState(false);
   return (
@@ -31,21 +33,31 @@ function Header() {
           )}
         </div>
         <div className="nav_btns">
-          <ActionButton handleClick={() => navigate("/signup")}>
-            Sign Up
-          </ActionButton>
-          <ActionButton handleClick={() => navigate("/login")}>
-            Log In
-          </ActionButton>
-
-          <ActionButton
-            handleClick={() => {
-              localStorage.clear();
-              navigate("/");
-            }}
-          >
-            Log Out
-          </ActionButton>
+          {!token && (
+            <ActionButton handleClick={() => navigate("/signup")}>
+              Sign Up
+            </ActionButton>
+          )}
+          {!token && (
+            <ActionButton handleClick={() => navigate("/login")}>
+              Log In
+            </ActionButton>
+          )}
+          {token && (
+            <ActionButton handleClick={() => navigate("/profile")}>
+              <AccountCircle />
+            </ActionButton>
+          )}
+          {token && (
+            <ActionButton
+              handleClick={() => {
+                localStorage.clear();
+                navigate("/");
+              }}
+            >
+              Log Out
+            </ActionButton>
+          )}
         </div>
       </div>
     </header>
