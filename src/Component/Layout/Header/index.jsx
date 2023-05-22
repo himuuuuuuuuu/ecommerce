@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./Header.css";
 import Navbar from "../../Navbar";
@@ -7,12 +8,10 @@ import Sidebar from "../Sidebar";
 import NavLogo from "../../../Asset/Navbar/NavLogo.png";
 import { Menu } from "@mui/icons-material";
 import ActionButton from "../../Action/ActionButton";
-import { Login } from "@mui/icons-material";
-import ModalWrap from "../../ModalWrap";
-import SignUpForm from "../../Form/SignUpForm";
-import LogInForm from "../../Form/LogInForm";
 
 function Header() {
+  const navigate = useNavigate();
+
   const [isSideActive, setIsSideActive] = useState(false);
   return (
     <header className="header">
@@ -32,21 +31,21 @@ function Header() {
           )}
         </div>
         <div className="nav_btns">
-          <ModalWrap actionIcon={<Login />}>
-            <SignUpForm />
-          </ModalWrap>
-          <ModalWrap actionIcon={<Login />}>
-            <LogInForm />
-          </ModalWrap>
+          <ActionButton handleClick={() => navigate("/signup")}>
+            Sign Up
+          </ActionButton>
+          <ActionButton handleClick={() => navigate("/login")}>
+            Log In
+          </ActionButton>
 
-          <button
-            onClick={() => {
+          <ActionButton
+            handleClick={() => {
               localStorage.clear();
-              window.location.href = "/";
+              navigate("/");
             }}
           >
-            Signout
-          </button>
+            Log Out
+          </ActionButton>
         </div>
       </div>
     </header>

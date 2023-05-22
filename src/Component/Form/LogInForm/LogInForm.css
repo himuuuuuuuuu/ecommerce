@@ -46,16 +46,15 @@
   color: #fff;
 }
 
-.is_forget,
 .is_sign_up {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 16px;
   color: #fff;
   font-size: 1.2rem;
 }
 
-.is_forget a,
 .is_sign_up a {
   color: #fff;
 }

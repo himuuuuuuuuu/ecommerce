@@ -6,6 +6,7 @@ import WishList from "./WishList";
 import PageNotFound from "./PageNotFound";
 import Profile from "./Profile";
 import Login from "./Login";
+import SignUp from "./SignUp";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   PageNotFound,
   Profile,
   Login,
+  SignUp,
 };

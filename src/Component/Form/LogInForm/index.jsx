@@ -6,11 +6,8 @@ import NavLogo from "../../../Asset/Navbar/NavLogo.png";
 import ActionButton from "../../Action/ActionButton";
 import ActionLink from "../../Action/ActionLink";
 import { useAuth } from "../../../Context/AuthContext";
-import ModalWrap from "../../ModalWrap";
-import SignUpForm from "../../Form/SignUpForm";
 
 function LogInForm() {
-  const location = useLocation();
   const navigate = useNavigate();
 
   const [logInData, setLogInData] = useState({
@@ -36,17 +33,12 @@ function LogInForm() {
     event.preventDefault();
     logInHandler(logInData.logInEmail, logInData.logInPassword);
   };
-  console.log(navigate);
-
-  useEffect(() => {
-    navigate(location?.state?.from.pathname || "/", { replace: true });
-  }, [token]);
 
   return (
     <div className="sign_in_form_wrap">
       <div className="form_head">
         <img src={NavLogo} alt="nav_logo" />
-        <h2>Sign In</h2>
+        <h2>Log In</h2>
       </div>
       <form className="sign_in_form" onSubmit={handleLogInSubmit}>
         <input
@@ -74,11 +66,11 @@ function LogInForm() {
       <div className="sign_up_meta">
         <p className="is_sign_up">
           Don't have an Account?{" "}
-          <ModalWrap actionIcon={"SIGN UP"}>
-            <SignUpForm />
-          </ModalWrap>
+          <ActionButton handleClick={() => navigate("/signup")}>
+            SIGN UP
+          </ActionButton>
         </p>
-        <ActionLink>Back to Store</ActionLink>
+        <ActionLink reach="/productList">Back to Store</ActionLink>
       </div>
     </div>
   );

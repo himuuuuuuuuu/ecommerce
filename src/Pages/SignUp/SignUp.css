@@ -1,10 +1,10 @@
-.login_section {
+.signup_section {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.login_section_wrap {
+.signup_section_wrap {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -12,25 +12,40 @@
   margin: 0 auto;
 }
 
-.login_head {
+.signup_head {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
 }
 
-.login_head span {
+.signup_head span {
   color: #fff;
   font-size: 32px;
 }
 
-.login_head img {
+.signup_head img {
   width: 40px;
   height: 40px;
 }
 
-.login_body {
+.signup_body {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.signup_dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.signup_dialog_title {
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  opacity: 0.7;
 }
