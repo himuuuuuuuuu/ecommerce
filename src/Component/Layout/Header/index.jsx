@@ -38,6 +38,15 @@ function Header() {
           <ModalWrap actionIcon={<Login />}>
             <LogInForm />
           </ModalWrap>
+
+          <button
+            onClick={() => {
+              localStorage.clear();
+              window.location.href = "/";
+            }}
+          >
+            Signout
+          </button>
         </div>
       </div>
     </header>

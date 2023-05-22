@@ -19,7 +19,7 @@ const style = {
 };
 
 export default function BasicModal(props) {
-  const { actionIcon, children, bgColor } = props;
+  const { actionIcon, children, bgColor, modalBody } = props;
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -39,7 +39,12 @@ export default function BasicModal(props) {
               <CloseIcon />
             </ActionButton>
           </div>
-          <div className="modal_body">{children}</div>
+          <div className="modal_body">
+            {children}
+            {props?.modalBody &&
+              React.cloneElement(modalBody, { onClose: handleClose })}
+            {console.log(props)}
+          </div>
         </div>
       </Modal>
     </div>

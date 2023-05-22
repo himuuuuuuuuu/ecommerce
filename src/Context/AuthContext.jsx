@@ -16,7 +16,6 @@ function AuthProvider({ children }) {
         status,
         data: { createdUser, encodedToken },
       } = await SignUpService({ email, password, firstName, lastName });
-      console.log(status);
       if (status == 200 || status == 201) {
         localStorage.setItem(
           "loginItems",

@@ -7,7 +7,8 @@ import NavLogo from "../../../Asset/Navbar/NavLogo.png";
 import ActionButton from "../../Action/ActionButton";
 import ActionLink from "../../Action/ActionLink";
 
-function SignUpForm() {
+function SignUpForm(props) {
+  const { onClose } = props;
   const { signUpHandler } = useAuth();
 
   const [signUpData, setSignUpData] = useState({
@@ -78,7 +79,11 @@ function SignUpForm() {
           onChange={handleSignUpInput}
           value={signUpData.signUpConfirm}
         />
-        <ActionButton className="sign_up_btn" btnType="submit">
+        <ActionButton
+          className="sign_up_btn"
+          btnType="submit"
+          handleClick={onClose}
+        >
           Sign Up
         </ActionButton>
       </form>

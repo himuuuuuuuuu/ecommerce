@@ -12,7 +12,6 @@ import SignUpForm from "../../Form/SignUpForm";
 function LogInForm() {
   const location = useLocation();
   const navigate = useNavigate();
-  // console.log(location, navigate);
 
   const [logInData, setLogInData] = useState({
     logInEmail: "",
@@ -40,7 +39,7 @@ function LogInForm() {
   console.log(navigate);
 
   useEffect(() => {
-    // navigate(location?.state?.from.pathname || "/", { replace: true });
+    navigate(location?.state?.from.pathname || "/", { replace: true });
   }, [token]);
 
   return (

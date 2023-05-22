@@ -26,8 +26,8 @@ function Login() {
             </div>
             <div className="signup_dialog">
               <h3 className="signup_dialog_title">Not have an account?</h3>
-              <ModalWrap actionIcon={"SIGN UP"}>
-                <SignUpForm />
+              <ModalWrap actionIcon={"SIGN UP"} modalBody={<SignUpForm />}>
+                {/* <SignUpForm /> */}
               </ModalWrap>
             </div>
           </div>
