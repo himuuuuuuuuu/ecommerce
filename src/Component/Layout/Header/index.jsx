@@ -12,9 +12,14 @@ import ActionButton from "../../Action/ActionButton";
 
 function Header() {
   const navigate = useNavigate();
-  const { token } = useAuth();
+  const { token, logOutHandler } = useAuth();
 
   const [isSideActive, setIsSideActive] = useState(false);
+
+  const handleLogout = () => {
+    logOutHandler();
+    navigate("/login");
+  };
   return (
     <header className="header">
       <div className="header_wrap">
@@ -49,12 +54,7 @@ function Header() {
             </ActionButton>
           )}
           {token && (
-            <ActionButton
-              handleClick={() => {
-                localStorage.clear();
-                navigate("/");
-              }}
-            >
+            <ActionButton handleClick={() => handleLogout()}>
               Log Out
             </ActionButton>
           )}

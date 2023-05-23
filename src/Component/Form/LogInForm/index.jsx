@@ -8,18 +8,17 @@ import ActionLink from "../../Action/ActionLink";
 import { useAuth } from "../../../Context/AuthContext";
 
 function LogInForm() {
+  const { logInHandler, token } = useAuth();
   const navigate = useNavigate();
-
+  const location = useLocation();
   const [logInData, setLogInData] = useState({
     logInEmail: "",
     logInPassword: "",
   });
 
-  const { logInHandler, token } = useAuth();
-
   const fixedLogInData = {
-    logInEmail: "vhgfdh@gmail.com",
-    logInPassword: "vhgfdh",
+    logInEmail: "adarshbalika@gmail.com",
+    logInPassword: "adarshbalika",
   };
 
   const handleLogInInput = (event) => {
@@ -33,6 +32,12 @@ function LogInForm() {
     event.preventDefault();
     logInHandler(logInData.logInEmail, logInData.logInPassword);
   };
+
+  useEffect(() => {
+    if (token) {
+      navigate(location?.state?.from.pathname || "/", { replace: true });
+    }
+  }, [token]);
 
   return (
     <div className="sign_in_form_wrap">
@@ -58,7 +63,12 @@ function LogInForm() {
         <ActionButton btnType="submit">Log In</ActionButton>
         <ActionButton
           btnType="submit"
-          handleClick={() => setLogInData(fixedLogInData)}
+          handleClick={() =>
+            setLogInData({
+              logInEmail: fixedLogInData.logInEmail,
+              logInPassword: fixedLogInData.logInPassword,
+            })
+          }
         >
           Log In As Guest
         </ActionButton>
