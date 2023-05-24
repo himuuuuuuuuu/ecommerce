@@ -21,12 +21,14 @@ function DataProvider({ children }) {
     (async () => {
       try {
         const productResponse = await GetProductList();
-        const {
-          status,
-          data: { products },
-        } = productResponse;
-        if (status == 200) {
-          dispatch({ type: "GET_DATA", payload: products });
+        if (productResponse.status == 200) {
+          dispatch({ type: "GET_DATA", payload: {products: productResponse.data.products} });
+        }
+
+        const categoryResponse = await GetCategoryList();
+        console.log(categoryResponse);
+        if(categoryResponse.status == 200) {
+          dispatch({type: "GET_CATEGORY", payload: {categories: categoryResponse.data.categories}})
         }
       } catch (err) {
         console.log(err);

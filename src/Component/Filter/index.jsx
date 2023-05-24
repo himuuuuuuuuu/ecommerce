@@ -8,25 +8,17 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Typography,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import Slider, { SliderThumb } from "@mui/material/Slider";
+
 import { ExpandMore } from "@mui/icons-material";
-import { gameList } from "../../Data";
+import { useData } from "../../Context/DataContext";
 
 import "./Filter.css";
 
 function Filter(props) {
+  const {state} = useData();
   const { className } = props;
-
   const classes = className + " filter";
-  const genreList = gameList.reduce((list, currentGame) => {
-    return list.includes(currentGame.genre)
-      ? list
-      : [...list, currentGame.genre];
-  }, []);
-
   return (
     <div className={classes}>
       <h2 className="filter_head">FILTER</h2>
@@ -42,10 +34,11 @@ function Filter(props) {
           </AccordionSummary>
           <AccordionDetails>
             <fieldset className="filter_field filter_genre">
-              {genreList.map((currentGenre) => {
+              {state.categoryList.map((currentGenre) => {
                 return (
                   <FormControlLabel
                     sx={{ color: "#fff" }}
+                    key={currentGenre._id}
                     control={
                       <Checkbox
                         sx={{
@@ -56,7 +49,7 @@ function Filter(props) {
                         }}
                       />
                     }
-                    label={currentGenre}
+                    label={currentGenre.categoryName}
                   />
                 );
               })}

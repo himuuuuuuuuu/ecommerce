@@ -5,8 +5,8 @@ import PageContainer from "../../Component/Layout/PageContainer";
 import SectionContainer from "../../Component/Layout/SectionContainer";
 import Filter from "../../Component/Filter";
 import PrimaryCard from "../../Component/Card/PrimaryCard";
-import { gameList } from "../../Data";
 import { useData } from "../../Context/DataContext";
+
 
 function ProductList() {
   const { state } = useData();

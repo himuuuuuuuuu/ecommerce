@@ -123,7 +123,7 @@ function PrimaryCarousel() {
           })
           .map((current) => {
             return (
-              <div className="primary_carousel_detail">
+              <div className="primary_carousel_detail" key={current.id}>
                 <h2 className="primary_carousel_title">{current.title}</h2>
                 <ActionButton>GET IT NOW!</ActionButton>
               </div>
