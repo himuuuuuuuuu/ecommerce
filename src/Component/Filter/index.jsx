@@ -16,7 +16,7 @@ import { useData } from "../../Context/DataContext";
 import "./Filter.css";
 
 function Filter(props) {
-  const {state, dispatch} = useData();
+  const { state, dispatch } = useData();
   const { className } = props;
   const classes = className + " filter";
   return (
@@ -41,11 +41,15 @@ function Filter(props) {
                     key={currentGenre._id}
                     control={
                       <Checkbox
-                      checked={state.filterBy.category.includes(currentGenre.categoryName)}
-                      onChange={(event) => {
-                        dispatch({type: "FILTER_BY_CATEGORY", payload: currentGenre.categoryName})
-                       
-                    }}
+                        checked={state.filterBy.category.includes(
+                          currentGenre.categoryName
+                        )}
+                        onChange={(evnt) => {
+                          dispatch({
+                            type: "FILTER_BY_CATEGORY",
+                            payload: currentGenre.categoryName,
+                          });
+                        }}
                         sx={{
                           color: "#fcaf17",
                           "&.Mui-checked": {
