@@ -3,4 +3,8 @@ export const initialState = {
   categoryList: [],
   wishList: [],
   cartList: [],
+  filterBy: {
+    category: [],
+    rating: ""
+  }
 };

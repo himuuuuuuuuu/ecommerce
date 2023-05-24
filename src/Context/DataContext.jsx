@@ -26,7 +26,6 @@ function DataProvider({ children }) {
         }
 
         const categoryResponse = await GetCategoryList();
-        console.log(categoryResponse);
         if(categoryResponse.status == 200) {
           dispatch({type: "GET_CATEGORY", payload: {categories: categoryResponse.data.categories}})
         }
