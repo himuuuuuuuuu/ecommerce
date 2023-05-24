@@ -44,7 +44,7 @@ function Filter(props) {
                         checked={state.filterBy.category.includes(
                           currentGenre.categoryName
                         )}
-                        onChange={(evnt) => {
+                        onChange={() => {
                           dispatch({
                             type: "FILTER_BY_CATEGORY",
                             payload: currentGenre.categoryName,
@@ -77,48 +77,54 @@ function Filter(props) {
           </AccordionSummary>
           <AccordionDetails>
             <fieldset className="filter_field filter_sort">
-              <RadioGroup defaultValue="female" name="radio-buttons-group">
-                <FormControlLabel
-                  value="four"
-                  sx={{ color: "#fff" }}
-                  control={
-                    <Radio
-                      sx={{
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Radio
+                    value="lowToHigh"
+                    checked={state.filterBy.sort == "lowToHigh"}
+                    onChange={(event) =>{
+                      dispatch({
+                        type: "FILTER_BY_RADIO",
+                        payload: event.target.value,
+                      })}
+                    }
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
                         color: "#fcaf17",
-                        "&.Mui-checked": {
-                          color: "#fcaf17",
-                        },
-                      }}
-                    />
-                  }
-                  label="Price: Low to High"
-                />
+                      },
+                    }}
+                  />
+                }
+                label="Price: Low to High"
+              />
 
-                <FormControlLabel
-                  value="one"
-                  sx={{ color: "#fff" }}
-                  control={
-                    <Radio
-                      sx={{
-                        color: "#fcaf17",
-                        "&.Mui-checked": {
-                          color: "#fcaf17",
-                        },
-                      }}
-                    />
+              <FormControlLabel
+                sx={{ color: "#fff" }}
+                control={
+                  <Radio
+                  value="highToLow"
+                  checked={state.filterBy.sort == "highToLow"}
+                  onChange={(event) =>
+                    dispatch({
+                      type: "FILTER_BY_RADIO",
+                      payload: event.target.value,
+                    })
                   }
-                  label="Price: High to Low"
-                />
-              </RadioGroup>
+                    sx={{
+                      color: "#fcaf17",
+                      "&.Mui-checked": {
+                        color: "#fcaf17",
+                      },
+                    }}
+                  />
+                }
+                label="Price: High to Low"
+              />
             </fieldset>
           </AccordionDetails>
         </Accordion>
-
-        {/* RATING */}
-        {/* <fieldset className="filter_field filter_rating">
-          <legend className="filter_legend">RATING</legend>
-          <Slider defaultValue={30} step={10} marks min={10} max={110} />
-        </fieldset> */}
       </div>
     </div>
   );

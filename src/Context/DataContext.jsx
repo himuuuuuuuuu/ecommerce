@@ -31,6 +31,18 @@ function DataProvider({ children }) {
           });
         });
 
+  // FILTER BY SORT:
+
+  const sortCheckedList = state.filterBy.sort
+    ? [...categoryCheckedList].sort((a, b) => {
+        return (state.filterBy.sort == "lowToHigh"
+          ? a.price - b.price
+          : b.price - a.price);
+      })
+    : categoryCheckedList;
+
+  // console.log(sortCheckedList);
+
   useEffect(() => {
     (async () => {
       try {
@@ -55,7 +67,7 @@ function DataProvider({ children }) {
     })();
   }, [token]);
   return (
-    <DataContext.Provider value={{ state, dispatch, categoryCheckedList }}>
+    <DataContext.Provider value={{ state, dispatch, sortCheckedList }}>
       {children}
     </DataContext.Provider>
   );

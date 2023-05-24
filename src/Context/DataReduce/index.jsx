@@ -13,8 +13,13 @@ export function DataReducer(state, action) {
         return !(current == action.payload);
       }): [...state.filterBy.category, action.payload] }}
 
+    case "FILTER_BY_RADIO":
+      return {...state, filterBy: {...state.filterBy, sort: action.payload}}
+
     default: {
       return state;
     }
   }
 }
+
+

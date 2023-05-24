@@ -10,7 +10,7 @@ export const products = [
     _id: "0",
     title: "Grand Theft Auto V",
     rating: "5",
-    price: "2,321",
+    price: "2321",
     genre: "Adventure",
     developer: "Rockstar Games",
     publisher: "Rockstar Games",
@@ -1125,7 +1125,7 @@ export const products = [
   {
     _id: "31",
     title: "Them and Us",
-    rating: "",
+    rating: "2",
     price: "785",
     genre: "Survival",
     developer: "TendoGames Co., Ltd.",
@@ -1161,7 +1161,7 @@ export const products = [
   {
     _id: "32",
     title: "Kraken Academy!!",
-    rating: "",
+    rating: "3",
     price: "200",
     genre: "Anime",
     developer: "Happy Broccoli Games",

@@ -5,6 +5,9 @@ export const initialState = {
   cartList: [],
   filterBy: {
     category: [],
-    rating: ""
+    rating: "",
+    sort:""
   }
 };
+
+

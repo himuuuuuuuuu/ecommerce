@@ -13,4 +13,5 @@ const simpleString = (str) => {
   return str.trim().split(" ").join("").toLowerCase();
 }
 
+
 export { validateEmail, validatePassword, simpleString };

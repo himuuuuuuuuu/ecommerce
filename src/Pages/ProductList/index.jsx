@@ -9,8 +9,8 @@ import { useData } from "../../Context/DataContext";
 
 
 function ProductList() {
-  const { state, categoryCheckedList } = useData();
-  console.log(categoryCheckedList);
+  const { state, sortCheckedList } = useData();
+
   return (
     <PageContainer>
       <SectionContainer className="product_list">
@@ -18,7 +18,7 @@ function ProductList() {
         <div className="product_list_content">
           <h3 className="product_list_content_head">Products</h3>
           <div className="product_list_content_body">
-            {categoryCheckedList.map((currentGame) => {
+            {sortCheckedList.map((currentGame) => {
               return <PrimaryCard {...currentGame} key={currentGame.id} />;
             })}
           </div>
