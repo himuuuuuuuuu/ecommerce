@@ -133,7 +133,11 @@ function Filter(props) {
               className="filter_slider"
               min="0"
               max="5"
+              defaultValue="0"
               list="ratings"
+              onChange={(event) => {
+                dispatch({type: "FILTER_BY_RATING", payload: event.target.value})
+              }}
             />
             <datalist id="ratings">
               <option value="0" label="0"></option>

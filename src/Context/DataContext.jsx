@@ -35,13 +35,20 @@ function DataProvider({ children }) {
 
   const sortCheckedList = state.filterBy.sort
     ? [...categoryCheckedList].sort((a, b) => {
-        return (state.filterBy.sort == "lowToHigh"
+        return state.filterBy.sort == "lowToHigh"
           ? a.price - b.price
-          : b.price - a.price);
+          : b.price - a.price;
       })
     : categoryCheckedList;
 
-  // console.log(sortCheckedList);
+  // FILTER BY RATING:
+
+  const ratingCheckedList =
+    !state.filterBy.rating || state.filterBy.rating == 0
+      ? sortCheckedList
+      : sortCheckedList.filter((currentProduct) => {
+          return currentProduct.rating > state.filterBy.rating;
+        });
 
   useEffect(() => {
     (async () => {
@@ -67,7 +74,7 @@ function DataProvider({ children }) {
     })();
   }, [token]);
   return (
-    <DataContext.Provider value={{ state, dispatch, sortCheckedList }}>
+    <DataContext.Provider value={{ state, dispatch, ratingCheckedList }}>
       {children}
     </DataContext.Provider>
   );
