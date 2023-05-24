@@ -3,15 +3,15 @@ import React from "react";
 import {
   FormControlLabel,
   Checkbox,
-  RadioGroup,
   Radio,
   Accordion,
   AccordionSummary,
   AccordionDetails,
 } from "@mui/material";
-
+import ActionButton from "../Action/ActionButton";
 import { ExpandMore } from "@mui/icons-material";
 import { useData } from "../../Context/DataContext";
+import RotateLeftIcon from '@mui/icons-material/RotateLeft';
 
 import "./Filter.css";
 
@@ -21,7 +21,10 @@ function Filter(props) {
   const classes = className + " filter";
   return (
     <div className={classes}>
-      <h2 className="filter_head">FILTER</h2>
+      <div className="filter_head">
+      <h2 className="filter_title">FILTER</h2>
+      <ActionButton className="filter_reset_btn"><RotateLeftIcon/></ActionButton>
+      </div>
       <div className="filter_wrap">
         {/* CATEGORY */}
         <Accordion sx={{ backgroundColor: "#000" }}>

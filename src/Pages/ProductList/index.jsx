@@ -11,8 +11,6 @@ import { useData } from "../../Context/DataContext";
 function ProductList() {
   const { state, ratingCheckedList } = useData();
 
-// console.log(ratingCheckedList);
-
   return (
     <PageContainer>
       <SectionContainer className="product_list">

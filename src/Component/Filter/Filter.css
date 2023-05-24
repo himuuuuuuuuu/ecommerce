@@ -27,8 +27,8 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -5px; /* Centers thumb on the track */
   background-color: #fff;
   height: 2rem;
-  width: 2rem;  
-  border-radius: 50%;  
+  width: 2rem;
+  border-radius: 50%;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -37,11 +37,10 @@ input[type="range"]::-moz-range-thumb {
   background-color: #fff;
   height: 2rem;
   width: 2rem;
-  border-radius: 50%;  
+  border-radius: 50%;
 }
 
 /* --------------------------------------------------------------------------------- */
-
 
 fieldset {
   border: none;
@@ -72,13 +71,27 @@ fieldset {
 }
 
 .filter_head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter_title {
   color: #fff;
 }
 
-.filter_slider {
-
+.filter_reset_btn {
+  border-radius: 50%;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.filter_reset_btn svg {
+  font-size: 24px;
+}
 
 .filter_rating_label {
   display: flex;

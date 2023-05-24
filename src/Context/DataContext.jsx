@@ -31,7 +31,7 @@ function DataProvider({ children }) {
           });
         });
 
-  // FILTER BY SORT:
+  // FILTERED BY SORT:
 
   const sortCheckedList = state.filterBy.sort
     ? [...categoryCheckedList].sort((a, b) => {
@@ -41,7 +41,7 @@ function DataProvider({ children }) {
       })
     : categoryCheckedList;
 
-  // FILTER BY RATING:
+  // FILTERED BY RATING:
 
   const ratingCheckedList =
     !state.filterBy.rating || state.filterBy.rating == 0
