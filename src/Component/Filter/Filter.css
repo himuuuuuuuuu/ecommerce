@@ -1,3 +1,48 @@
+/* SLIDER RESET */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #fcaf17;
+  height: 1rem;
+  border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-track {
+  background: #fcaf17;
+  height: 1rem;
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -5px; /* Centers thumb on the track */
+  background-color: #fff;
+  height: 2rem;
+  width: 2rem;  
+  border-radius: 50%;  
+}
+
+input[type="range"]::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+  background-color: #fff;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;  
+}
+
+/* --------------------------------------------------------------------------------- */
+
+
 fieldset {
   border: none;
 }
@@ -27,6 +72,30 @@ fieldset {
 }
 
 .filter_head {
+  color: #fff;
+}
+
+.filter_slider {
+
+}
+
+
+.filter_rating_label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #0b0b0b;
+  border-radius: 4px;
+  padding: 20px 16px;
+}
+
+.filter_rating_label span {
+  color: #fff;
+}
+
+.filter_rating_label datalist {
+  display: flex;
+  justify-content: space-between;
   color: #fff;
 }
 

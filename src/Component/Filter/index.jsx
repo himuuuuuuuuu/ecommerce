@@ -83,12 +83,12 @@ function Filter(props) {
                   <Radio
                     value="lowToHigh"
                     checked={state.filterBy.sort == "lowToHigh"}
-                    onChange={(event) =>{
+                    onChange={(event) => {
                       dispatch({
                         type: "FILTER_BY_RADIO",
                         payload: event.target.value,
-                      })}
-                    }
+                      });
+                    }}
                     sx={{
                       color: "#fcaf17",
                       "&.Mui-checked": {
@@ -104,14 +104,14 @@ function Filter(props) {
                 sx={{ color: "#fff" }}
                 control={
                   <Radio
-                  value="highToLow"
-                  checked={state.filterBy.sort == "highToLow"}
-                  onChange={(event) =>
-                    dispatch({
-                      type: "FILTER_BY_RADIO",
-                      payload: event.target.value,
-                    })
-                  }
+                    value="highToLow"
+                    checked={state.filterBy.sort == "highToLow"}
+                    onChange={(event) =>
+                      dispatch({
+                        type: "FILTER_BY_RADIO",
+                        payload: event.target.value,
+                      })
+                    }
                     sx={{
                       color: "#fcaf17",
                       "&.Mui-checked": {
@@ -125,6 +125,26 @@ function Filter(props) {
             </fieldset>
           </AccordionDetails>
         </Accordion>
+        <fieldset className="filter_field filter_rating">
+          <label className="filter_rating_label">
+            <span>RATING</span>
+            <input
+              type="range"
+              className="filter_slider"
+              min="0"
+              max="5"
+              list="ratings"
+            />
+            <datalist id="ratings">
+              <option value="0" label="0"></option>
+              <option value="1" label="1"></option>
+              <option value="2" label="2"></option>
+              <option value="3" label="3"></option>
+              <option value="4" label="4"></option>
+              <option value="5" label="5"></option>
+            </datalist>
+          </label>
+        </fieldset>
       </div>
     </div>
   );
