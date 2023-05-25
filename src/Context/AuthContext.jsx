@@ -8,6 +8,7 @@ function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(localStorageToken?.user);
   const [token, setToken] = useState(localStorageToken?.token);
 
+
   // SIGN UP HANDLER:
 
   const signUpHandler = async (email, password, firstName, lastName) => {
