@@ -5,9 +5,17 @@ export function DataReducer(state, action) {
     case "GET_DATA": {
       return { ...state, productList: [...action.payload.products] };
     }
+
     case "GET_CATEGORY": {
       return { ...state, categoryList: [...action.payload.categories] };
     }
+
+    case "GET_CART": {
+      return {...state, cartList: [ ...action.payload.cart]};
+    }
+
+  
+
     case "FILTER_BY_CATEGORY":
       return {
         ...state,

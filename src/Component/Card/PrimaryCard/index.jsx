@@ -1,15 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import "./PrimaryCard.css";
 
 import ActionButton from "../../Action/ActionButton";
 
-import { ShoppingCart, Favorite, Delete } from "@mui/icons-material";
+import { ShoppingCart, Favorite, Delete, ArrowForward } from "@mui/icons-material";
+import { PostCart } from "../../../Service/CartService";
+import { useAuth } from "../../../Context/AuthContext";
+import { useData } from "../../../Context/DataContext";
 
 function PrimaryCard(props) {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { token } = useAuth();
+  const { dispatch } = useData();
+
+  const [isBtnCarted, setIsBtnCarted] = useState(false);
+  const [isBtnWished, setIsBtnWished] = useState(false);
+
   const {
-    id,
+    _id,
     title,
     rating,
     price,
@@ -31,14 +42,54 @@ function PrimaryCard(props) {
 
   const starList = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
 
+  const HandleAddCart = async () => {
+    setIsBtnCarted(true);
+    try {
+      if (!token) {
+        navigate("/login", { state: { from: location } });
+        return;
+      }
+      const addCartResponse = await PostCart({
+        product: { ...props, qty: 1 },
+        encodedToken: token,
+      });
+      if (addCartResponse.status == 201) {
+        dispatch({
+          type: "GET_CART",
+          payload: { cart: addCartResponse.data.cart },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <article className="primary_card">
       <img className="primary_card_img" src={thumbnail} alt={title} />
       <div className="primary_card_content">
         <div className="primary_card_actions">
-          <ActionButton className="primary_card_action">
-            <ShoppingCart />
-          </ActionButton>
+          {isBtnCarted ? (
+            <ActionButton
+              className="primary_card_action"
+              handleClick={() => {
+                navigate("/cart")
+              }}
+            >
+              <ArrowForward />
+            </ActionButton>
+          ) : (
+            <ActionButton
+              className="primary_card_action"
+              handleClick={() => {
+                HandleAddCart();
+              }}
+            >
+              <ShoppingCart />
+            </ActionButton>
+          )}
+          <ShoppingCart />
+
           {!isWishList && (
             <ActionButton className="primary_card_action">
               <Favorite />
@@ -79,7 +130,7 @@ function PrimaryCard(props) {
             </p>
           </div>
           <div className="primary_card_view">
-            <Link className="primary_card_view_btn" to={`/productList/${id}`}>
+            <Link className="primary_card_view_btn" to={`/productList/${_id}`}>
               View
             </Link>
           </div>

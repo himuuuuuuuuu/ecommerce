@@ -10,6 +10,7 @@ import { useAuth } from "./AuthContext";
 import { initialState } from "./InitialState";
 import { DataReducer } from "./DataReduce";
 import { GetProductList, GetCategoryList } from "../Service";
+import {GetCartList} from "../Service/CartService";
 import { simpleString } from "../Component/Utils";
 
 const DataContext = createContext();
@@ -68,6 +69,14 @@ function DataProvider({ children }) {
             payload: { categories: categoryResponse.data.categories },
           });
         }
+
+        if(token) {
+          const cartListResponse = await GetCartList({encodedToken: token});
+          if(cartListResponse.status == 200) {
+            dispatch({type: "GET_CART", payload: {cart: cartListResponse.data.cart}})
+          }
+        }
+
       } catch (err) {
         console.log(err);
       }
