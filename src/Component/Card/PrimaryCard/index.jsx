@@ -5,10 +5,16 @@ import "./PrimaryCard.css";
 
 import ActionButton from "../../Action/ActionButton";
 
-import { ShoppingCart, Favorite, Delete, ArrowForward } from "@mui/icons-material";
+import {
+  ShoppingCart,
+  Favorite,
+  Delete,
+  ArrowForward,
+} from "@mui/icons-material";
 import { PostCart } from "../../../Service/CartService";
 import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
+import { PostWish, DeleteWish } from "../../../Service/WishService";
 
 function PrimaryCard(props) {
   const navigate = useNavigate();
@@ -64,6 +70,39 @@ function PrimaryCard(props) {
     }
   };
 
+  const HandleAddWish = async () => {
+    setIsBtnWished(true);
+    try {
+      const addWishResponse = await PostWish({
+        product: { ...props },
+        encodedToken: token,
+      });
+      if (addWishResponse.status == 201) {
+        dispatch({ type: "GET_WISH", payload: {wishlist: addWishResponse.data.wishlist} });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const HandleDeleteWish = async () => {
+    setIsBtnWished(false);
+    try {
+      const deleteWishResponse = await DeleteWish({
+        productId: _id,
+        encodedToken: token,
+      });
+      if (deleteWishResponse.status == 200) {
+        dispatch({
+          type: "GET_WISH",
+          payload: {wishlist: deleteWishResponse.data.wishlist},
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <article className="primary_card">
       <img className="primary_card_img" src={thumbnail} alt={title} />
@@ -73,7 +112,7 @@ function PrimaryCard(props) {
             <ActionButton
               className="primary_card_action"
               handleClick={() => {
-                navigate("/cart")
+                navigate("/cart");
               }}
             >
               <ArrowForward />
@@ -90,13 +129,26 @@ function PrimaryCard(props) {
           )}
           <ShoppingCart />
 
-          {!isWishList && (
-            <ActionButton className="primary_card_action">
-              <Favorite />
+          {!isWishList && (isBtnWished ? 
+            <ActionButton
+              className="primary_card_action"
+              handleClick={() => HandleDeleteWish()}
+            >
+              <Favorite style={{color: "red"}}/>
             </ActionButton>
+            :
+            <ActionButton
+            className="primary_card_action"
+            handleClick={() => HandleAddWish()}
+          >
+            <Favorite />
+          </ActionButton>
           )}
           {isWishList && (
-            <ActionButton className="primary_card_action">
+            <ActionButton
+              className="primary_card_action"
+              handleClick={() => HandleDeleteWish()}
+            >
               <Delete />
             </ActionButton>
           )}

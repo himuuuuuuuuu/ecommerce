@@ -11,10 +11,12 @@ export function DataReducer(state, action) {
     }
 
     case "GET_CART": {
-      return {...state, cartList: [ ...action.payload.cart]};
+      return { ...state, cartList: [...action.payload.cart] };
     }
 
-  
+    case "GET_WISH": {
+      return { ...state, wishList: [...action.payload.wishlist] };
+    }
 
     case "FILTER_BY_CATEGORY":
       return {

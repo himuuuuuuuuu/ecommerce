@@ -6,12 +6,6 @@ import SectionContainer from "../../Component/Layout/SectionContainer";
 import EmptyCart from "../../Component/Card/EmptyCart";
 import CartCard from "../../Component/Card/CartCard";
 import ActionButton from "../../Component/Action/ActionButton";
-import {
-  GetCartList,
-  PostCart,
-  DeleteCart,
-  UpdateCart,
-} from "../../Service/CartService";
 import { useAuth } from "../../Context/AuthContext";
 import { useData } from "../../Context/DataContext";
 
