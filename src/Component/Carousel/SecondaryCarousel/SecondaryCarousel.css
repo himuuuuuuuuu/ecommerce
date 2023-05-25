@@ -21,6 +21,11 @@
   position: relative;
   border-radius: 4px;
   overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.second_carousel_slide:active {
+  transform: scale(0.98);
 }
 
 /* CAROUSEL SLIDE => PSEUDO ELEMENT */
@@ -28,6 +33,7 @@
 .second_carousel_slide_0::before,
 .second_carousel_slide_1::before,
 .second_carousel_slide_2::before,
+.second_carousel_slide_3::before,
 .second_carousel_slide_4::before,
 .second_carousel_slide_5::before,
 .second_carousel_slide_6::before,

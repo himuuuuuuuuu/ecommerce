@@ -4,12 +4,13 @@ import "./Home.css";
 import PageContainer from "../../Component/Layout/PageContainer";
 import SectionContainer from "../../Component/Layout/SectionContainer";
 
-import Sidebar from "../../Component/Layout/Sidebar";
-import PrimaryCard from "../../Component/Card/PrimaryCard";
 import PrimaryCarousel from "../../Component/Carousel/PrimaryCarousel";
 import SecondaryCarousel from "../../Component/Carousel/SecondaryCarousel";
+import {useData} from "../../Context/DataContext";
 
 function Home() {
+  const {state} = useData();
+  
   const carouselData = [
     {
       id: 0,
@@ -64,7 +65,7 @@ function Home() {
       </SectionContainer>
       <SectionContainer className="category_section">
         <h2 className="section_head category_head">#BROWSE BY CATEGORY</h2>
-        <SecondaryCarousel />
+        <SecondaryCarousel carouselData={state.categoryList}/>
       </SectionContainer>
       <SectionContainer className="fame_section">
         <h2 className="section_head fame_head">#WALL OF FAME</h2>
