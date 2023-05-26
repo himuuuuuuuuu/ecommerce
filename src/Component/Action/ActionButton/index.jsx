@@ -4,7 +4,7 @@ import "./ActionButton.css";
 function ActionButton(props) {
   const { children, className, handleClick, style: buttonStyle } = props;
 
-  const classes = "action_button " + className;
+  const classes =   className + " action_button";
 
   return (
     <button

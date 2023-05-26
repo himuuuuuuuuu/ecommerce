@@ -10,6 +10,9 @@
   background: transparent;
   color: #fff;
   transition: background 0.5s, transform 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .action_button:hover {
@@ -20,4 +23,9 @@
 
 .action_button:active {
   transform: scale(0.98);
+}
+
+
+.action_button svg {
+  font-size: 24px;
 }

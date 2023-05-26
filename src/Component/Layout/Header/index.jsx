@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../Context/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, AccountCircle } from "@mui/icons-material";
 
 import "./Header.css";
 import Navbar from "../../Navbar";
 import Sidebar from "../Sidebar";
 import NavLogo from "../../../Asset/Navbar/NavLogo.png";
-import { Menu, AccountCircle } from "@mui/icons-material";
 import ActionButton from "../../Action/ActionButton";
+import ActionIcon from "../../Action/ActionIcon";
+import { useAuth } from "../../../Context/AuthContext";
 
 function Header() {
   const navigate = useNavigate();
@@ -25,19 +26,23 @@ function Header() {
       <div className="header_wrap">
         <div className="header_primary">
           <ActionButton
-            className="header_hamburger"
+            className="header_action_hamburger"
             handleClick={() => setIsSideActive(true)}
           >
             <Menu />
           </ActionButton>
-          <img src={NavLogo} alt="nav_logo" className="header_img" />
+          <h1>
+            <Link to="/">
+              <img src={NavLogo} alt="nav_logo" className="header_img" />
+            </Link>
+          </h1>
           <Navbar />
           {createPortal(
             <Sidebar isActive={isSideActive} handleClose={setIsSideActive} />,
             document.body
           )}
         </div>
-        <div className="nav_btns">
+        <div className="header_account_actions">
           {!token && (
             <ActionButton handleClick={() => navigate("/signup")}>
               Sign Up
@@ -49,12 +54,15 @@ function Header() {
             </ActionButton>
           )}
           {token && (
-            <ActionButton handleClick={() => navigate("/profile")}>
+            <ActionIcon handleClick={() => navigate("/profile")}>
               <AccountCircle />
-            </ActionButton>
+            </ActionIcon>
           )}
           {token && (
-            <ActionButton handleClick={() => handleLogout()}>
+            <ActionButton
+              handleClick={() => handleLogout()}
+              className="header_account_action"
+            >
               Log Out
             </ActionButton>
           )}
