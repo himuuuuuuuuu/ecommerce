@@ -73,6 +73,9 @@ function PrimaryCard(props) {
   const HandleAddWish = async () => {
     setIsBtnWished(true);
     try {
+      if(!token) {
+        navigate("/login", {state: {from: location}})
+      }
       const addWishResponse = await PostWish({
         product: { ...props },
         encodedToken: token,
@@ -88,6 +91,9 @@ function PrimaryCard(props) {
   const HandleDeleteWish = async () => {
     setIsBtnWished(false);
     try {
+      if(!token) {
+        navigate("/login", {state: {from: location}})
+      }
       const deleteWishResponse = await DeleteWish({
         productId: _id,
         encodedToken: token,
