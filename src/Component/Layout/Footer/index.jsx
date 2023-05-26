@@ -9,6 +9,8 @@ import {
   Linkedin,
   Facebook,
   Instagram,
+  Github,
+  Hash,
 } from "../../../Asset/Footer";
 
 function Footer() {
@@ -17,50 +19,66 @@ function Footer() {
       <div className="footer_container">
         {/* HEADER */}
         <div className="footer_header">
+          <Link className="footer_header_logo">
           <img src={NavLogo} alt="footer_logo" />
+          <h3 className="footer_header_title">PLAYVERSE</h3>
+          </Link>
         </div>
         {/* BODY */}
         <div className="footer_body">
           <div className="footer_primary">
             <div className="footer_primary_row">
-              <Link className="footer_text_link">Home</Link>
-              <Link className="footer_text_link">Store</Link>
-              <Link className="footer_text_link">Cart</Link>
-              <Link className="footer_text_link">Wish List</Link>
-              <Link className="footer_text_link">About</Link>
-              <Link className="footer_text_link">Contact</Link>
-              <Link className="footer_text_link">Policy</Link>
-              <Link className="footer_text_link">Click</Link>
+              <Link className="footer_text_link" to="/">
+                Home
+              </Link>
+              <Link className="footer_text_link" to="/productList">
+                Store
+              </Link>
+              <Link className="footer_text_link" to="/cart">
+                Cart
+              </Link>
+              <Link className="footer_text_link" to="/wishList">
+                Wish List
+              </Link>
             </div>
           </div>
           <div className="footer_secondary">
             <h3 className="footer_secondary_header">Connect With Me:</h3>
             <div className="footer_social">
-              <Link className="footer_img_link">
-                <img src={Twitch} alt="social_logo" />
-              </Link>
-              <Link className="footer_img_link">
+              <a
+                className="footer_img_link"
+                href="https://github.com/vivekbhatt07"
+                target="_blank"
+              >
+                <img src={Github} alt="social_logo" />
+              </a>
+              <a
+                className="footer_img_link"
+                href="https://twitter.com/vivekbhatt07"
+                target="_blank"
+              >
                 <img src={Twitter} alt="social_logo" />
-              </Link>
-              <Link className="footer_img_link">
+              </a>
+              <a
+                className="footer_img_link"
+                href="https://www.linkedin.com/in/vivekbhatt07/"
+                target="_blank"
+              >
                 <img src={Linkedin} alt="social_logo" />
-              </Link>
-              <Link className="footer_img_link">
-                <img src={Instagram} alt="social_logo" />
-              </Link>
-              <Link className="footer_img_link">
-                <img src={Discord} alt="social_logo" />
-              </Link>
-              <Link className="footer_img_link">
-                <img src={Facebook} alt="social_logo" />
-              </Link>
+              </a>
+              <a
+                className="footer_img_link"
+                href="https://hashnode.com/@vivekbhatt07"
+              >
+                <img src={Hash} alt="social_logo" />
+              </a>
             </div>
           </div>
         </div>
         {/* FOOTER */}
 
         <p className="footer_footer">
-          © 2023 Valve Corporation. All rights reserved. All trademarks are
+          © 2023 PlayVerse Corporation. All rights reserved. All trademarks are
           property of their respective owners in the US and other countries. VAT
           included in all prices where applicable.
         </p>

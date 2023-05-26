@@ -4,5 +4,16 @@ import Discord from "./Discord_Footer.svg";
 import Instagram from "./Instagram_Footer.svg";
 import Twitch from "./Twitch_Footer.svg";
 import Linkedin from "./Linkedin_Footer.svg";
+import Github from "./Github_Footer.svg";
+import Hash from "./Hash_Footer.svg";
 
-export { Twitter, Facebook, Discord, Instagram, Twitch, Linkedin };
+export {
+  Twitter,
+  Facebook,
+  Discord,
+  Instagram,
+  Twitch,
+  Linkedin,
+  Github,
+  Hash,
+};
