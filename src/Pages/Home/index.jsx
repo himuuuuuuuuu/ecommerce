@@ -7,6 +7,7 @@ import SectionContainer from "../../Component/Layout/SectionContainer";
 import PrimaryCarousel from "../../Component/Carousel/PrimaryCarousel";
 import SecondaryCarousel from "../../Component/Carousel/SecondaryCarousel";
 import { useData } from "../../Context/DataContext";
+import SecondaryCard from "../../Component/Card/SecondaryCard";
 
 function Home() {
   const { state } = useData();
@@ -42,6 +43,7 @@ function Home() {
           })}
         </div>
       </SectionContainer>
+      <SecondaryCard />
     </PageContainer>
   );
 }

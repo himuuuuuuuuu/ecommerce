@@ -24,3 +24,17 @@ body {
   background: var(--primary-color);
   position: relative;
 }
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(161, 161, 161, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #fcaf17;
+  outline: 1px solid slategrey;
+  border-radius: 4px;
+}
