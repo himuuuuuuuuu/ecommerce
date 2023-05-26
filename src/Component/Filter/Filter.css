@@ -73,25 +73,13 @@ fieldset {
 .filter_head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .filter_title {
   color: #fff;
 }
 
-.filter_reset_btn {
-  border-radius: 50%;
-  padding: 0;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.filter_reset_btn svg {
-  font-size: 24px;
-}
 
 .filter_rating_label {
   display: flex;

@@ -11,7 +11,8 @@ import {
 import ActionButton from "../Action/ActionButton";
 import { ExpandMore } from "@mui/icons-material";
 import { useData } from "../../Context/DataContext";
-import RotateLeftIcon from '@mui/icons-material/RotateLeft';
+import RotateLeftIcon from "@mui/icons-material/RotateLeft";
+import ActionIcon from "../Action/ActionIcon";
 
 import "./Filter.css";
 
@@ -22,8 +23,13 @@ function Filter(props) {
   return (
     <div className={classes}>
       <div className="filter_head">
-      <h2 className="filter_title">FILTER</h2>
-      <ActionButton className="filter_reset_btn"><RotateLeftIcon/></ActionButton>
+        <h2 className="filter_title">FILTER</h2>
+        <ActionIcon
+          className="filter_reset_btn"
+          handleClick={() => dispatch({ type: "RESET_FILTER" })}
+        >
+          <RotateLeftIcon />
+        </ActionIcon>
       </div>
       <div className="filter_wrap">
         {/* CATEGORY */}
@@ -136,10 +142,13 @@ function Filter(props) {
               className="filter_slider"
               min="0"
               max="5"
-              defaultValue="0"
               list="ratings"
+              value={state.filterBy.rating}
               onChange={(event) => {
-                dispatch({type: "FILTER_BY_RATING", payload: event.target.value})
+                dispatch({
+                  type: "FILTER_BY_RATING",
+                  payload: event.target.value,
+                });
               }}
             />
             <datalist id="ratings">

@@ -1,4 +1,5 @@
 import React from "react";
+import Lottie from "lottie-react";
 
 import "./Cart.css";
 import PageContainer from "../../Component/Layout/PageContainer";
@@ -8,6 +9,7 @@ import CartCard from "../../Component/Card/CartCard";
 import ActionButton from "../../Component/Action/ActionButton";
 import { useAuth } from "../../Context/AuthContext";
 import { useData } from "../../Context/DataContext";
+import EmptyBoxLottie from "../../Asset/Lottie/EmptyBox.json";
 
 function Cart() {
   const { token } = useAuth();
@@ -17,7 +19,10 @@ function Cart() {
       <SectionContainer className="cart_section">
         <h1 className="cart_section_head">MY CART</h1>
         {state.cartList.length == 0 ? (
-          <EmptyCart />
+          <div>
+            {/* <Lottie animationData={EmptyBoxLottie} width="50" height="50"/> */}
+            <EmptyCart />
+          </div>
         ) : (
           <div className="cart_section_body">
             {/* CART PRICE */}

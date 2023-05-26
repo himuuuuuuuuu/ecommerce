@@ -43,6 +43,10 @@ export function DataReducer(state, action) {
         filterBy: { ...state.filterBy, rating: action.payload },
       };
 
+    case "RESET_FILTER":
+      return {
+        ...state, filterBy: {category: [], rating: "0", sort: ""}
+      }
     default: {
       return state;
     }

@@ -12,15 +12,6 @@ import EmptyBoxLottie from "../../Asset/Lottie/EmptyBox.json";
 function WishList() {
   const { state } = useData();
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: EmptyBoxLottie,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
   return (
     <PageContainer>
       <SectionContainer className="wish_section">
@@ -29,7 +20,7 @@ function WishList() {
         {state.wishList.length == 0 ? (
           <div>
             <EmptyWishList />
-            <Lottie animationData={EmptyBoxLottie} />
+            {/* <Lottie animationData={EmptyBoxLottie} /> */}
           </div>
         ) : (
           <div className="wish_body">
