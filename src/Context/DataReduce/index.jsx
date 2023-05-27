@@ -18,6 +18,10 @@ export function DataReducer(state, action) {
       return { ...state, wishList: [...action.payload.wishlist] };
     }
 
+    case "GET_ADDRESS": {
+      return {...state, addressList: [...action.payload.address]}
+    }
+
     case "FILTER_BY_CATEGORY":
       return {
         ...state,

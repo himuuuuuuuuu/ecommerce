@@ -12,6 +12,7 @@ import { DataReducer } from "./DataReduce";
 import { GetProductList, GetCategoryList } from "../Service";
 import { GetCartList } from "../Service/CartService";
 import { GetWishList } from "../Service/WishService";
+import { GetAddress } from "../Service/AddressService";
 import { simpleString } from "../Component/Utils";
 
 const DataContext = createContext();
@@ -85,6 +86,15 @@ function DataProvider({ children }) {
             dispatch({
               type: "GET_WISH",
               payload: { wishlist: wishListResponse.data.wishlist },
+            });
+          }
+
+          const addressListResponse = await GetAddress({ encodedToken: token });
+          console.log(addressListResponse);
+          if (addressListResponse.status == 200) {
+            dispatch({
+              type: "GET_ADDRESS",
+              payload: { address: addressListResponse.data.address },
             });
           }
         }

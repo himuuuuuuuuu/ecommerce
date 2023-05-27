@@ -7,12 +7,14 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Slider
 } from "@mui/material";
 import ActionButton from "../Action/ActionButton";
 import { ExpandMore } from "@mui/icons-material";
 import { useData } from "../../Context/DataContext";
 import RotateLeftIcon from "@mui/icons-material/RotateLeft";
 import ActionIcon from "../Action/ActionIcon";
+import {PostAddress} from "../../Service/AddressService";
 
 import "./Filter.css";
 
@@ -20,6 +22,10 @@ function Filter(props) {
   const { state, dispatch } = useData();
   const { className } = props;
   const classes = className + " filter";
+
+  // const 
+
+  
   return (
     <div className={classes}>
       <div className="filter_head">
@@ -160,6 +166,14 @@ function Filter(props) {
               <option value="5" label="5"></option>
             </datalist>
           </label>
+          {/* <Slider
+            aria-label="Custom marks"
+            defaultValue={0}
+            getAriaValueText={valuetext}
+            step={10}
+            valueLabelDisplay="auto"
+            marks={marks}
+          /> */}
         </fieldset>
       </div>
     </div>

@@ -15,5 +15,17 @@ export const users = [
     password: "adarshbalika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    address: [
+      {
+        _id: uuid(),
+        addressFormName: "Vivek Bhatt",
+        addressFormNumber: "9975558910",
+        addressFormPin: "263153",
+        addressFormCity: "Rudrapur",
+        addressFormAddress: "6, Alliance",
+        addressFormAlternateNumber: "9546721547",
+        addressFormState: "Uttarakhand",
+      },
+    ],
   },
 ];

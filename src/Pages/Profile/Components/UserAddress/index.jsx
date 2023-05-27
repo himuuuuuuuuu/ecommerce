@@ -4,8 +4,11 @@ import "./UserAddress.css";
 import ActionButton from "../../../../Component/Action/ActionButton";
 import AddressCard from "../../../../Component/Card/AddressCard";
 import AddressForm from "../../../../Component/Form/AddressForm";
+import { useData } from "../../../../Context/DataContext";
 
 function UserAddress() {
+const {state} = useData();
+
   return (
     <div className="address">
       <ActionButton style={{ backgroundColor: "lightgreen" }}>
@@ -13,7 +16,9 @@ function UserAddress() {
       </ActionButton>
       <AddressForm />
       <div className="address_list">
-        <AddressCard />
+        {state.addressList.map((currentAddress, index) => {
+          return <AddressCard {...currentAddress} key={index}/>
+        })}
       </div>
     </div>
   );

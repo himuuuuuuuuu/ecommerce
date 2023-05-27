@@ -2,34 +2,53 @@ import React from "react";
 import "./AddressCard.css";
 import ActionButton from "../../Action/ActionButton";
 
-function AddressCard() {
+function AddressCard(props) {
+  console.log(props);
+  const {
+    _id,
+    addressFormName,
+    addressFormNumber,
+    addressFormPin,
+    addressFormCity,
+    addressFormAddress,
+    addressFormAlternateNumber,
+    addressFormState,
+  } = props;
   return (
     <div className="address_card">
       <div className="address_card_body">
         <p className="address_card_body_item">
           <span className="address_card_body_item_key">Name:</span>
-          <span className="address_card_body_item_value">Vivek Bhatt</span>
+          <span className="address_card_body_item_value">
+            {addressFormName}
+          </span>
         </p>
         <p className="address_card_body_item">
           <span className="address_card_body_item_key">Mobile Number:</span>
-          <span className="address_card_body_item_value">9997339912</span>
+          <span className="address_card_body_item_value">
+            {addressFormNumber}
+          </span>
         </p>
         <p className="address_card_body_item">
           <span className="address_card_body_item_key">Pincode:</span>
-          <span className="address_card_body_item_value">263153</span>
+          <span className="address_card_body_item_value">{addressFormPin}</span>
         </p>
         <p className="address_card_body_item">
           <span className="address_card_body_item_key">Alternate Number:</span>
-          <span className="address_card_body_item_value">9058068465</span>
+          <span className="address_card_body_item_value">
+            {addressFormAlternateNumber}
+          </span>
         </p>
         <p className="address_card_body_item">
           <span className="address_card_body_item_key">State:</span>
-          <span className="address_card_body_item_value">Uttarakhand</span>
+          <span className="address_card_body_item_value">
+            {addressFormCity}
+          </span>
         </p>
         <p className="address_card_body_item">
           <span className="address_card_body_item_key">Address:</span>
           <span className="address_card_body_item_value">
-            Rudrapur, Udham Singh Nagar
+            {addressFormAddress}
           </span>
         </p>
       </div>

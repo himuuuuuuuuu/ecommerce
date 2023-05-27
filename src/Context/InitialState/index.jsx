@@ -3,6 +3,7 @@ export const initialState = {
   categoryList: [],
   wishList: [],
   cartList: [],
+  addressList: [],
   filterBy: {
     category: [],
     rating: "0",
