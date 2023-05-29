@@ -7,7 +7,6 @@ import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
 function AddressForm(props) {
   const {
-    closeAddressForm,
     _id,
     addressFormName: name,
     addressFormNumber: number,
@@ -17,6 +16,9 @@ function AddressForm(props) {
     addressFormAlternateNumber: alternate,
     addressFormState: state,
     isEdit,
+    closeForm,
+    openEdit,
+    closeEdit
   } = props;
   const { token } = useAuth();
   const { dispatch } = useData();
@@ -186,7 +188,7 @@ function AddressForm(props) {
         <ActionButton className="address_form_random_btn">RANDOM</ActionButton>
         <ActionButton
           className="address_form_cancel_btn"
-          handleClick={() => closeAddressForm(false)}
+          handleClick={() => isEdit ? closeEdit() : closeForm()}
         >
           CANCEL
         </ActionButton>

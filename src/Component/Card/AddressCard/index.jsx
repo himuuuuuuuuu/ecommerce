@@ -10,9 +10,6 @@ import AddressForm from "../../Form/AddressForm";
 function AddressCard(props) {
   const { token } = useAuth();
   const { dispatch } = useData();
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   const styleOut = {
     position: "absolute",
@@ -35,6 +32,9 @@ function AddressCard(props) {
     addressFormAddress,
     addressFormAlternateNumber,
     addressFormState,
+    isEdit,
+    openEditForm,
+    closeEditForm,
   } = props;
 
   const handleRemoveAddress = async () => {
@@ -93,17 +93,22 @@ function AddressCard(props) {
         </p>
       </div>
       <div className="address_card_actions">
-        <ActionButton className="address_card_edit" handleClick={handleOpen}>
+        <ActionButton className="address_card_edit" handleClick={openEditForm}>
           Edit
         </ActionButton>
         <Modal
-          open={open}
-          onClose={handleClose}
+          open={isEdit}
+          onClose={closeEditForm}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
           <div style={styleOut}>
-            <AddressForm {...props} isEdit />
+            <AddressForm
+              {...props}
+              isEdit
+              openEdit={openEditForm}
+              closeEdit={closeEditForm}
+            />
           </div>
         </Modal>
         <ActionButton
