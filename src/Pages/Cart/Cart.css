@@ -23,7 +23,6 @@
 /* CART LIST */
 
 .cart_list {
-  padding: 1em;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
