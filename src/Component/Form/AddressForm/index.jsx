@@ -2,21 +2,33 @@ import React, { useState } from "react";
 import ActionButton from "../../Action/ActionButton";
 
 import "./AddressForm.css";
-import { PostAddress } from "../../../Service/AddressService";
+import { PostAddress, UpdateAddress } from "../../../Service/AddressService";
 import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
-function AddressForm() {
+function AddressForm(props) {
+  const {
+    closeAddressForm,
+    _id,
+    addressFormName: name,
+    addressFormNumber: number,
+    addressFormPin: pin,
+    addressFormCity: city,
+    addressFormAddress: address,
+    addressFormAlternateNumber: alternate,
+    addressFormState: state,
+    isEdit,
+  } = props;
   const { token } = useAuth();
-  const {dispatch} = useData();
+  const { dispatch } = useData();
 
   const [addressFormData, setAddressFormData] = useState({
-    addressFormName: "",
-    addressFormNumber: "",
-    addressFormPin: "",
-    addressFormCity: "",
-    addressFormAddress: "",
-    addressFormAlternateNumber: "",
-    addressFormState: "",
+    addressFormName: name ? name : "",
+    addressFormNumber: number ? number : "",
+    addressFormPin: pin ? pin : "",
+    addressFormCity: city ? city : "",
+    addressFormAddress: address ? address : "",
+    addressFormAlternateNumber: alternate ? alternate : "",
+    addressFormState: state ? state : "",
   });
 
   const stateList = [
@@ -50,6 +62,25 @@ function AddressForm() {
     "Uttarakhand",
     "West Bengal",
   ];
+
+  const handleEditAddress = async () => {
+    try {
+      const editAddressResponse = await UpdateAddress({
+        address: { _id, ...addressFormData },
+        addressId: _id,
+        encodedToken: token,
+      });
+      console.log(editAddressResponse, "68");
+      if (editAddressResponse.status == 201) {
+        dispatch({
+          type: "GET_ADDRESS",
+          payload: { address: editAddressResponse.data.address },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleAddressFormData = (event) => {
     const { name, value } = event.target;
@@ -129,7 +160,7 @@ function AddressForm() {
         value={addressFormData.addressFormState}
         onChange={handleAddressFormData}
       >
-        <option selected style={{ textAlign: "center" }}>
+        <option defaultChecked style={{ textAlign: "center" }}>
           --- CHOOSE STATE ---
         </option>
         {stateList.map((currentState, index) => {
@@ -147,13 +178,18 @@ function AddressForm() {
       <div className="address_form_actions">
         <ActionButton
           className="address_form_add_btn"
-          handleClick={handleAddAddress}
+          handleClick={isEdit ? handleEditAddress : handleAddAddress}
         >
           ADD
         </ActionButton>
         <ActionButton className="address_form_reset_btn">RESET</ActionButton>
         <ActionButton className="address_form_random_btn">RANDOM</ActionButton>
-        <ActionButton className="address_form_cancel_btn">CANCEL</ActionButton>
+        <ActionButton
+          className="address_form_cancel_btn"
+          handleClick={() => closeAddressForm(false)}
+        >
+          CANCEL
+        </ActionButton>
       </div>
     </form>
   );

@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AddressCard.css";
 import ActionButton from "../../Action/ActionButton";
+import { DeleteAddress } from "../../../Service/AddressService";
+import { useAuth } from "../../../Context/AuthContext";
+import { useData } from "../../../Context/DataContext";
+import Modal from "@mui/material/Modal";
+import AddressForm from "../../Form/AddressForm";
 
 function AddressCard(props) {
-  console.log(props);
+  const { token } = useAuth();
+  const { dispatch } = useData();
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const styleOut = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "500px",
+    backgroundColor: "#2b2b2b",
+    border: "2px solid #000",
+    boxShadow: 24,
+    padding: "16px",
+  };
+
   const {
     _id,
     addressFormName,
@@ -14,6 +36,24 @@ function AddressCard(props) {
     addressFormAlternateNumber,
     addressFormState,
   } = props;
+
+  const handleRemoveAddress = async () => {
+    try {
+      const removeAddressResponse = await DeleteAddress({
+        addressId: _id,
+        encodedToken: token,
+      });
+      if (removeAddressResponse.status == 200) {
+        dispatch({
+          type: "GET_ADDRESS",
+          payload: { address: removeAddressResponse.data.address },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="address_card">
       <div className="address_card_body">
@@ -53,8 +93,25 @@ function AddressCard(props) {
         </p>
       </div>
       <div className="address_card_actions">
-        <ActionButton className="address_card_edit">Edit</ActionButton>
-        <ActionButton className="address_card_delete">Delete</ActionButton>
+        <ActionButton className="address_card_edit" handleClick={handleOpen}>
+          Edit
+        </ActionButton>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <div style={styleOut}>
+            <AddressForm {...props} isEdit />
+          </div>
+        </Modal>
+        <ActionButton
+          className="address_card_delete"
+          handleClick={handleRemoveAddress}
+        >
+          Delete
+        </ActionButton>
       </div>
     </div>
   );
