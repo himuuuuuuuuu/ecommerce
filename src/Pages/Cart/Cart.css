@@ -23,9 +23,11 @@
 /* CART LIST */
 
 .cart_list {
-  background: #2b2b2b;
   padding: 1em;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 /* CARD PRICE */
@@ -34,15 +36,17 @@
   background: #2b2b2b;
   border-radius: 4px;
   margin: 0 16px;
+  overflow: hidden;
 }
 
 .cart_price_title {
-  border-bottom: 1px solid #ddd;
   padding: 1rem;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 20px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #fff;
+  text-align: center;
+  background-color: #fcaf17;
 }
 
 .cart_price_body {
@@ -78,13 +82,9 @@
   justify-content: space-between;
 }
 
-.cart_price_footer_key {
-  font-size: 24px;
-  color: #fff;
-}
-
+.cart_price_footer_key,
 .cart_price_footer_value {
-  font-size: 24px;
+  font-size: 20px;
   color: #fff;
 }
 
@@ -103,5 +103,6 @@
   .cart_section_body {
     display: grid;
     grid-template-columns: 0.7fr 1fr;
+    align-items: flex-start;
   }
 }
