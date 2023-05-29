@@ -20,10 +20,7 @@ function PrimaryCard(props) {
   const navigate = useNavigate();
   const location = useLocation();
   const { token } = useAuth();
-  const { dispatch } = useData();
-
-  const [isBtnCarted, setIsBtnCarted] = useState(false);
-  const [isBtnWished, setIsBtnWished] = useState(false);
+  const { state, dispatch } = useData();
 
   const {
     _id,
@@ -46,10 +43,17 @@ function PrimaryCard(props) {
     isWishList,
   } = props;
 
+  const isCarted = state.cartList.findIndex((currentProduct) => {
+    return currentProduct._id == _id;
+  });
+
+  const isWished = state.wishList.findIndex((currentProduct) => {
+    return currentProduct._id == _id;
+  });
+
   const starList = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
 
   const HandleAddCart = async () => {
-    setIsBtnCarted(true);
     try {
       if (!token) {
         navigate("/login", { state: { from: location } });
@@ -71,17 +75,19 @@ function PrimaryCard(props) {
   };
 
   const HandleAddWish = async () => {
-    setIsBtnWished(true);
     try {
-      if(!token) {
-        navigate("/login", {state: {from: location}})
+      if (!token) {
+        navigate("/login", { state: { from: location } });
       }
       const addWishResponse = await PostWish({
         product: { ...props },
         encodedToken: token,
       });
       if (addWishResponse.status == 201) {
-        dispatch({ type: "GET_WISH", payload: {wishlist: addWishResponse.data.wishlist} });
+        dispatch({
+          type: "GET_WISH",
+          payload: { wishlist: addWishResponse.data.wishlist },
+        });
       }
     } catch (error) {
       console.log(error);
@@ -89,10 +95,9 @@ function PrimaryCard(props) {
   };
 
   const HandleDeleteWish = async () => {
-    setIsBtnWished(false);
     try {
-      if(!token) {
-        navigate("/login", {state: {from: location}})
+      if (!token) {
+        navigate("/login", { state: { from: location } });
       }
       const deleteWishResponse = await DeleteWish({
         productId: _id,
@@ -101,7 +106,7 @@ function PrimaryCard(props) {
       if (deleteWishResponse.status == 200) {
         dispatch({
           type: "GET_WISH",
-          payload: {wishlist: deleteWishResponse.data.wishlist},
+          payload: { wishlist: deleteWishResponse.data.wishlist },
         });
       }
     } catch (error) {
@@ -114,7 +119,7 @@ function PrimaryCard(props) {
       <img className="primary_card_img" src={thumbnail} alt={title} />
       <div className="primary_card_content">
         <div className="primary_card_actions">
-          {isBtnCarted ? (
+          {isCarted !== -1 ? (
             <ActionButton
               className="primary_card_action"
               handleClick={() => {
@@ -135,21 +140,22 @@ function PrimaryCard(props) {
           )}
           <ShoppingCart />
 
-          {!isWishList && (isBtnWished ? 
-            <ActionButton
-              className="primary_card_action"
-              handleClick={() => HandleDeleteWish()}
-            >
-              <Favorite style={{color: "red"}}/>
-            </ActionButton>
-            :
-            <ActionButton
-            className="primary_card_action"
-            handleClick={() => HandleAddWish()}
-          >
-            <Favorite />
-          </ActionButton>
-          )}
+          {!isWishList &&
+            (isWished !== -1 ? (
+              <ActionButton
+                className="primary_card_action"
+                handleClick={() => HandleDeleteWish()}
+              >
+                <Favorite style={{ color: "red" }} />
+              </ActionButton>
+            ) : (
+              <ActionButton
+                className="primary_card_action"
+                handleClick={() => HandleAddWish()}
+              >
+                <Favorite />
+              </ActionButton>
+            ))}
           {isWishList && (
             <ActionButton
               className="primary_card_action"
