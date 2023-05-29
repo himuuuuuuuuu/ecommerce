@@ -11,6 +11,7 @@ import {
   Profile,
   Login,
   SignUp,
+  Checkout,
 } from "./Pages";
 import {
   UserProfile,
@@ -35,6 +36,7 @@ function App() {
           <Route path="address" element={<UserAddress />} />
           <Route path="orders" element={<UserOrders />} />
         </Route>
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<PageNotFound />} />
         <Route
           path="/cart"

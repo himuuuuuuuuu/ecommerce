@@ -7,6 +7,7 @@ import PageNotFound from "./PageNotFound";
 import Profile from "./Profile";
 import Login from "./Login";
 import SignUp from "./SignUp";
+import Checkout from "./Checkout";
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   Profile,
   Login,
   SignUp,
+  Checkout
 };
