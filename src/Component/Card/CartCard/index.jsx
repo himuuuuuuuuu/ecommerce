@@ -1,14 +1,20 @@
 import React from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./CartCard.css";
 import ActionButton from "../../Action/ActionButton";
 import { Add, Remove, Delete, Favorite } from "@mui/icons-material";
 import { PostCart, DeleteCart, UpdateCart } from "../../../Service/CartService";
 import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
+import { PostWish, DeleteWish } from "../../../Service/WishService";
+
+
 
 function CartCard(props) {
   const { token } = useAuth();
-  const { dispatch } = useData();
+  const { state, dispatch } = useData();
+  const navigate = useNavigate();
+  const location = useLocation();
   const {
     _id,
     title,
@@ -92,6 +98,51 @@ function CartCard(props) {
     }
   };
 
+
+  const HandleAddWish = async () => {
+    try {
+      if (!token) {
+        navigate("/login", { state: { from: location } });
+      }
+      const addWishResponse = await PostWish({
+        product: { ...props },
+        encodedToken: token,
+      });
+      if (addWishResponse.status == 201) {
+        dispatch({
+          type: "GET_WISH",
+          payload: { wishlist: addWishResponse.data.wishlist },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const HandleDeleteWish = async () => {
+    try {
+      if (!token) {
+        navigate("/login", { state: { from: location } });
+      }
+      const deleteWishResponse = await DeleteWish({
+        productId: _id,
+        encodedToken: token,
+      });
+      if (deleteWishResponse.status == 200) {
+        dispatch({
+          type: "GET_WISH",
+          payload: { wishlist: deleteWishResponse.data.wishlist },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const isWished = state.wishList.findIndex((currentProduct) => {
+    return currentProduct._id == _id;
+  });
+
   return (
     <article className="cart_card">
       <div className="cart_card_img">
@@ -102,11 +153,11 @@ function CartCard(props) {
         <div className="cart_card_text">
           <p className="cart_card_body_item">
             <span className="cart_card_body_item_key">Price</span>
-            <span className="cart_card_body_item_value">{price}</span>
+            <span className="cart_card_body_item_value">₹{price}</span>
           </p>
           <p className="cart_card_body_item">
             <span className="cart_card_body_item_key">Subtotal</span>
-            <span className="cart_card_body_item_value">{price}</span>
+            <span className="cart_card_body_item_value">₹{qty * price}</span>
           </p>
         </div>
         <div className="cart_card_actions">
@@ -138,9 +189,15 @@ function CartCard(props) {
             >
               <Delete />
             </ActionButton>
-            <ActionButton className="cart_card_wish_btn">
-              <Favorite />
-            </ActionButton>
+            {isWished !== -1 ? (
+              <ActionButton className="cart_card_wish_btn" handleClick={HandleDeleteWish}>
+                <Favorite sx={{color: "red"}}/>
+              </ActionButton>
+            ) : (
+              <ActionButton className="cart_card_wish_btn" handleClick={HandleAddWish}>
+                <Favorite />
+              </ActionButton>
+            )}
           </div>
         </div>
       </div>

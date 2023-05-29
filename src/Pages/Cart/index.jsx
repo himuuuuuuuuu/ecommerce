@@ -14,6 +14,8 @@ import EmptyBoxLottie from "../../Asset/Lottie/EmptyBox.json";
 function Cart() {
   const { token } = useAuth();
   const { state } = useData();
+
+  
   return (
     <PageContainer>
       <SectionContainer className="cart_section">
@@ -36,12 +38,6 @@ function Cart() {
                 <p className="cart_price_body_item">
                   <span className="cart_price_body_item_key">Discount</span>
                   <span className="cart_price_body_item_value">− ₹6,500</span>
-                </p>
-                <p className="cart_price_body_item">
-                  <span className="cart_price_body_item_key">
-                    Delivery Charges
-                  </span>
-                  <span className="cart_price_body_item_value">Free</span>
                 </p>
               </div>
               <div className="cart_price_footer">
