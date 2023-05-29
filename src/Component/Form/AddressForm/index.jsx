@@ -17,7 +17,7 @@ function AddressForm(props) {
     addressFormState: state,
     isEdit,
     closeForm,
-    openEdit,
+    closeAdd,
     closeEdit
   } = props;
   const { token } = useAuth();
@@ -188,7 +188,7 @@ function AddressForm(props) {
         <ActionButton className="address_form_random_btn">RANDOM</ActionButton>
         <ActionButton
           className="address_form_cancel_btn"
-          handleClick={() => isEdit ? closeEdit() : closeForm()}
+          handleClick={() => isEdit ? closeEdit() : closeAdd()}
         >
           CANCEL
         </ActionButton>

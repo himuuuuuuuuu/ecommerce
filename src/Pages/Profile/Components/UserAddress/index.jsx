@@ -8,9 +8,9 @@ import { useData } from "../../../../Context/DataContext";
 import { Modal } from "@mui/material";
 
 function UserAddress() {
-  const [isAddressForm, setIsAddressForm] = React.useState(false);
-  const handleAddressOpen = () => setIsAddressForm(true);
-  const handleAddressClose = () => setIsAddressForm(false);
+  const [isAddAddress, setIsAddAddress] = React.useState(false);
+  const handleAddAddressOpen = () => setIsAddAddress(true);
+  const handleAddAddressClose = () => setIsAddAddress(false);
   const { state } = useData();
 
   const styleOut = {
@@ -29,19 +29,19 @@ function UserAddress() {
     <div className="address">
       <ActionButton
         style={{ backgroundColor: "lightgreen" }}
-        handleClick={() => handleAddressOpen(true)}
+        handleClick={() => handleAddAddressOpen(true)}
       >
         ADD NEW ADDRESS
       </ActionButton>
 
       <Modal
-        open={isAddressForm}
-        onClose={handleAddressClose}
+        open={isAddAddress}
+        onClose={handleAddAddressClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <div style={styleOut}>
-          <AddressForm closeForm={handleAddressClose} />
+          <AddressForm closeAdd={handleAddAddressClose}/>
         </div>
       </Modal>
 
@@ -51,9 +51,6 @@ function UserAddress() {
             <AddressCard
               {...currentAddress}
               key={index}
-              closeEditForm={handleAddressClose}
-              openEditForm={handleAddressOpen}
-              isEdit={isAddressForm}
             />
           );
         })}

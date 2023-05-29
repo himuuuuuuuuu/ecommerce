@@ -11,6 +11,10 @@ function AddressCard(props) {
   const { token } = useAuth();
   const { dispatch } = useData();
 
+  const [isEditAddress, setIsEditAddress] = React.useState(false);
+  const handleEditAddressOpen = () => setIsEditAddress(true);
+  const handleEditAddressClose = () => setIsEditAddress(false);
+
   const styleOut = {
     position: "absolute",
     top: "50%",
@@ -93,12 +97,12 @@ function AddressCard(props) {
         </p>
       </div>
       <div className="address_card_actions">
-        <ActionButton className="address_card_edit" handleClick={openEditForm}>
+        <ActionButton className="address_card_edit" handleClick={handleEditAddressOpen}>
           Edit
         </ActionButton>
         <Modal
-          open={isEdit}
-          onClose={closeEditForm}
+          open={isEditAddress}
+          onClose={handleEditAddressClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
@@ -106,8 +110,8 @@ function AddressCard(props) {
             <AddressForm
               {...props}
               isEdit
-              openEdit={openEditForm}
-              closeEdit={closeEditForm}
+              openEdit={handleEditAddressOpen}
+              closeEdit={handleEditAddressClose}
             />
           </div>
         </Modal>
