@@ -19,12 +19,57 @@ import {
   Paper,
 } from "@mui/material";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import { useAuth } from "../../Context/AuthContext";
 
 function Checkout() {
   const { state, dispatch } = useData();
+  const { currentUser } = useAuth();
   const [isAddAddress, setIsAddAddress] = React.useState(false);
   const handleAddAddressOpen = () => setIsAddAddress(true);
   const handleAddAddressClose = () => setIsAddAddress(false);
+
+  // const handlePaymentSuccess = (response) => {
+  //   const orderDetail = {
+  //     id: response.razorpay_payment_id,
+  //     productsList: [...cart],
+  //     address: currentAddress,
+  //     amount: totalCheckoutAmount,
+  //     date: new Date(),
+  //   };
+  //   productDispatch({ type: SET_O
+  // };
+
+  const grossTotal = state.cartList.reduce((total, currentProduct) => {
+    return (total += currentProduct.price * currentProduct.qty);
+  }, 0);
+
+  const netTotal = grossTotal - (grossTotal * 10) / 100;
+
+  const razorpayOptions = {
+    key: "rzp_test_00dP2uDP2yHZOB",
+    amount: netTotal * 100,
+    name: "Playverse",
+    description: "Thank You For Ordering",
+    image:
+      "https://cdn.shopify.com/s/files/1/0579/7924/0580/files/Bestseller-1_2x_9a883cf1-58ba-4c74-badf-f02924575b68_small.png?v=1656416175",
+    handler: (response) => console.log(response),
+    prefill: {
+      name: currentUser?.firstName,
+      email: currentUser?.email,
+      contact: state.selectedAddress.addressFormNumber,
+    },
+    notes: {
+      address: state.selectedAddress,
+    },
+  };
+
+  const handleOrderBtn = () => {
+    if (state.selectedAddress._id) {
+      const razorpayInstance = new window.Razorpay(razorpayOptions);
+      razorpayInstance.open();
+    } else {
+    }
+  };
 
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -45,12 +90,6 @@ function Checkout() {
       border: 0,
     },
   }));
-
-  const grossTotal = state.cartList.reduce((total, currentProduct) => {
-    return (total += currentProduct.price * currentProduct.qty);
-  }, 0);
-
-  const netTotal = grossTotal - (grossTotal * 10) / 100;
 
   return (
     <PageContainer>
@@ -119,7 +158,9 @@ function Checkout() {
               </div>
             </div>
             <div className="checkout_price_action">
-              <ActionButton>PLACE ORDER</ActionButton>
+              <ActionButton handleClick={handleOrderBtn}>
+                PLACE ORDER
+              </ActionButton>
             </div>
           </div>
           {/* <EmptyCart /> */}

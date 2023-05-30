@@ -19,7 +19,7 @@ export function DataReducer(state, action) {
     }
 
     case "GET_ADDRESS": {
-      return {...state, addressList: [...action.payload.address]}
+      return { ...state, addressList: [...action.payload.address] };
     }
 
     case "FILTER_BY_CATEGORY":
@@ -49,8 +49,17 @@ export function DataReducer(state, action) {
 
     case "RESET_FILTER":
       return {
-        ...state, filterBy: {category: [], rating: "0", sort: ""}
-      }
+        ...state,
+        filterBy: { category: [], rating: "0", sort: "" },
+      };
+
+    case "ADDRESS_SELECTED":
+      return {
+        ...state,
+        selectedAddress: state.addressList.find((currentAddress) => {
+          return currentAddress._id === action.payload.addressId;
+        }),
+      };
     default: {
       return state;
     }

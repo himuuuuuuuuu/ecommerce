@@ -10,7 +10,7 @@ export const products = [
     _id: "0",
     title: "Grand Theft Auto V",
     rating: "5",
-    price: "2321",
+    price: "200",
     genre: "Adventure",
     developer: "Rockstar Games",
     publisher: "Rockstar Games",
