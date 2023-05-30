@@ -22,7 +22,7 @@
   font-weight: 500;
   border-radius: 4px;
   border: 2px solid #fff;
-  width: 100px;
+  width: 120px;
   justify-content: center;
   position: relative;
 }
@@ -51,6 +51,22 @@
 .active {
   background-color: #fcaf17;
   color: #000;
+}
+
+.nav_label {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: #fcaf17;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
 }
 
 @media (min-width: 768px) {
