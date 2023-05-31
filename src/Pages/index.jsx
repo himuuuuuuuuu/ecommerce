@@ -8,6 +8,7 @@ import Profile from "./Profile";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Checkout from "./Checkout";
+import OrderSuccess from "./OrderSuccess";
 
 export {
   Home,
@@ -19,5 +20,6 @@ export {
   Profile,
   Login,
   SignUp,
-  Checkout
+  Checkout,
+  OrderSuccess,
 };

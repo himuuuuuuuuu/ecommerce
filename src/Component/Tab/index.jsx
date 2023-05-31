@@ -20,7 +20,7 @@ function Tab(props) {
               <Link
                 className="tab_btn"
                 onClick={() => setActiveTab(i)}
-                to={tabList[activeTab].reach}
+                to={currentTab.reach}
                 style={{
                   backgroundColor: activeTab == i ? "#fcaf17" : "transparent",
                   color: activeTab == i ? "#000" : "#fff",

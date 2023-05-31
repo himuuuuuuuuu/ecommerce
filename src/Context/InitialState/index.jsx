@@ -5,6 +5,7 @@ export const initialState = {
   cartList: [],
   addressList: [],
   selectedAddress: {},
+  orderList: [],
   filterBy: {
     category: [],
     rating: "0",

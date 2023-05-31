@@ -12,6 +12,7 @@ import {
   Login,
   SignUp,
   Checkout,
+  OrderSuccess,
 } from "./Pages";
 import {
   UserProfile,
@@ -38,6 +39,7 @@ function App() {
         </Route>
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="/orderSuccess" element={<OrderSuccess />} />
         <Route
           path="/cart"
           element={

@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 import "./Checkout.css";
 import PageContainer from "../../Component/Layout/PageContainer";
@@ -24,26 +25,46 @@ import { useAuth } from "../../Context/AuthContext";
 function Checkout() {
   const { state, dispatch } = useData();
   const { currentUser } = useAuth();
+  const navigate = useNavigate();
   const [isAddAddress, setIsAddAddress] = React.useState(false);
   const handleAddAddressOpen = () => setIsAddAddress(true);
   const handleAddAddressClose = () => setIsAddAddress(false);
-
-  // const handlePaymentSuccess = (response) => {
-  //   const orderDetail = {
-  //     id: response.razorpay_payment_id,
-  //     productsList: [...cart],
-  //     address: currentAddress,
-  //     amount: totalCheckoutAmount,
-  //     date: new Date(),
-  //   };
-  //   productDispatch({ type: SET_O
-  // };
 
   const grossTotal = state.cartList.reduce((total, currentProduct) => {
     return (total += currentProduct.price * currentProduct.qty);
   }, 0);
 
   const netTotal = grossTotal - (grossTotal * 10) / 100;
+
+  const getDeliveryDate = () => {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + 5);
+    const options = {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    };
+    const formattedDate = currentDate.toLocaleDateString("en-US", options);
+    return formattedDate;
+  };
+
+  const handlePaymentSuccess = (response) => {
+    const orderDetail = {
+      id: response.razorpay_payment_id,
+      productsList: [...state.cartList],
+      address: state.selectedAddress,
+      amount: netTotal,
+      date: new Date(),
+      deliveryDate: getDeliveryDate(),
+    };
+    dispatch({ type: "GET_ORDER", payload: orderDetail });
+    navigate("/orderSuccess");
+    dispatch({ type: "CLEAR_CART" });
+    setTimeout(() => {
+      navigate("/profile/orders");
+    }, 4000);
+  };
 
   const razorpayOptions = {
     key: "rzp_test_00dP2uDP2yHZOB",
@@ -52,7 +73,7 @@ function Checkout() {
     description: "Thank You For Ordering",
     image:
       "https://cdn.shopify.com/s/files/1/0579/7924/0580/files/Bestseller-1_2x_9a883cf1-58ba-4c74-badf-f02924575b68_small.png?v=1656416175",
-    handler: (response) => console.log(response),
+    handler: (response) => handlePaymentSuccess(response),
     prefill: {
       name: currentUser?.firstName,
       email: currentUser?.email,

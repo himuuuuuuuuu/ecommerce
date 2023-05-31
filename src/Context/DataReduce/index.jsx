@@ -60,6 +60,18 @@ export function DataReducer(state, action) {
           return currentAddress._id === action.payload.addressId;
         }),
       };
+
+    case "CLEAR_CART":
+      return {
+        ...state,
+        cartList: [],
+      };
+
+    case "GET_ORDER":
+      return {
+        ...state,
+        orderList: [...state.orderList, action.payload],
+      };
     default: {
       return state;
     }
