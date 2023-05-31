@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import "./PrimaryCard.css";
-
-import ActionButton from "../../Action/ActionButton";
+import { ActionIcon } from "../../Action";
 
 import {
   ShoppingCart,
   Favorite,
   Delete,
   ArrowForward,
+  Add,
 } from "@mui/icons-material";
 import { PostCart } from "../../../Service/CartService";
 import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
 import { PostWish, DeleteWish } from "../../../Service/WishService";
+import { UpdateCart } from "../../../Service/CartService";
 
 function PrimaryCard(props) {
   const navigate = useNavigate();
@@ -114,55 +115,74 @@ function PrimaryCard(props) {
     }
   };
 
+  // CART INCREMENT:
+
+  const HandleCartIncrement = async () => {
+    try {
+      const incrementResponse = await UpdateCart({
+        productId: _id,
+        encodedToken: token,
+        type: "increment",
+      });
+      console.log(incrementResponse);
+      if (incrementResponse.status == 200) {
+        dispatch({
+          type: "GET_CART",
+          payload: { cart: incrementResponse.data.cart },
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <article className="primary_card">
       <img className="primary_card_img" src={thumbnail} alt={title} />
       <div className="primary_card_content">
         <div className="primary_card_actions">
           {isCarted !== -1 ? (
-            <ActionButton
-              className="primary_card_action"
+            <ActionIcon
               handleClick={() => {
                 navigate("/cart");
               }}
             >
               <ArrowForward />
-            </ActionButton>
+            </ActionIcon>
           ) : (
-            <ActionButton
-              className="primary_card_action"
+            <ActionIcon
               handleClick={() => {
                 HandleAddCart();
               }}
             >
               <ShoppingCart />
-            </ActionButton>
+            </ActionIcon>
           )}
-          <ShoppingCart />
 
           {!isWishList &&
             (isWished !== -1 ? (
-              <ActionButton
-                className="primary_card_action"
-                handleClick={() => HandleDeleteWish()}
-              >
+              <ActionIcon handleClick={() => HandleDeleteWish()}>
                 <Favorite style={{ color: "red" }} />
-              </ActionButton>
+              </ActionIcon>
             ) : (
-              <ActionButton
-                className="primary_card_action"
-                handleClick={() => HandleAddWish()}
-              >
+              <ActionIcon handleClick={() => HandleAddWish()}>
                 <Favorite />
-              </ActionButton>
+              </ActionIcon>
             ))}
           {isWishList && (
-            <ActionButton
-              className="primary_card_action"
-              handleClick={() => HandleDeleteWish()}
-            >
+            <ActionIcon handleClick={() => HandleDeleteWish()}>
               <Delete />
-            </ActionButton>
+            </ActionIcon>
+          )}
+          {isCarted !== -1 && isWishList && (
+            <ActionIcon handleClick={() => HandleCartIncrement()}>
+              <Add />
+            </ActionIcon>
+          )}
+          {isCarted !== -1 && isWishList && (
+            <div className="wish_cart_count">
+              {state.cartList[isCarted].qty}
+            </div>
           )}
         </div>
         <div className="primary_card_text">

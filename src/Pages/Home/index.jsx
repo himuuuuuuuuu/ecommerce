@@ -7,7 +7,6 @@ import SectionContainer from "../../Component/Layout/SectionContainer";
 import PrimaryCarousel from "../../Component/Carousel/PrimaryCarousel";
 import SecondaryCarousel from "../../Component/Carousel/SecondaryCarousel";
 import { useData } from "../../Context/DataContext";
-import SecondaryCard from "../../Component/Card/SecondaryCard";
 
 function Home() {
   const { state } = useData();
@@ -33,17 +32,13 @@ function Home() {
         <div className="fame_body">
           {limitFameList.map((current, index) => {
             return (
-              <div
-                key={current._id}
-                className={`fame_item fame_item_${index}`}
-              >
+              <div key={current._id} className={`fame_item fame_item_${index}`}>
                 <img src={current.thumbnail} alt="game_img" />
               </div>
             );
           })}
         </div>
       </SectionContainer>
-      <SecondaryCard />
     </PageContainer>
   );
 }

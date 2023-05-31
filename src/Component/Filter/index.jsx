@@ -7,14 +7,14 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Slider
+  Slider,
 } from "@mui/material";
 import ActionButton from "../Action/ActionButton";
 import { ExpandMore } from "@mui/icons-material";
 import { useData } from "../../Context/DataContext";
 import RotateLeftIcon from "@mui/icons-material/RotateLeft";
 import ActionIcon from "../Action/ActionIcon";
-import {PostAddress} from "../../Service/AddressService";
+import { PostAddress } from "../../Service/AddressService";
 
 import "./Filter.css";
 
@@ -23,9 +23,8 @@ function Filter(props) {
   const { className } = props;
   const classes = className + " filter";
 
-  // const 
+  // const
 
-  
   return (
     <div className={classes}>
       <div className="filter_head">
@@ -52,7 +51,11 @@ function Filter(props) {
               {state.categoryList.map((currentGenre) => {
                 return (
                   <FormControlLabel
-                    sx={{ color: "#fff" }}
+                    sx={{
+                      color: "#fff",
+                      textTransform: "capitalize",
+                      fontSize: "18px",
+                    }}
                     key={currentGenre._id}
                     control={
                       <Checkbox
@@ -93,7 +96,7 @@ function Filter(props) {
           <AccordionDetails>
             <fieldset className="filter_field filter_sort">
               <FormControlLabel
-                sx={{ color: "#fff" }}
+                sx={{ color: "#fff", fontSize: "18px" }}
                 control={
                   <Radio
                     value="lowToHigh"
