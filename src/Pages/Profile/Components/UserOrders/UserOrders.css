@@ -4,6 +4,10 @@
   gap: 24px;
 }
 
+.orders_head {
+  color: #000;
+}
+
 .orders h3 {
   font-size: 16px;
   text-align: center;
