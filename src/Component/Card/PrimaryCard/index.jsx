@@ -3,6 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import "./PrimaryCard.css";
 import { ActionIcon } from "../../Action";
+import { ToastHandler } from "../../../Component/Utils";
 
 import {
   ShoppingCart,
@@ -69,6 +70,7 @@ function PrimaryCard(props) {
           type: "GET_CART",
           payload: { cart: addCartResponse.data.cart },
         });
+        ToastHandler("success", "Added to Cart");
       }
     } catch (error) {
       console.log(error);
@@ -89,6 +91,7 @@ function PrimaryCard(props) {
           type: "GET_WISH",
           payload: { wishlist: addWishResponse.data.wishlist },
         });
+        ToastHandler("success", "Added to Wishlist");
       }
     } catch (error) {
       console.log(error);
@@ -109,6 +112,7 @@ function PrimaryCard(props) {
           type: "GET_WISH",
           payload: { wishlist: deleteWishResponse.data.wishlist },
         });
+        ToastHandler("warn", "Removed from Wishlist");
       }
     } catch (error) {
       console.log(error);
@@ -158,7 +162,6 @@ function PrimaryCard(props) {
               <ShoppingCart />
             </ActionIcon>
           )}
-
           {!isWishList &&
             (isWished !== -1 ? (
               <ActionIcon handleClick={() => HandleDeleteWish()}>

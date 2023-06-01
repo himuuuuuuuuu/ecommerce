@@ -7,6 +7,7 @@ import { PostCart } from "../../Service/CartService";
 import { PostWish } from "../../Service/WishService";
 import { useData } from "../../Context/DataContext";
 import { useAuth } from "../../Context/AuthContext";
+import { ToastHandler } from "../../Component/Utils";
 
 function ProductDetail() {
   const { token } = useAuth();
@@ -35,6 +36,7 @@ function ProductDetail() {
           type: "GET_CART",
           payload: { cart: addCartResponse.data.cart },
         });
+        ToastHandler("success", "Added to Cart");
       }
     } catch (error) {
       console.log(error);
@@ -55,6 +57,7 @@ function ProductDetail() {
           type: "GET_WISH",
           payload: { wishlist: addWishResponse.data.wishlist },
         });
+        ToastHandler("success", "Added to Wishlist");
       }
     } catch (error) {
       console.log(error);

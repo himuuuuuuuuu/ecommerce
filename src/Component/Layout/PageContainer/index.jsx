@@ -10,9 +10,7 @@ function PageContainer(props) {
   const { children } = props;
   return (
     <div className="page_container">
-      <Header />
       <Main>{children}</Main>
-      <Footer />
     </div>
   );
 }

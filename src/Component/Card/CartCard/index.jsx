@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { ToastHandler } from "../../Utils";
+
 import "./CartCard.css";
 import ActionButton from "../../Action/ActionButton";
 import { Add, Remove, Delete, Favorite } from "@mui/icons-material";
@@ -7,8 +9,6 @@ import { PostCart, DeleteCart, UpdateCart } from "../../../Service/CartService";
 import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
 import { PostWish, DeleteWish } from "../../../Service/WishService";
-
-
 
 function CartCard(props) {
   const { token } = useAuth();
@@ -47,6 +47,7 @@ function CartCard(props) {
           type: "GET_CART",
           payload: { cart: deleteCartResponse.data.cart },
         });
+        ToastHandler("warn", "Removed from Cart");
       }
     } catch (error) {
       console.log(error);
@@ -98,7 +99,6 @@ function CartCard(props) {
     }
   };
 
-
   const HandleAddWish = async () => {
     try {
       if (!token) {
@@ -113,6 +113,7 @@ function CartCard(props) {
           type: "GET_WISH",
           payload: { wishlist: addWishResponse.data.wishlist },
         });
+        ToastHandler("success", "Added to Wishlist");
       }
     } catch (error) {
       console.log(error);
@@ -133,6 +134,7 @@ function CartCard(props) {
           type: "GET_WISH",
           payload: { wishlist: deleteWishResponse.data.wishlist },
         });
+        ToastHandler("warn", "Removed from Wishlist");
       }
     } catch (error) {
       console.log(error);
@@ -190,11 +192,17 @@ function CartCard(props) {
               <Delete />
             </ActionButton>
             {isWished !== -1 ? (
-              <ActionButton className="cart_card_wish_btn" handleClick={HandleDeleteWish}>
-                <Favorite sx={{color: "red"}}/>
+              <ActionButton
+                className="cart_card_wish_btn"
+                handleClick={HandleDeleteWish}
+              >
+                <Favorite sx={{ color: "red" }} />
               </ActionButton>
             ) : (
-              <ActionButton className="cart_card_wish_btn" handleClick={HandleAddWish}>
+              <ActionButton
+                className="cart_card_wish_btn"
+                handleClick={HandleAddWish}
+              >
                 <Favorite />
               </ActionButton>
             )}

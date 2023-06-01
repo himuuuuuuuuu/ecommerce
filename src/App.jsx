@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "./App.css";
+import { Header, Footer } from "./Component";
 import {
   Home,
   ProductList,
@@ -24,7 +27,18 @@ import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
-    <>
+    <div className="app">
+      <ToastContainer
+        position="bottom-right"
+        autoClose={false}
+        newestOnTop={false}
+        closeOnClick
+        theme="colored"
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+      />
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productList" element={<ProductList />} />
@@ -57,7 +71,8 @@ function App() {
           }
         />
       </Routes>
-    </>
+      <Footer />
+    </div>
   );
 }
 

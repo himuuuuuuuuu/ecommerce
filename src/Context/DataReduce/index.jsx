@@ -59,7 +59,7 @@ export function DataReducer(state, action) {
     case "RESET_FILTER":
       return {
         ...state,
-        filterBy: { category: [], rating: "0", sort: "" },
+        filterBy: { searchText: "", category: [], rating: "0", sort: "" },
       };
 
     case "ADDRESS_SELECTED":
