@@ -1,14 +1,12 @@
 import React from "react";
 
 import "./UserOrders.css";
-import { useAuth } from "../../../../Context/AuthContext";
 import { useData } from "../../../../Context/DataContext";
-import OrderCard from "../../../../Component/Card/OrderCard";
+import { OrderCard } from "../../../../Component";
 
 function UserOrders() {
-  // const {state} = useAuth();
   const { state } = useData();
-  console.log(state.orderList, "10");
+
   return (
     <div className="orders">
       <h3 className="orders_head">ORDER SUMMARY</h3>

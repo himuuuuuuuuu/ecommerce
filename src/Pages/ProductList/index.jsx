@@ -1,12 +1,13 @@
 import React from "react";
 
 import "./ProductList.css";
-import PageContainer from "../../Component/Layout/PageContainer";
-import SectionContainer from "../../Component/Layout/SectionContainer";
-import Filter from "../../Component/Filter";
-import PrimaryCard from "../../Component/Card/PrimaryCard";
+import {
+  PageContainer,
+  SectionContainer,
+  Filter,
+  PrimaryCard,
+} from "../../Component";
 import { useData } from "../../Context/DataContext";
-
 
 function ProductList() {
   const { state, ratingCheckedList } = useData();

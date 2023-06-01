@@ -1,7 +1,8 @@
 import React from "react";
 import "./Login.css";
-import PageContainer from "../../Component/Layout/PageContainer";
-import SectionContainer from "../../Component/Layout/SectionContainer";
+
+import { PageContainer, SectionContainer } from "../../Component";
+
 import LoginImg from "../../Asset/Login/LoginLogo.png";
 import LogInForm from "../../Component/Form/LogInForm";
 

@@ -1,10 +1,8 @@
 import React from "react";
 import "./SignUp.css";
-import PageContainer from "../../Component/Layout/PageContainer";
-import SectionContainer from "../../Component/Layout/SectionContainer";
+
+import { PageContainer, SectionContainer, SignUpForm } from "../../Component";
 import LoginImg from "../../Asset/Login/LoginLogo.png";
-import ActionButton from "../../Component/Action/ActionButton";
-import SignUpForm from "../../Component/Form/SignUpForm";
 
 function SignUp() {
   return (

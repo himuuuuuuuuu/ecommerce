@@ -3,13 +3,18 @@ import { Modal } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
 import "./Checkout.css";
-import PageContainer from "../../Component/Layout/PageContainer";
-import SectionContainer from "../../Component/Layout/SectionContainer";
-import ActionButton from "../../Component/Action/ActionButton";
+
+import {
+  PageContainer,
+  SectionContainer,
+  ActionButton,
+  AddressForm,
+  SelectAddressCard,
+  ModalContentWrapper,
+} from "../../Component";
+
 import { useData } from "../../Context/DataContext";
-import { SelectAddressCard } from "../../Component/Card";
-import AddressForm from "../../Component/Form/AddressForm";
-import ModalContentWrapper from "../../Component/ModalContentWrapper";
+
 import {
   styled,
   Table,

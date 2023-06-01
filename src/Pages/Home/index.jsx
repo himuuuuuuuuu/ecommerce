@@ -1,11 +1,14 @@
 import React from "react";
 
 import "./Home.css";
-import PageContainer from "../../Component/Layout/PageContainer";
-import SectionContainer from "../../Component/Layout/SectionContainer";
 
-import PrimaryCarousel from "../../Component/Carousel/PrimaryCarousel";
-import SecondaryCarousel from "../../Component/Carousel/SecondaryCarousel";
+import {
+  PageContainer,
+  SectionContainer,
+  PrimaryCarousel,
+  SecondaryCarousel,
+} from "../../Component";
+
 import { useData } from "../../Context/DataContext";
 
 function Home() {

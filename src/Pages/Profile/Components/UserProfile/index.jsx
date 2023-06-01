@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./UserProfile.css";
-import ActionButton from "../../../../Component/Action/ActionButton";
+import { ActionButton } from "../../../../Component";
 import { useAuth } from "../../../../Context/AuthContext";
 
 function UserProfile() {

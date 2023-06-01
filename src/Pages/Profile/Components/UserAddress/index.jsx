@@ -1,11 +1,9 @@
 import React, { useState } from "react";
+import { Modal } from "@mui/material";
 
 import "./UserAddress.css";
-import ActionButton from "../../../../Component/Action/ActionButton";
-import AddressCard from "../../../../Component/Card/AddressCard";
-import AddressForm from "../../../../Component/Form/AddressForm";
+import { ActionButton, AddressCard, AddressForm } from "../../../../Component";
 import { useData } from "../../../../Context/DataContext";
-import { Modal } from "@mui/material";
 
 function UserAddress() {
   const [isAddAddress, setIsAddAddress] = React.useState(false);
@@ -41,18 +39,13 @@ function UserAddress() {
         aria-describedby="modal-modal-description"
       >
         <div style={styleOut}>
-          <AddressForm closeAdd={handleAddAddressClose}/>
+          <AddressForm closeAdd={handleAddAddressClose} />
         </div>
       </Modal>
 
       <div className="address_list">
         {state.addressList.map((currentAddress, index) => {
-          return (
-            <AddressCard
-              {...currentAddress}
-              key={index}
-            />
-          );
+          return <AddressCard {...currentAddress} key={index} />;
         })}
       </div>
     </div>
