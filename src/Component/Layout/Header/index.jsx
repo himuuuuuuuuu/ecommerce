@@ -10,10 +10,18 @@ import NavLogo from "../../../Asset/Navbar/NavLogo.png";
 import ActionButton from "../../Action/ActionButton";
 import ActionIcon from "../../Action/ActionIcon";
 import { useAuth } from "../../../Context/AuthContext";
+import SearchIcon from "@mui/icons-material/Search";
+import { useData } from "../../../Context/DataContext";
+
+import Popper from "@mui/material/Popper";
+import Fade from "@mui/material/Fade";
 
 function Header() {
+  const [open, setOpen] = React.useState(false);
+  const [searchInputText, setSearchInputText] = useState("");
   const navigate = useNavigate();
   const { token, logOutHandler } = useAuth();
+  const { state, dispatch } = useData();
 
   const [isSideActive, setIsSideActive] = useState(false);
 
@@ -21,6 +29,7 @@ function Header() {
     logOutHandler();
     navigate("/login");
   };
+
   return (
     <header className="header">
       <div className="header_wrap">
@@ -41,6 +50,42 @@ function Header() {
             <Sidebar isActive={isSideActive} handleClose={setIsSideActive} />,
             document.body
           )}
+        </div>
+        <div className="header_input_wrap">
+          <div className="search_wrap">
+            <input
+              className="search_input"
+              type="search"
+              value={searchInputText}
+              placeholder="Explore..."
+              onChange={(event) => {
+                setSearchInputText(event.target.value);
+              }}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  dispatch({
+                    type: "FILTER_BY_SEARCH",
+                    payload: searchInputText,
+                  });
+                  navigate("/productList");
+                }
+              }}
+            />
+            <ActionIcon
+              handleClick={() => {
+                if (searchInputText) {
+                  dispatch({
+                    type: "FILTER_BY_SEARCH",
+                    payload: searchInputText,
+                  });
+                  navigate("/productList");
+                } else {
+                }
+              }}
+            >
+              <SearchIcon />
+            </ActionIcon>
+          </div>
         </div>
         <div className="header_account_actions">
           {!token && (

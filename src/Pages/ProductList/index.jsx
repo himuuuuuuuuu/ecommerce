@@ -10,7 +10,7 @@ import {
 import { useData } from "../../Context/DataContext";
 
 function ProductList() {
-  const { state, ratingCheckedList } = useData();
+  const { state, searchCheckedList } = useData();
 
   return (
     <PageContainer>
@@ -19,7 +19,7 @@ function ProductList() {
         <div className="product_list_content">
           <h3 className="product_list_content_head">Products</h3>
           <div className="product_list_content_body">
-            {ratingCheckedList.map((currentGame) => {
+            {searchCheckedList.map((currentGame) => {
               return <PrimaryCard {...currentGame} key={currentGame.id} />;
             })}
           </div>

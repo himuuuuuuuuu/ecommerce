@@ -22,6 +22,15 @@ export function DataReducer(state, action) {
       return { ...state, addressList: [...action.payload.address] };
     }
 
+    case "FILTER_BY_SEARCH":
+      return {
+        ...state,
+        filterBy: {
+          ...state.filterBy,
+          searchText: action.payload,
+        },
+      };
+
     case "FILTER_BY_CATEGORY":
       return {
         ...state,

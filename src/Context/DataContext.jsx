@@ -53,6 +53,14 @@ function DataProvider({ children }) {
           return currentProduct.rating > state.filterBy.rating;
         });
 
+  const searchCheckedList = state.filterBy.searchText
+    ? ratingCheckedList.filter((currentProduct) => {
+        return simpleString(currentProduct.title).includes(
+          simpleString(state.filterBy.searchText)
+        );
+      })
+    : ratingCheckedList;
+
   useEffect(() => {
     (async () => {
       try {
@@ -104,7 +112,7 @@ function DataProvider({ children }) {
     })();
   }, [token]);
   return (
-    <DataContext.Provider value={{ state, dispatch, ratingCheckedList }}>
+    <DataContext.Provider value={{ state, dispatch, searchCheckedList }}>
       {children}
     </DataContext.Provider>
   );
