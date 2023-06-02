@@ -67,7 +67,6 @@ function ProductDetail() {
   const isCarted = state.cartList.findIndex((currentProduct) => {
     return currentProduct._id === getGame._id;
   });
-  console.log(isCarted);
 
   const isWished = state.wishList.findIndex((currentProduct) => {
     return currentProduct._id === getGame._id;

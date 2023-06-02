@@ -23,7 +23,6 @@ function PrimaryCard(props) {
   const location = useLocation();
   const { token } = useAuth();
   const { state, dispatch } = useData();
-
   const {
     _id,
     title,
@@ -62,7 +61,7 @@ function PrimaryCard(props) {
         return;
       }
       const addCartResponse = await PostCart({
-        product: { ...props, qty: 1 },
+        product: props,
         encodedToken: token,
       });
       if (addCartResponse.status == 201) {
