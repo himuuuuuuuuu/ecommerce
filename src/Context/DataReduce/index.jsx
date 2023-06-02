@@ -19,7 +19,7 @@ export function DataReducer(state, action) {
     }
 
     case "GET_ADDRESS": {
-      return { ...state, addressList: [...action.payload.address] };
+      return { ...state, addressList: action.payload };
     }
 
     case "FILTER_BY_SEARCH":

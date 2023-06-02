@@ -77,7 +77,7 @@ function AddressForm(props) {
       if (editAddressResponse.status == 201) {
         dispatch({
           type: "GET_ADDRESS",
-          payload: { address: editAddressResponse.data.address },
+          payload: editAddressResponse.data.address,
         });
       }
     } catch (error) {
@@ -102,7 +102,7 @@ function AddressForm(props) {
       if (addAddressResponse.status == 201) {
         dispatch({
           type: "GET_ADDRESS",
-          payload: { address: addAddressResponse.data.address },
+          payload: addAddressResponse.data.address,
         });
       }
     } catch (error) {

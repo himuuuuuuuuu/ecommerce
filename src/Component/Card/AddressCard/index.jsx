@@ -50,7 +50,7 @@ function AddressCard(props) {
       if (removeAddressResponse.status == 200) {
         dispatch({
           type: "GET_ADDRESS",
-          payload: { address: removeAddressResponse.data.address },
+          payload: removeAddressResponse.data.address,
         });
       }
     } catch (error) {
@@ -97,7 +97,10 @@ function AddressCard(props) {
         </p>
       </div>
       <div className="address_card_actions">
-        <ActionButton className="address_card_edit" handleClick={handleEditAddressOpen}>
+        <ActionButton
+          className="address_card_edit"
+          handleClick={handleEditAddressOpen}
+        >
           Edit
         </ActionButton>
         <Modal

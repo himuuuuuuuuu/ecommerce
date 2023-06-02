@@ -101,11 +101,11 @@ function DataProvider({ children }) {
           }
 
           const addressListResponse = await GetAddress({ encodedToken: token });
-          console.log(addressListResponse);
+          console.log(addressListResponse, "104");
           if (addressListResponse.status == 200) {
             dispatch({
               type: "GET_ADDRESS",
-              payload: { address: addressListResponse.data.address },
+              payload: addressListResponse.data.address,
             });
           }
         }
