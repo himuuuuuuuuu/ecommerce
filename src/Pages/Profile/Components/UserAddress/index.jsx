@@ -10,7 +10,7 @@ function UserAddress() {
   const handleAddAddressOpen = () => setIsAddAddress(true);
   const handleAddAddressClose = () => setIsAddAddress(false);
   const { state } = useData();
-
+  console.log(state.addressList);
   const styleOut = {
     position: "absolute",
     top: "50%",

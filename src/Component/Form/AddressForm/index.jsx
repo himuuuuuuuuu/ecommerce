@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuid } from "uuid";
 import ActionButton from "../../Action/ActionButton";
 
 import "./AddressForm.css";
@@ -85,20 +86,17 @@ function AddressForm(props) {
   };
 
   const handleAddressFormData = (event) => {
+    event.preventDefault();
     const { name, value } = event.target;
     setAddressFormData((prevAddressFormData) => {
       return { ...prevAddressFormData, [name]: value };
     });
   };
 
-  const submitAddressFormData = (event) => {
-    event.preventDefault();
-  };
-
   const handleAddAddress = async () => {
     try {
       const addAddressResponse = await PostAddress({
-        address: addressFormData,
+        address: { _id: uuid(), ...addressFormData },
         encodedToken: token,
       });
       if (addAddressResponse.status == 201) {
@@ -110,6 +108,12 @@ function AddressForm(props) {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const submitAddressFormData = (event) => {
+    event.preventDefault();
+    isEdit ? closeEdit() : closeAdd();
+    isEdit ? handleEditAddress() : handleAddAddress();
   };
 
   return (
@@ -186,13 +190,12 @@ function AddressForm(props) {
       <div className="address_form_actions">
         <ActionButton
           className="address_form_add_btn"
-          handleClick={() => {
-            closeEdit();
-            isEdit ? handleEditAddress() : handleAddAddress();
-          }}
+          type="submit"
+          value="SUBMIT"
         >
           ADD
         </ActionButton>
+
         <ActionButton
           className="address_form_reset_btn"
           btnType="reset"
@@ -229,6 +232,7 @@ function AddressForm(props) {
         </ActionButton>
         <ActionButton
           className="address_form_cancel_btn"
+          btnType="button"
           handleClick={() => (isEdit ? closeEdit() : closeAdd())}
         >
           CANCEL
