@@ -50,6 +50,7 @@ function LogInForm() {
           name="logInEmail"
           type="email"
           placeholder="Email"
+          value={logInData.logInEmail}
           required={true}
           onChange={handleLogInInput}
         />
@@ -57,16 +58,17 @@ function LogInForm() {
           name="logInPassword"
           type="password"
           placeholder="Password"
+          value={logInData.logInPassword}
           required={true}
           onChange={handleLogInInput}
         />
         <ActionButton btnType="submit">Log In</ActionButton>
         <ActionButton
           btnType="submit"
-          handleClick={() =>
+          handleClick={(event) =>
             setLogInData({
-              logInEmail: fixedLogInData.logInEmail,
-              logInPassword: fixedLogInData.logInPassword,
+              logInEmail: "adarshbalika@gmail.com",
+              logInPassword: "adarshbalika",
             })
           }
         >
