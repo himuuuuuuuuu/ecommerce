@@ -18,7 +18,7 @@ function AddressForm(props) {
     isEdit,
     closeForm,
     closeAdd,
-    closeEdit
+    closeEdit,
   } = props;
   const { token } = useAuth();
   const { dispatch } = useData();
@@ -120,6 +120,7 @@ function AddressForm(props) {
         name="addressFormName"
         value={addressFormData.addressFormName}
         onChange={handleAddressFormData}
+        required
       />
       <input
         placeholder="Contact Number"
@@ -127,6 +128,7 @@ function AddressForm(props) {
         name="addressFormNumber"
         value={addressFormData.addressFormNumber}
         onChange={handleAddressFormData}
+        required
       />
       <input
         placeholder="Pin Code"
@@ -134,6 +136,7 @@ function AddressForm(props) {
         name="addressFormPin"
         value={addressFormData.addressFormPin}
         onChange={handleAddressFormData}
+        required
       />
       <input
         placeholder="City"
@@ -141,6 +144,7 @@ function AddressForm(props) {
         name="addressFormCity"
         value={addressFormData.addressFormCity}
         onChange={handleAddressFormData}
+        required
       />
       <textarea
         placeholder="Address"
@@ -148,6 +152,7 @@ function AddressForm(props) {
         name="addressFormAddress"
         value={addressFormData.addressFormAddress}
         onChange={handleAddressFormData}
+        required
       />
       <input
         placeholder="Alternate Number"
@@ -155,6 +160,7 @@ function AddressForm(props) {
         name="addressFormAlternateNumber"
         value={addressFormData.addressFormAlternateNumber}
         onChange={handleAddressFormData}
+        required
       />
       <select
         className="state_input"
@@ -180,15 +186,50 @@ function AddressForm(props) {
       <div className="address_form_actions">
         <ActionButton
           className="address_form_add_btn"
-          handleClick={isEdit ? handleEditAddress : handleAddAddress}
+          handleClick={() => {
+            closeEdit();
+            isEdit ? handleEditAddress() : handleAddAddress();
+          }}
         >
           ADD
         </ActionButton>
-        <ActionButton className="address_form_reset_btn">RESET</ActionButton>
-        <ActionButton className="address_form_random_btn">RANDOM</ActionButton>
+        <ActionButton
+          className="address_form_reset_btn"
+          btnType="reset"
+          handleClick={() => {
+            setAddressFormData({
+              addressFormName: "",
+              addressFormNumber: "",
+              addressFormPin: "",
+              addressFormCity: "",
+              addressFormAddress: "",
+              addressFormAlternateNumber: "",
+              addressFormState: "",
+            });
+          }}
+        >
+          RESET
+        </ActionButton>
+        <ActionButton
+          className="address_form_random_btn"
+          btnType="button"
+          handleClick={() => {
+            setAddressFormData({
+              addressFormName: "Vivek Bhatt",
+              addressFormNumber: "8958399976",
+              addressFormPin: "263153",
+              addressFormCity: "Rudrapur",
+              addressFormAddress: "Alliance",
+              addressFormAlternateNumber: "9997654921",
+              addressFormState: "Uttarakhand",
+            });
+          }}
+        >
+          RANDOM
+        </ActionButton>
         <ActionButton
           className="address_form_cancel_btn"
-          handleClick={() => isEdit ? closeEdit() : closeAdd()}
+          handleClick={() => (isEdit ? closeEdit() : closeAdd())}
         >
           CANCEL
         </ActionButton>

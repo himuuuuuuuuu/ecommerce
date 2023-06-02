@@ -24,10 +24,14 @@ import {
 } from "./Pages/Profile/Components";
 import MockMan from "mockman-js";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+import { useData } from "./Context/DataContext";
+import Loader from "./Component/Loader";
 
 function App() {
+  const { loader } = useData();
   return (
     <div className="app">
+      {loader && <Loader />}
       <ToastContainer
         position="bottom-right"
         autoClose={false}

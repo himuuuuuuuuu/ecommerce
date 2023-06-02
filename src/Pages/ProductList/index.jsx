@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./ProductList.css";
 import {
@@ -11,6 +11,11 @@ import { useData } from "../../Context/DataContext";
 
 function ProductList() {
   const { state, searchCheckedList } = useData();
+  const { loader, setLoader } = useData();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <PageContainer>

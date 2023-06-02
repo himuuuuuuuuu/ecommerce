@@ -5,7 +5,8 @@
   gap: 32px;
   padding: 1em;
   border-radius: 4px;
-  background: #5b5b5b;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .address_card_body {

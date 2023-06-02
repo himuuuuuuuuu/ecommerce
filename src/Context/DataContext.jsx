@@ -20,6 +20,7 @@ const DataContext = createContext();
 function DataProvider({ children }) {
   const { token } = useAuth();
   const [state, dispatch] = useReducer(DataReducer, initialState);
+  const [loader, setLoader] = useState(false);
 
   // FILTERED BY CATEGORY:
   const categoryCheckedList =
@@ -62,6 +63,8 @@ function DataProvider({ children }) {
     : ratingCheckedList;
 
   useEffect(() => {
+    let id;
+    setLoader(true);
     (async () => {
       try {
         const productResponse = await GetProductList();
@@ -109,10 +112,18 @@ function DataProvider({ children }) {
       } catch (err) {
         console.log(err);
       }
+
+      setLoader(false);
+      id = setTimeout(() => {
+        setLoader(false);
+      }, 1000);
     })();
+    return () => clearTimeout(id);
   }, [token]);
   return (
-    <DataContext.Provider value={{ state, dispatch, searchCheckedList }}>
+    <DataContext.Provider
+      value={{ state, dispatch, searchCheckedList, loader, setLoader }}
+    >
       {children}
     </DataContext.Provider>
   );
