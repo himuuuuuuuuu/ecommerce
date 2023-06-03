@@ -61,7 +61,7 @@ function LogInForm() {
         <label className="login_password">
           <input
             name="logInPassword"
-            type="password"
+            type={showPassword ? "text" : "password"}
             placeholder="Password"
             value={logInData.logInPassword}
             required={true}
@@ -71,7 +71,6 @@ function LogInForm() {
             <button
               className="login_password_visibility"
               onClick={(event) => {
-                event.stopPropagation();
                 setShowPassword(false);
               }}
               type="button"
@@ -82,7 +81,6 @@ function LogInForm() {
             <button
               className="login_password_visibility"
               onClick={(event) => {
-                event.stopPropagation();
                 setShowPassword(true);
               }}
               type="button"

@@ -75,7 +75,6 @@
   border: none;
   background-color: transparent;
   transition: 0.2s ease;
-  z-index: 4;
 }
 
 .login_password_visibility:hover {

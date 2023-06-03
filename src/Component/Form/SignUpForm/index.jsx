@@ -7,11 +7,14 @@ import NavLogo from "../../../Asset/Navbar/NavLogo.png";
 import ActionButton from "../../Action/ActionButton";
 import ActionLink from "../../Action/ActionLink";
 import { validateEmail, validatePassword } from "../../Utils";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 function SignUpForm() {
   const { signUpHandler, token } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isSignPass, setIsSignPass] = useState(false);
+  const [isSignConfirmPass, setIsSignConfirmPass] = useState(false);
 
   const [signUpData, setSignUpData] = useState({
     signUpFirstName: "",
@@ -101,40 +104,86 @@ function SignUpForm() {
         {signUpErrorData.signUpEmail && (
           <div className="signup_error">{signUpErrorData.signUpEmail}</div>
         )}
-        <input
-          name="signUpPassword"
-          placeholder="Password"
-          type="password"
-          onChange={(event) => {
-            handleSignUpInput(event);
-            if (!validatePassword(event.target.value)) {
-              setSignUpErrorData((prevSignUpErrorData) => {
-                return {
-                  ...prevSignUpErrorData,
-                  [event.target.name]:
-                    "PASSWORD SHOULD BE IN 8 TO 20 CHARACTERS AND SHOULD HAVE ONE DIGIT",
-                };
-              });
-            } else {
-              setSignUpErrorData((prevSignUpErrorData) => {
-                return { ...prevSignUpErrorData, [event.target.name]: "" };
-              });
-            }
-          }}
-          value={signUpData.signUpPassword}
-          required
-        />
+        <label className="signup_password">
+          <input
+            name="signUpPassword"
+            placeholder="Password"
+            type={isSignPass ? "text" : "password"}
+            onChange={(event) => {
+              handleSignUpInput(event);
+              if (!validatePassword(event.target.value)) {
+                setSignUpErrorData((prevSignUpErrorData) => {
+                  return {
+                    ...prevSignUpErrorData,
+                    [event.target.name]:
+                      "PASSWORD SHOULD BE IN 8 TO 20 CHARACTERS AND SHOULD HAVE ONE DIGIT",
+                  };
+                });
+              } else {
+                setSignUpErrorData((prevSignUpErrorData) => {
+                  return { ...prevSignUpErrorData, [event.target.name]: "" };
+                });
+              }
+            }}
+            value={signUpData.signUpPassword}
+            required
+          />
+          {isSignPass ? (
+            <button
+              className="signup_password_visibility"
+              onClick={() => {
+                setIsSignPass(false);
+              }}
+              type="button"
+            >
+              <Visibility />
+            </button>
+          ) : (
+            <button
+              className="signup_password_visibility"
+              onClick={() => {
+                setIsSignPass(true);
+              }}
+              type="button"
+            >
+              <VisibilityOff />
+            </button>
+          )}
+        </label>
         {signUpErrorData.signUpPassword && (
           <div className="signup_error">{signUpErrorData.signUpPassword}</div>
         )}
-        <input
-          name="signUpConfirm"
-          placeholder="Confirm Password"
-          type="password"
-          onChange={handleSignUpInput}
-          value={signUpData.signUpConfirm}
-          required
-        />
+        <label className="signup_password">
+          <input
+            name="signUpConfirm"
+            placeholder="Confirm Password"
+            type={isSignConfirmPass ? "text" : "password"}
+            onChange={handleSignUpInput}
+            value={signUpData.signUpConfirm}
+            required
+          />
+          {isSignConfirmPass ? (
+            <button
+              className="signup_password_visibility"
+              onClick={() => {
+                setIsSignConfirmPass(false);
+              }}
+              type="button"
+            >
+              <Visibility />
+            </button>
+          ) : (
+            <button
+              className="signup_password_visibility"
+              onClick={() => {
+                setIsSignConfirmPass(true);
+              }}
+              type="button"
+            >
+              <VisibilityOff />
+            </button>
+          )}
+        </label>
         <ActionButton className="sign_up_btn" btnType="submit">
           Sign Up
         </ActionButton>

@@ -57,3 +57,25 @@
   padding: 8px;
   font-weight: 500;
 }
+
+.signup_password {
+  position: relative;
+}
+
+.signup_password_visibility {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: 0.2s ease;
+}
+
+.signup_password_visibility:hover {
+  background: #ddd;
+}
