@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import BrandLogo from "../../Asset/Navbar/NavLogo.png";
 
 import "./Checkout.css";
 
@@ -76,8 +77,7 @@ function Checkout() {
     amount: netTotal * 100,
     name: "Playverse",
     description: "Thank You For Ordering",
-    image:
-      "https://cdn.shopify.com/s/files/1/0579/7924/0580/files/Bestseller-1_2x_9a883cf1-58ba-4c74-badf-f02924575b68_small.png?v=1656416175",
+    image: BrandLogo,
     handler: (response) => handlePaymentSuccess(response),
     prefill: {
       name: currentUser?.firstName,
@@ -86,6 +86,9 @@ function Checkout() {
     },
     notes: {
       address: state.selectedAddress,
+    },
+    theme: {
+      color: "#fcaf17",
     },
   };
 
