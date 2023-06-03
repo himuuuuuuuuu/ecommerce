@@ -6,8 +6,10 @@ import NavLogo from "../../../Asset/Navbar/NavLogo.png";
 import ActionButton from "../../Action/ActionButton";
 import ActionLink from "../../Action/ActionLink";
 import { useAuth } from "../../../Context/AuthContext";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 function LogInForm() {
+  const [showPassword, setShowPassword] = useState(false);
   const { logInHandler, token } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
@@ -46,22 +48,49 @@ function LogInForm() {
         <h2>Log In</h2>
       </div>
       <form className="sign_in_form" onSubmit={handleLogInSubmit}>
-        <input
-          name="logInEmail"
-          type="email"
-          placeholder="Email"
-          value={logInData.logInEmail}
-          required={true}
-          onChange={handleLogInInput}
-        />
-        <input
-          name="logInPassword"
-          type="password"
-          placeholder="Password"
-          value={logInData.logInPassword}
-          required={true}
-          onChange={handleLogInInput}
-        />
+        <label>
+          <input
+            name="logInEmail"
+            type="email"
+            placeholder="Email"
+            value={logInData.logInEmail}
+            required={true}
+            onChange={handleLogInInput}
+          />
+        </label>
+        <label className="login_password">
+          <input
+            name="logInPassword"
+            type="password"
+            placeholder="Password"
+            value={logInData.logInPassword}
+            required={true}
+            onChange={handleLogInInput}
+          />
+          {showPassword ? (
+            <button
+              className="login_password_visibility"
+              onClick={(event) => {
+                event.stopPropagation();
+                setShowPassword(false);
+              }}
+              type="button"
+            >
+              <Visibility />
+            </button>
+          ) : (
+            <button
+              className="login_password_visibility"
+              onClick={(event) => {
+                event.stopPropagation();
+                setShowPassword(true);
+              }}
+              type="button"
+            >
+              <VisibilityOff />
+            </button>
+          )}
+        </label>
         <ActionButton btnType="submit">Log In</ActionButton>
         <ActionButton
           btnType="submit"

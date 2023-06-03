@@ -58,3 +58,26 @@
 .is_sign_up a {
   color: #fff;
 }
+
+.login_password {
+  position: relative;
+}
+
+.login_password_visibility {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: 0.2s ease;
+  z-index: 4;
+}
+
+.login_password_visibility:hover {
+  background: #ddd;
+}
