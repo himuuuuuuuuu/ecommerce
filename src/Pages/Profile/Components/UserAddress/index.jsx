@@ -43,9 +43,13 @@ function UserAddress() {
       </Modal>
 
       <div className="address_list">
-        {state.addressList.map((currentAddress, index) => {
-          return <AddressCard {...currentAddress} key={index} />;
-        })}
+        {state.addressList.length !== 0 ? (
+          state.addressList.map((currentAddress, index) => {
+            return <AddressCard {...currentAddress} key={index} />;
+          })
+        ) : (
+          <div className="address_list_empty">No Address Data Found</div>
+        )}
       </div>
     </div>
   );
