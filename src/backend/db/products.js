@@ -41,6 +41,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fgrand-theft-auto-v%2Fhome%2FGTAV_EGS_Artwork_400x400_GameLogo-1000x1000-f6c47a98454049a5e63959f7b6f898c4fc22829c.png?h=270&quality=medium&resize=1&w=480",
     description:
       "The Grand Theft Auto V: Premium Edition includes the complete GTAV story, Grand Theft Auto Online and all existing gameplay upgrades and content. You’ll also get the Criminal Enterprise Starter Pack, the fastest way to jumpstart your criminal empire in GTA Online.",
+    isTrending: true,
   },
   {
     _id: "1",
@@ -77,6 +78,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-valorant-riotgames-ic1-400x270-ee924f75e8d4.png?h=270&quality=medium&resize=1&w=480",
     description:
       "VALORANT is a character-based 5v5 tactical shooter set on the global stage. Outwit, outplay, and outshine your competition with tactical abilities, precise gunplay, and adaptive teamwork.",
+    isTrending: true,
   },
   {
     _id: "2",
@@ -113,6 +115,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-fifa23ultimateeditionlimitedtimebonus-eacanada-editions-ic1-200x200-674fec977cfd.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Kick off your season with a boost! FIFA 23 Ultimate Edition includes 4600 FIFA Points. This is a soccer simulation game in which players engage in realistic matches with teams across international leagues. Players can practice penalty kicks, assign on-field strategies, and participate in a variety of game modes to improve their soccer skills.",
+    isTrending: true,
   },
   {
     _id: "3",
@@ -149,6 +152,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-starwarsjedisurvivorstandardedition-respawnentertainment-ic1-400x400-9ff568e5738d.png?h=270&quality=medium&resize=1&w=480",
     description:
       "The story of Cal Kestis continues in Star Wars Jedi: Survivor™, a third-person galaxy-spanning action-adventure game from Respawn Entertainment and Lucasfilm Games.",
+    isTrending: true,
   },
   {
     _id: "4",
@@ -185,6 +189,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-battlefield2042-dice-ic1-400x400-9d42aed4f59b.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Battlefield™ 2042 marks the return to the iconic all-out warfare of the franchise. Squad up and bring a cutting-edge arsenal into massive-scale battlegrounds, set in a near-future world transformed by disorder.",
+    isTrending: true,
   },
   {
     _id: "5",
@@ -221,6 +226,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-deadspace-motive…64eb642fc.png?h=270&quality=medium&resize=1&w=480",
     description:
       "The sci-fi survival horror classic returns, completely rebuilt to offer an even more immersive experience – including visual, audio, and gameplay improvements.",
+    isTrending: false,
   },
   {
     _id: "6",
@@ -257,6 +263,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-thesims4-electronicarts-ic1-400x400-b8a3c66fbb00.png?h=270&quality=medium&resize=1&w=480",
     description:
       "The Sims 4 is free to download! Unleash your imagination and create a unique world of Sims that’s an expression of you. Choose how Sims look, act, and dress, then manage the ups and downs of their everyday lives.",
+    isTrending: false,
   },
   {
     _id: "7",
@@ -293,6 +300,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-maddennfl23-tiburon-ic1-400x400-f44e75afe807.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Play your way into the history books! Updates to your favorite modes deliver all-new ways to control your impact with every decision. Call the shots in Franchise, establish a legacy in Face of the Franchise: The League, and dominate in Madden Ultimate Team™.",
+    isTrending: false,
   },
   {
     _id: "8",
@@ -329,6 +337,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-grandtheftautovicecitythedefinitiveedition-rockstargames-ic1-400x400-09731a63f67e.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Grand Theft Auto: Vice City: Welcome to the 1980s… Experience Tommy Vercetti’s tale of betrayal and revenge in the neon-soaked tropical sprawl of Vice City, a town brimming with excess, ready to be taken over, your way.",
+    isTrending: false,
   },
   {
     _id: "9",
@@ -365,6 +374,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-masseffectlegendaryedition-bioware-ic1-400x400-2fb662c963a7.png?h=270&quality=medium&resize=1&w=480",
     description:
       "The Mass Effect™ Legendary Edition includes single-player base content and over 40 DLC from the highly acclaimed Mass Effect, Mass Effect 2, and Mass Effect 3 games, remastered and optimized for 4K Ultra HD.",
+    isTrending: false,
   },
   {
     _id: "10",
@@ -401,6 +411,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-ittakestwo-hazelight-ic1-400x400-10a8bec2a659.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Embark on the craziest journey of your life in It Takes Two. Invite a friend to join for free with Friend’s Pass* and work together across a huge variety of gleefully disruptive gameplay challenges.",
+    isTrending: false,
   },
   {
     _id: "11",
@@ -437,6 +448,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fgrand-theft-auto-v%2Fhome%2FGTAV_EGS_Artwork_400x400_GameLogo-1000x1000-f6c47a98454049a5e63959f7b6f898c4fc22829c.png?h=270&quality=medium&resize=1&w=480",
     description:
       "The Grand Theft Auto V: Premium Edition includes the complete GTAV story, Grand Theft Auto Online and all existing gameplay upgrades and content. You’ll also get the Criminal Enterprise Starter Pack, the fastest way to jumpstart your criminal empire in GTA Online.",
+    isTrending: false,
   },
   {
     _id: "12",
@@ -473,6 +485,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-narakabladepoint-24entertainment-ic1-400x146-6f7be3db7ca0.png?h=270&quality=medium&resize=1&w=480",
     description:
       "NARAKA: BLADEPOINT is an up to 60-player PVP mythical action combat experience with martial arts inspired melee combat, gravity defying mobility, vast arsenals of melee & ranged weapons, legendary customizable heroes with epic abilities.",
+    isTrending: false,
   },
   {
     _id: "13",
@@ -509,6 +522,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/8e51aa6f1a384da0a503435129af402a/ebola-3-logo-1cs65.png?h=270&quality=medium&resize=1&w=480",
     description:
       "EBOLA 3 - is created in the spirit of the great classics of survival horrors. In this game, you will control the main character with a first-person camera which makes you feel like you’re in a real horror movie.",
+    isTrending: false,
   },
   {
     _id: "14",
@@ -545,6 +559,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-deadisland2-deepsilverdambusterstudios-ic1-400x196-9cbd3690d951.png?h=270&quality=medium&resize=1&w=480",
     description:
       "A deadly virus is spreading across Los Angeles, turning inhabitants into zombies. Bitten, infected, but more than just immune, uncover the truth behind the outbreak and discover who -or what- you are.",
+    isTrending: false,
   },
   {
     _id: "15",
@@ -581,6 +596,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/71e07bded36942308388b11038b369f5/the-mortuary-assistant-logo-1hl05.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Alone with the dead... Embalm corpses, banish demons, save your soul.",
+    isTrending: false,
   },
   {
     _id: "16",
@@ -617,6 +633,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/964693002c1b447c949b155c71727c45/maid-of-sker-logo-13s8k.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Maid of Sker is a first-person survival horror, set in a remote hotel with a gory and macabre history from British folklore. Brave the nightmares of the Quiet Ones. Do not panic…don’t even breathe!",
+    isTrending: false,
   },
   {
     _id: "17",
@@ -653,6 +670,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/e8c07b5d3fc24a7bbb02193fd194f17b/the-gravehouse-logo-14kk5.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Take on the role of an innocent, defenseless man in this horror survival game and experience evil like you've never experienced before: You are invited to the funeral of an unknown 'friend', but you never arrive. Instead, your path leads straight to a gloomy mansion...",
+    isTrending: false,
   },
   {
     _id: "18",
@@ -689,6 +707,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/903c888b4ce14e1983a384b29ca29853/my-lovely-wife-logo-yfssn.png?h=270&quality=medium&resize=1&w=480",
     description:
       "My Lovely Wife delves into the depths of a man’s grief after the sudden death of his beloved wife. Explore one’s willingness to do anything for love and the importance of letting go in this mix of dating, management, and alchemy simulators.",
+    isTrending: false,
   },
   {
     _id: "19",
@@ -725,6 +744,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-thiswarofmine-11bitstudiossa-ic2-128x128-a024e66ddf58.png?h=270&quality=medium&resize=1&w=480",
     description:
       "In This War Of Mine you do not play as an elite soldier, rather a group of civilians trying to survive in a besieged city; struggling with lack of food, medicine and constant danger from snipers and hostile scavengers.",
+    isTrending: false,
   },
   {
     _id: "20",
@@ -761,6 +781,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/fc6-logo-400x150-7808789f6a13.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Enter the adrenaline-filled world of a modern-day guerrilla revolution. With stunning vistas, visceral gunplay, and a huge variety of gameplay experiences, there's never been a better time to join the fight. Play the Far Cry® 6 FREE TRIAL and discover why GAME INFORMER calls it 'A nonstop thrill ride from start to finish.' And, when you buy the full game, all of your progression will be saved.",
+    isTrending: false,
   },
   {
     _id: "21",
@@ -797,6 +818,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-marvelsspidermanmilesmorales-insomniacgamesnixxessoftware-ic1-400x400-32513a3f95a0.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Teenage Miles Morales is adjusting to his new home while following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. When a fierce power struggle threatens to destroy his home, Miles must take up the mantle of Spider-Man and own it.",
+    isTrending: false,
   },
   {
     _id: "22",
@@ -833,6 +855,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/80a102deb2d74302aaed47665a28242c/bus-driver-simulator-logo-1de2z.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Try yourself in a role of a passenger bus driver! Complete journeys around the city and its suburbs, strictly following the schedule. Earn money by successfully delivering passengers and following the traffic laws.",
+    isTrending: false,
   },
   {
     _id: "23",
@@ -869,6 +892,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/7a8643df35a24a1fb3970e4020aa8cf1/the-lost-village-logo-1f54o.png?h=270&quality=medium&resize=1&w=480",
     description:
       "'The Lost Village' is a unique 3D independent Roguelite + SLG game. You will perform as the son of the former Master to rebuild your village and sect.You will face the severe challenge of fantasyland and eventually lead your sect to glory.",
+    isTrending: false,
   },
   {
     _id: "24",
@@ -905,6 +929,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-needforspeedunboundstandardedition-criteriongames-ic1-400x400-18b74eda56f3.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Tear up the streets with friends as Need for Speed Unbound Vol 2 brings new ways to compare and compete with the squad in Lakeshore Online.",
+    isTrending: false,
   },
   {
     _id: "25",
@@ -941,6 +966,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-hotwheelsunleashed-milestonesrl-ic5-400x234-ff9ef0614482.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Collect the best vehicles in the Hot Wheels™ universe, build spectacular tracks and dive into breathtaking races. The most iconic and sought after Hot Wheels™ vehicles are waiting for you. Get ready to make them race at full speed!",
+    isTrending: false,
   },
   {
     _id: "26",
@@ -977,6 +1003,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/f98517036ab5480ebd9c68d7249188b4/darkwood-logo-1rvo5.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Darkwood - a new perspective on survival horror. Scavenge and explore a rich, ever-changing free-roam world by day, then hunker down in your hideout and pray for the morning light.",
+    isTrending: false,
   },
   {
     _id: "27",
@@ -1013,6 +1040,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-outlast2-redbarrels-ic1-400x166-ca84f5b5f601.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Sullivan Knoth and his followers are preparing for the tribulations of the end of times at Temple Gate, a town, deep in the wilderness and hidden from civilization.",
+    isTrending: false,
   },
   {
     _id: "28",
@@ -1049,6 +1077,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/6a10229d28a8493c90a6952984ae06f3/lost-ruins-logo-1oz3r.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Lost Ruins is a 2D side-scrolling survival action game. Play as a young girl that has awoken in a strange place with no memories. With the aid of weapons, spells, and the guidance of the mysterious Beatrice, you will explore a dangerous world and topple incredible bosses.",
+    isTrending: false,
   },
   {
     _id: "29",
@@ -1085,6 +1114,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/9714e6bc74cb47e7ac31fca0ba6b699d/elegies-aya-logo-1xtac.png?h=270&quality=medium&resize=1&w=480",
     description:
       "After losing his parents and barely escaping his burning home, Zach wakes up in the hospital where he meets Aya, the ghost of a girl. Who is she, and why can only Zach see her? Together they try to investigate Aya's past, which quickly awakens new dangers.",
+    isTrending: false,
   },
   {
     _id: "30",
@@ -1121,6 +1151,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-theoutlasttrials-redbarrels-ic1-400x208-173911782.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Red Barrels invites you to experience mind-numbing terror, this time with friends. Whether you go through the trials alone or in teams, if you survive long enough and complete the therapy, Murkoff will happily let you leave… but will you be the same?",
+    isTrending: false,
   },
   {
     _id: "31",
@@ -1157,6 +1188,7 @@ export const products = [
     logo: "https://cdn1.epicgames.com/spt-assets/690e49d2e1f94c1487badc4df2d25b7f/them-and-us-logo-1qu1w.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Them and Us is a classic, survival horror game with a focus on atmosphere and player immersion. Discover the truth of Alicia’s past as she descends further into her strange, unending nightmare.",
+    isTrending: false,
   },
   {
     _id: "32",
@@ -1193,6 +1225,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-krakenacademy-happybroccoligames-ic1-400x221-4417728a1be2.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Make friends, free spirits and make sure that the world doesn’t end! Welcome to Kraken Academy, a technicolor fever dream that for legal reasons can only be described as 'technically a school.' Join forces with a magical kraken to save the world!",
+    isTrending: false,
   },
   {
     _id: "33",
@@ -1227,7 +1260,9 @@ export const products = [
       "https://cdn1.epicgames.com/spt-assets/e7c3547b95ff4d1a9bcf8868b7c90f38/download-hello-goodboy-offer-tdbyr.jpg?h=480&quality=medium&resize=1&w=360",
     imageList: [],
     logo: "https://cdn1.epicgames.com/spt-assets/e7c3547b95ff4d1a9bcf8868b7c90f38/hello-goodboy-logo-1i0mb.png?h=270&quality=medium&resize=1&w=480",
-    description: "",
+    description:
+      "A lost soul and his dog set out on an otherworldly trek through the afterlife in this wholesome, non-linear adventure game. Pass into the world beyond, perform acts of kindness for other souls, and mend mistakes from a forgotten past life - all with a very good boy by your side!",
+    isTrending: false,
   },
   {
     _id: "34",
@@ -1264,6 +1299,7 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-f123standardedition-codemasters-ic1-400x400-dede9d82d953.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Pre-purchase* F1® 23 Standard Edition and receive the F1® World Starter Pack and 5,000 PitCoin virtual currency to spend in-game. Pre-purchase* F1® 23 Standard Edition and receive the F1® World Starter Pack and 5,000 PitCoin virtual currency to spend in-game.",
+    isTrending: false,
   },
   {
     _id: "35",
@@ -1300,5 +1336,6 @@ export const products = [
     logo: "https://cdn2.unrealengine.com/egs-ride5specialedition-milestonesrl-editions-ic1-200x200-13b290250115.png?h=270&quality=medium&resize=1&w=480",
     description:
       "Enjoy RIDE to the fullest with RIDE 5 - Special Edition! Pre-purchase RIDE 5 - Special Edition and get: full game, Season Pass and 4 fantastic bikes. Enjoy RIDE to the fullest with RIDE 5 - Special Edition! Pre-purchase RIDE 5 - Special Edition and get: full game, Season Pass and 4 fantastic bikes.",
+    isTrending: false,
   },
 ];

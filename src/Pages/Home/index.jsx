@@ -24,7 +24,7 @@ function Home() {
     <PageContainer>
       <SectionContainer className="trending_section">
         <h2 className="section_head trending_head">#TRENDING</h2>
-        <PrimaryCarousel />
+        <PrimaryCarousel carouselData={state.productList} />
       </SectionContainer>
       <SectionContainer className="category_section">
         <h2 className="section_head category_head">#BROWSE BY CATEGORY</h2>

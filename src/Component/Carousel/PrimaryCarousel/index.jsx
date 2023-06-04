@@ -1,47 +1,19 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import "./PrimaryCarousel.css";
-import { Circle } from "@mui/icons-material";
 import ActionButton from "../../Action/ActionButton";
+import { useData } from "../../../Context/DataContext";
 
-function PrimaryCarousel() {
+function PrimaryCarousel(props) {
   const [activeSlide, setActiveSlide] = useState(0);
-  const carouselData = [
-    {
-      id: 0,
-      title: "Read Dead Redemption 2",
-      thumbnail:
-        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption2.jpg",
-      landscape:
-        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/screens/912-1.jpg",
-    },
-    {
-      id: 1,
-      title: "GTA: 3",
-      thumbnail:
-        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/grandtheftauto3.jpg",
-      landscape:
-        "https://media-rockstargames-com.akamaized.net/mfe4/__common/img/afa2de9642866521f4d2.jpg",
-    },
-    {
-      id: 2,
-      title: "GTA: Vicecity",
-      thumbnail:
-        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/vicecity.jpg",
-      landscape:
-        "https://media-rockstargames-com.akamaized.net/mfe4/__common/img/5038478f256b924725ac.jpg",
-    },
-    {
-      id: 3,
-      title: "Read Dead Redemption",
-      thumbnail:
-        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption.jpg",
-      landscape:
-        "https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/screens/912-4.jpg",
-    },
-  ];
+  const navigate = useNavigate();
 
-  const maxSlide = carouselData.length - 1;
+  const trendingList = props.carouselData.filter((currentGame) => {
+    return currentGame.isTrending;
+  });
+
+  const maxSlide = trendingList.length - 1;
 
   const incrementSlide = () => {
     if (maxSlide === activeSlide) {
@@ -66,11 +38,11 @@ function PrimaryCarousel() {
   return (
     <div className="primary_carousel">
       <div className="primary_carousel_slider">
-        {carouselData.map((currentSlide, index) => {
+        {trendingList.map((currentSlide, index) => {
           return (
             <div
               className="primary_carousel_slide"
-              key={currentSlide.id}
+              key={currentSlide._id}
               style={{
                 transform: `translateX(${(index - activeSlide) * 100}%)`,
               }}
@@ -103,7 +75,7 @@ function PrimaryCarousel() {
         </button> */}
 
         {/* <div className="primary_carousal_slider_action_wrap">
-          {carouselData.map((current, index) => {
+          {trendingList.map((current, index) => {
             return (
               <button
                 className="primary_carousal_slider_action"
@@ -117,15 +89,19 @@ function PrimaryCarousel() {
         </div> */}
       </div>
       <div className="primary_carousel_detail_wrap">
-        {carouselData
+        {trendingList
           .filter((currentGame) => {
-            return currentGame.id == activeSlide;
+            return currentGame._id == activeSlide;
           })
           .map((current) => {
             return (
               <div className="primary_carousel_detail" key={current.id}>
                 <h2 className="primary_carousel_title">{current.title}</h2>
-                <ActionButton>GET IT NOW!</ActionButton>
+                <ActionButton
+                  handleClick={() => navigate(`/productList/${current._id}`)}
+                >
+                  GET IT NOW!
+                </ActionButton>
               </div>
             );
           })}
