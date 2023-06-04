@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+
 import "react-toastify/dist/ReactToastify.css";
 
 import "./App.css";
-import { Header, Footer } from "./Component";
+import { Header, Footer, Loader } from "./Component";
 import {
   Home,
   ProductList,
@@ -25,7 +26,6 @@ import {
 import MockMan from "mockman-js";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 import { useData } from "./Context/DataContext";
-import Loader from "./Component/Loader";
 
 function App() {
   const { loader } = useData();

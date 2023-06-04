@@ -22,6 +22,7 @@ import {
 
 import ModalContentWrapper from "./ModalContentWrapper";
 import Filter from "./Filter";
+import Loader from "./Loader";
 
 export {
   Header,
@@ -48,4 +49,5 @@ export {
   ModalContentWrapper,
   Filter,
   DataNotFound,
+  Loader,
 };
