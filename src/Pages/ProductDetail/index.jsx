@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 
 import "./ProductDetail.css";
@@ -70,6 +70,10 @@ function ProductDetail() {
 
   const isWished = state.wishList.findIndex((currentProduct) => {
     return currentProduct._id === getGame._id;
+  });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   });
 
   return (

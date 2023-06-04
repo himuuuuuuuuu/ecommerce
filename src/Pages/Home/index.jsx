@@ -10,6 +10,7 @@ import {
 } from "../../Component";
 
 import { useData } from "../../Context/DataContext";
+import { Link } from "react-router-dom";
 
 function Home() {
   const { state } = useData();
@@ -35,9 +36,13 @@ function Home() {
         <div className="fame_body">
           {limitFameList.map((current, index) => {
             return (
-              <div key={current._id} className={`fame_item fame_item_${index}`}>
+              <Link
+                key={current._id}
+                className={`fame_item fame_item_${index}`}
+                to={`/productList/${current._id}`}
+              >
                 <img src={current.thumbnail} alt="game_img" />
-              </div>
+              </Link>
             );
           })}
         </div>
