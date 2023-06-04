@@ -33,14 +33,15 @@ function App() {
     <div className="app">
       {loader && <Loader />}
       <ToastContainer
-        position="bottom-right"
-        autoClose={false}
+        position="top-right"
+        // autoClose={false}
         newestOnTop={false}
         closeOnClick
         theme="colored"
         rtl={false}
         pauseOnFocusLoss
         draggable
+        autoClose={5000}
       />
       <Header />
       <Routes>

@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { LogInService, SignUpService } from "../Service";
+import { ToastHandler } from "../Component/Utils";
 
 const AuthContext = createContext();
 
@@ -7,7 +8,6 @@ function AuthProvider({ children }) {
   const localStorageToken = JSON.parse(localStorage.getItem("loginItems"));
   const [currentUser, setCurrentUser] = useState(localStorageToken?.user);
   const [token, setToken] = useState(localStorageToken?.token);
-
 
   // SIGN UP HANDLER:
 
@@ -18,6 +18,7 @@ function AuthProvider({ children }) {
         data: { createdUser, encodedToken },
       } = await SignUpService({ email, password, firstName, lastName });
       if (status == 200 || status == 201) {
+        ToastHandler("success", "Successfully Signed In");
         localStorage.setItem(
           "loginItems",
           JSON.stringify({ user: createdUser, token: encodedToken })
@@ -39,6 +40,7 @@ function AuthProvider({ children }) {
         status,
       } = await LogInService({ email, password });
       if (status == 200 || status == 201) {
+        ToastHandler("success", "Logged In");
         localStorage.setItem(
           "loginItems",
           JSON.stringify({ user: foundUser, token: encodedToken })

@@ -22,7 +22,7 @@ function ProductList() {
       <SectionContainer className="product_list">
         <Filter />
         <div className="product_list_content">
-          <h3 className="product_list_content_head">Products</h3>
+          <h3 className="product_list_content_head">GAMES</h3>
           <div className="product_list_content_body">
             {searchCheckedList.map((currentGame) => {
               return <PrimaryCard {...currentGame} key={currentGame.id} />;

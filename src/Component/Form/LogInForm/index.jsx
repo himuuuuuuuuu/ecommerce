@@ -18,11 +18,6 @@ function LogInForm() {
     logInPassword: "",
   });
 
-  const fixedLogInData = {
-    logInEmail: "adarshbalika@gmail.com",
-    logInPassword: "adarshbalika",
-  };
-
   const handleLogInInput = (event) => {
     const { name, value } = event.target;
     setLogInData((prevLogInData) => {

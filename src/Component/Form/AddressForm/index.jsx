@@ -124,6 +124,7 @@ function AddressForm(props) {
         name="addressFormName"
         value={addressFormData.addressFormName}
         onChange={handleAddressFormData}
+        type="text"
         required
       />
       <input
@@ -132,6 +133,7 @@ function AddressForm(props) {
         name="addressFormNumber"
         value={addressFormData.addressFormNumber}
         onChange={handleAddressFormData}
+        type="number"
         required
       />
       <input
@@ -140,6 +142,7 @@ function AddressForm(props) {
         name="addressFormPin"
         value={addressFormData.addressFormPin}
         onChange={handleAddressFormData}
+        type="number"
         required
       />
       <input
@@ -148,6 +151,7 @@ function AddressForm(props) {
         name="addressFormCity"
         value={addressFormData.addressFormCity}
         onChange={handleAddressFormData}
+        type="text"
         required
       />
       <textarea
@@ -164,6 +168,7 @@ function AddressForm(props) {
         name="addressFormAlternateNumber"
         value={addressFormData.addressFormAlternateNumber}
         onChange={handleAddressFormData}
+        type="number"
         required
       />
       <select

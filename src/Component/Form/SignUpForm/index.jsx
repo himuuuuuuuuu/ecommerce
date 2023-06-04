@@ -4,8 +4,7 @@ import { useAuth } from "../../../Context/AuthContext";
 
 import "./SignUpForm.css";
 import NavLogo from "../../../Asset/Navbar/NavLogo.png";
-import ActionButton from "../../Action/ActionButton";
-import ActionLink from "../../Action/ActionLink";
+import { ActionButton, ActionLink } from "../../../Component";
 import { validateEmail, validatePassword } from "../../Utils";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
@@ -41,12 +40,21 @@ function SignUpForm() {
 
   const handleSignUpSubmit = (event) => {
     event.preventDefault();
-    signUpHandler(
-      signUpData.signUpEmail,
-      signUpData.signUpPassword,
-      signUpData.signUpFirstName,
-      signUpData.signUpLastName
-    );
+    if (signUpData.signUpPassword === signUpData.signUpConfirm) {
+      signUpHandler(
+        signUpData.signUpEmail,
+        signUpData.signUpPassword,
+        signUpData.signUpFirstName,
+        signUpData.signUpLastName
+      );
+    } else {
+      setSignUpErrorData((prevSignUpErrorData) => {
+        return {
+          ...prevSignUpErrorData,
+          signUpConfirm: "Passwords don't match",
+        };
+      });
+    }
   };
 
   useEffect(() => {
@@ -184,6 +192,9 @@ function SignUpForm() {
             </button>
           )}
         </label>
+        {signUpErrorData.signUpConfirm && (
+          <div className="signup_error">{signUpErrorData.signUpConfirm}</div>
+        )}
         <ActionButton className="sign_up_btn" btnType="submit">
           Sign Up
         </ActionButton>
@@ -199,5 +210,3 @@ function SignUpForm() {
 }
 
 export default SignUpForm;
-
-// {"user":{"_id":"0de57c61-be34-4653-a6a9-9fafb2f264fd","email":"vivekbhatt618@gmail.com","password":"12345678","createdAt":"2023-05-22T17:57:58+05:30","updatedAt":"2023-05-22T17:57:58+05:30","firstName":"Vivek","lastName":"Bhatt","cart":[],"wishlist":[],"id":"2"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiIwZGU1N2M2MS1iZTM0LTQ2NTMtYTZhOS05ZmFmYjJmMjY0ZmQiLCJlbWFpbCI6InZpdmVrYmhhdHQ2MThAZ21haWwuY29tIn0.WkN6sSuetku1JZkjghTsMMIYcVMs3neGFYt0KQZa8iA"}

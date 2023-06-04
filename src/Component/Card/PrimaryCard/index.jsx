@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import "./PrimaryCard.css";
@@ -23,26 +23,8 @@ function PrimaryCard(props) {
   const location = useLocation();
   const { token } = useAuth();
   const { state, dispatch } = useData();
-  const {
-    _id,
-    title,
-    rating,
-    price,
-    genre,
-    developer,
-    publisher,
-    release,
-    downloads,
-    esrb,
-    status,
-    age,
-    requirement,
-    recommended,
-    thumbnail,
-    logo,
-    description,
-    isWishList,
-  } = props;
+  const { _id, title, rating, price, genre, esrb, age, thumbnail, isWishList } =
+    props;
 
   const isCarted = state.cartList.findIndex((currentProduct) => {
     return currentProduct._id == _id;
@@ -127,7 +109,6 @@ function PrimaryCard(props) {
         encodedToken: token,
         type: "increment",
       });
-      console.log(incrementResponse);
       if (incrementResponse.status == 200) {
         dispatch({
           type: "GET_CART",

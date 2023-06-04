@@ -1,16 +1,19 @@
 import React from "react";
+import "./OrderSuccess.css";
+
+import { PageContainer, SectionContainer } from "../../Component";
 
 function OrderSuccess() {
-  const msgStyles = {
-    color: "#1b4b33",
-    margin: "10rem auto",
-    textAlign: "center",
-  };
-
   return (
-    <div className="page-wrapper">
-      <h1 style={msgStyles}>Order Placed Successfully! 🎉</h1>
-    </div>
+    <PageContainer>
+      <SectionContainer className="order_success_section">
+        <h3 className="order_success_head">ORDER PLACED</h3>
+        <div className="order_success_body">
+          <p>Your payment is complete</p>
+          <p>Sending you to Order Details</p>
+        </div>
+      </SectionContainer>
+    </PageContainer>
   );
 }
 
