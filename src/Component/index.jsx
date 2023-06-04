@@ -17,6 +17,7 @@ import {
   OrderCard,
   PrimaryCard,
   SelectAddressCard,
+  DataNotFound,
 } from "./Card";
 
 import ModalContentWrapper from "./ModalContentWrapper";
@@ -46,4 +47,5 @@ export {
   SelectAddressCard,
   ModalContentWrapper,
   Filter,
+  DataNotFound,
 };

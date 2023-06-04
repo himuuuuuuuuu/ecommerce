@@ -5,6 +5,7 @@ import EmptyWishList from "./EmptyWishList";
 import OrderCard from "./OrderCard";
 import PrimaryCard from "./PrimaryCard";
 import SelectAddressCard from "./SelectAddressCard";
+import DataNotFound from "./DataNotFound";
 
 export {
   AddressCard,
@@ -14,4 +15,5 @@ export {
   OrderCard,
   PrimaryCard,
   SelectAddressCard,
+  DataNotFound,
 };

@@ -6,6 +6,7 @@ import {
   SectionContainer,
   Filter,
   PrimaryCard,
+  DataNotFound,
 } from "../../Component";
 import { useData } from "../../Context/DataContext";
 
@@ -24,9 +25,13 @@ function ProductList() {
         <div className="product_list_content">
           <h3 className="product_list_content_head">GAMES</h3>
           <div className="product_list_content_body">
-            {searchCheckedList.map((currentGame) => {
-              return <PrimaryCard {...currentGame} key={currentGame.id} />;
-            })}
+            {searchCheckedList.length !== 0 ? (
+              searchCheckedList.map((currentGame) => {
+                return <PrimaryCard {...currentGame} key={currentGame.id} />;
+              })
+            ) : (
+              <DataNotFound />
+            )}
           </div>
         </div>
       </SectionContainer>

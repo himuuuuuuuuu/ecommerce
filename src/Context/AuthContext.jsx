@@ -56,6 +56,7 @@ function AuthProvider({ children }) {
   //   LOG OUT HANDLER:
 
   const logOutHandler = () => {
+    ToastHandler("warn", "Logged Out");
     localStorage.removeItem("loginItems");
     setCurrentUser(null);
     setToken(null);
