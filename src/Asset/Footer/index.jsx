@@ -6,6 +6,7 @@ import Twitch from "./Twitch_Footer.svg";
 import Linkedin from "./Linkedin_Footer.svg";
 import Github from "./Github_Footer.svg";
 import Hash from "./Hash_Footer.svg";
+import Portfolio from "./Portfolio_Footer.png";
 
 export {
   Twitter,
@@ -16,4 +17,5 @@ export {
   Linkedin,
   Github,
   Hash,
+  Portfolio,
 };

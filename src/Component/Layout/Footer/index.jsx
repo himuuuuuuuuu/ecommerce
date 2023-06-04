@@ -11,6 +11,7 @@ import {
   Instagram,
   Github,
   Hash,
+  Portfolio,
 } from "../../../Asset/Footer";
 
 function Footer() {
@@ -20,8 +21,8 @@ function Footer() {
         {/* HEADER */}
         <div className="footer_header">
           <Link className="footer_header_logo">
-          <img src={NavLogo} alt="footer_logo" />
-          <h3 className="footer_header_title">PLAYVERSE</h3>
+            <img src={NavLogo} alt="footer_logo" />
+            <h3 className="footer_header_title">PLAYVERSE</h3>
           </Link>
         </div>
         {/* BODY */}
@@ -69,8 +70,16 @@ function Footer() {
               <a
                 className="footer_img_link"
                 href="https://hashnode.com/@vivekbhatt07"
+                target="_blank"
               >
                 <img src={Hash} alt="social_logo" />
+              </a>
+              <a
+                className="footer_img_link"
+                href="https://vivekbhatt.netlify.app/"
+                target="_blank"
+              >
+                <img src={Portfolio} alt="portfolio_logo" />
               </a>
             </div>
           </div>
