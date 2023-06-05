@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./OrderSuccess.css";
 
 import { PageContainer, SectionContainer } from "../../Component";
 
 function OrderSuccess() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <PageContainer>
       <SectionContainer className="order_success_section">

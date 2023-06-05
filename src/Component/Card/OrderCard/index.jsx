@@ -3,7 +3,6 @@ import React from "react";
 import "./OrderCard.css";
 
 const OrderCard = (props) => {
-  console.log(props);
   const { id, amount, address, productsList } = props;
   return (
     <article className="order_card">
