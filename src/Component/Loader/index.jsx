@@ -9,7 +9,6 @@ function Loader() {
         animationData={LoaderLottie}
         loop={true}
         style={{ width: "400px" }}
-        className="DNF_card_lottie"
       />
     </div>
   );
