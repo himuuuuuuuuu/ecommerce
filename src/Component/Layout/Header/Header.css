@@ -6,8 +6,9 @@
   display: flex;
   gap: 32px;
   padding: 1em 1.5em;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .header_primary {
@@ -17,7 +18,7 @@
 }
 
 .header_action_hamburger {
-  padding: 8px 12px;
+  padding: 8px !important;
 }
 
 .header_hamburger svg {
@@ -48,11 +49,15 @@
   border: none;
   outline: none;
   font-family: inherit;
+  width: 100px;
 }
 
 @media (min-width: 768px) {
   .header_primary .header_action_hamburger {
     display: none;
+  }
+  .header_action_hamburger {
+    padding: 8px 16px !important;
   }
 }
 

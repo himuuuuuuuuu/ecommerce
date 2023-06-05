@@ -37,7 +37,7 @@ function Header() {
           >
             <Menu />
           </ActionButton>
-          <h1>
+          <h1 className="header_logo">
             <Link to="/">
               <img src={NavLogo} alt="nav_logo" className="header_img" />
             </Link>
