@@ -2,7 +2,7 @@
 
 [Plantique](https://plantique-v1.netlify.app/) - An E-Commerce website for serene and lovely plants.
 
-https://github.com/pranita09/plantique-v1/assets/66015794/6a76a911-71ff-4ef2-b3ec-d64482a99f89
+https://github.com/vivekbhatt07/ecommerce/assets/93856336/cb9e7232-6004-4c90-91dc-1ee7e8de11a3
 
 ## How to install and run locally?
 
