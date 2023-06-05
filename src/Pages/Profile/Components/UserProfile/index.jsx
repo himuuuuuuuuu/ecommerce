@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./UserProfile.css";
 import { ActionButton } from "../../../../Component";
 import { useAuth } from "../../../../Context/AuthContext";
+import UserProfilePic from "../../../../Asset/User/UserProfileLogo.svg";
 
 function UserProfile() {
   const { currentUser, logOutHandler } = useAuth();
@@ -15,18 +16,17 @@ function UserProfile() {
 
   return (
     <div className="user">
-      <p className="user_item">
-        <span className="user_item_key">Name:</span>
-        <span className="user_item_value">
+      <div className="user_info">
+        <img className="user_info_img" src={UserProfilePic} alt="user_pic" />
+
+        <span className="user_info_text">
           {currentUser.firstName} {currentUser?.lastName}
         </span>
-      </p>
-      <p className="user_item">
-        <span className="user_item_key">Email:</span>
-        <span className="user_item_value">{currentUser?.email}</span>
-      </p>
+
+        <span className="user_info_text">{currentUser?.email}</span>
+      </div>
       <ActionButton className="user_logout_btn" handleClick={handleLogOut}>
-        Log Out
+        LOG OUT
       </ActionButton>
     </div>
   );
