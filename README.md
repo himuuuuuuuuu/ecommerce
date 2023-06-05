@@ -68,7 +68,7 @@ https://github.com/niharika-kesarwani/readhaven/assets/45658446/ebb2e7ba-6f5a-41
 
 |       PAGE NAME        |                                           DESKTOP VIEW (2560px)                                            | MOBILE VIEW (320px)                                                                                        |
 | :--------------------: | :--------------------------------------------------------------------------------------------------------: | ---------------------------------------------------------------------------------------------------------- |
-|       HOME PAGE        | ![1](https://github.com/niharika-kesarwani/readhaven/assets/45658446/83719d6f-715f-45dc-8a34-d9f3b903cccb) | ![1](https://github.com/niharika-kesarwani/readhaven/assets/45658446/34585f80-44a0-4349-9b72-c178fdbe0dda) |
+|       HOME PAGE        | ![1](https://github.com/vivekbhatt07/ecommerce/assets/93856336/3a454a75-c577-409f-955a-90055caa2a3a) |
 |      SIGNUP PAGE       | ![8](https://github.com/niharika-kesarwani/readhaven/assets/45658446/369650ea-81ce-420d-a363-08bef2893898) | ![2](https://github.com/niharika-kesarwani/readhaven/assets/45658446/2207d35f-ea41-45e5-93f8-4f68e7e46f65) |
 |  PRODUCT LISTING PAGE  | ![2](https://github.com/niharika-kesarwani/readhaven/assets/45658446/9532dd5f-91b7-4740-8eb0-1a5c21f7b780) | ![3](https://github.com/niharika-kesarwani/readhaven/assets/45658446/33b1db08-5804-4670-8b45-1dce4fdb924d) |
 |  PRODUCT DETAIL PAGE   | ![3](https://github.com/niharika-kesarwani/readhaven/assets/45658446/176784c1-f916-4964-a9fa-1ed287691926) | ![4](https://github.com/niharika-kesarwani/readhaven/assets/45658446/331bb83c-15a8-47ca-b3a3-0c2e4f33eadb) |
