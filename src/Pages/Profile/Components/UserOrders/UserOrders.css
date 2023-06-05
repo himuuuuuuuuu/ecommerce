@@ -15,12 +15,19 @@
   gap: 16px;
 }
 
-.orders_btn {
-  margin-left: 20px;
+.orders_empty img {
+  margin-right: 20px;
 }
 
 .orders_empty_text {
   color: #fff;
   text-align: center;
   font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.order_empty_label {
+  color: #fcaf17;
+  font-size: 16px;
+  font-weight: 800;
 }

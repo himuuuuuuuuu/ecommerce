@@ -15,6 +15,7 @@ function UserOrders() {
           <p className="orders_empty_text">
             Looks like you haven't placed an order
           </p>
+          <span className="order_empty_label">ORDER NOW!</span>
           <img src={EmptyOrder} alt="empty_order" />
           <ActionLink className="orders_btn" reach="/productList">
             Explore
