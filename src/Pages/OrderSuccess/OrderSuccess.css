@@ -11,6 +11,15 @@
 }
 
 .order_success_body {
-  background: #fcaf17;
-  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order_success_text {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
 }
