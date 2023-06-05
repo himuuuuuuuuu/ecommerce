@@ -6,9 +6,8 @@
   display: flex;
   gap: 32px;
   padding: 1em 1.5em;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .header_primary {
@@ -49,7 +48,10 @@
   border: none;
   outline: none;
   font-family: inherit;
-  width: 100px;
+}
+
+.header_input_wrap {
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -58,6 +60,12 @@
   }
   .header_action_hamburger {
     padding: 8px 16px !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  .header_input_wrap {
+    display: flex;
   }
 }
 
