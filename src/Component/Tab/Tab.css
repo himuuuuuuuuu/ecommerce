@@ -1,7 +1,6 @@
 .tab {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   min-height: 300px;
   background: #fff;
 }
@@ -43,13 +42,12 @@
 
 .tab_outlet {
   padding: 1em;
+  background: #484747;
+  flex: 1;
 }
 
 @media (min-width: 780px) {
   .tab {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
     min-width: 400px;
     min-height: 300px;
     background: #fff;

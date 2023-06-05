@@ -6,6 +6,8 @@ import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
 import Modal from "@mui/material/Modal";
 import AddressForm from "../../Form/AddressForm";
+import { ActionIcon } from "../../Action";
+import { Edit, Delete } from "@mui/icons-material";
 
 function AddressCard(props) {
   const { token } = useAuth();
@@ -97,12 +99,12 @@ function AddressCard(props) {
         </p>
       </div>
       <div className="address_card_actions">
-        <ActionButton
+        <ActionIcon
           className="address_card_edit"
           handleClick={handleEditAddressOpen}
         >
-          Edit
-        </ActionButton>
+          <Edit />
+        </ActionIcon>
         <Modal
           open={isEditAddress}
           onClose={handleEditAddressClose}
@@ -118,12 +120,12 @@ function AddressCard(props) {
             />
           </div>
         </Modal>
-        <ActionButton
+        <ActionIcon
           className="address_card_delete"
           handleClick={handleRemoveAddress}
         >
-          Delete
-        </ActionButton>
+          <Delete />
+        </ActionIcon>
       </div>
     </div>
   );

@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import { Modal } from "@mui/material";
 
 import "./UserAddress.css";
-import { ActionButton, AddressCard, AddressForm } from "../../../../Component";
+import {
+  ActionButton,
+  ActionIcon,
+  AddressCard,
+  AddressForm,
+} from "../../../../Component";
 import { useData } from "../../../../Context/DataContext";
+import { Add } from "@mui/icons-material";
 
 function UserAddress() {
   const [isAddAddress, setIsAddAddress] = React.useState(false);
@@ -24,12 +30,12 @@ function UserAddress() {
 
   return (
     <div className="address">
-      <ActionButton
-        style={{ backgroundColor: "lightgreen" }}
+      <ActionIcon
+        className="add_new_address_btn"
         handleClick={() => handleAddAddressOpen(true)}
       >
-        ADD NEW ADDRESS
-      </ActionButton>
+        <Add />
+      </ActionIcon>
 
       <Modal
         open={isAddAddress}
