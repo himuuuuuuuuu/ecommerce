@@ -42,6 +42,8 @@ export const products = [
     description:
       "The Grand Theft Auto V: Premium Edition includes the complete GTAV story, Grand Theft Auto Online and all existing gameplay upgrades and content. You’ll also get the Criminal Enterprise Starter Pack, the fastest way to jumpstart your criminal empire in GTA Online.",
     isTrending: true,
+    landscape:
+      "https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fgrand-theft-auto-v%2Fhome%2FGTAV_EGS_Artwork_1920x1080_Hero-Carousel_V06-1920x1080-1503e4b1320d5652dd4f57466c8bcb79424b3fc0.jpg",
   },
   {
     _id: "1",
@@ -79,6 +81,8 @@ export const products = [
     description:
       "VALORANT is a character-based 5v5 tactical shooter set on the global stage. Outwit, outplay, and outshine your competition with tactical abilities, precise gunplay, and adaptive teamwork.",
     isTrending: true,
+    landscape:
+      "https://cdn1.epicgames.com/offer/cbd5b3d310a54b12bf3fe8c41994174f/valwide_2560x1440-99f1632f76e12ddc17d4245a74f29fc5?h=270&quality=medium&resize=1&w=480",
   },
   {
     _id: "2",
@@ -116,6 +120,8 @@ export const products = [
     description:
       "Kick off your season with a boost! FIFA 23 Ultimate Edition includes 4600 FIFA Points. This is a soccer simulation game in which players engage in realistic matches with teams across international leagues. Players can practice penalty kicks, assign on-field strategies, and participate in a variety of game modes to improve their soccer skills.",
     isTrending: true,
+    landscape:
+      "https://cdn1.epicgames.com/offer/f5deacee017b4b109476933f7dd2edbd/EGS_EASPORTSFIFA23StandardEdition_EACanada_S1_2560x1440-aaf9c5273c27a485f2cce8cb7e804f5c?h=270&quality=medium&resize=1&w=480",
   },
   {
     _id: "3",
@@ -153,6 +159,8 @@ export const products = [
     description:
       "The story of Cal Kestis continues in Star Wars Jedi: Survivor™, a third-person galaxy-spanning action-adventure game from Respawn Entertainment and Lucasfilm Games.",
     isTrending: true,
+    landscape:
+      "https://cdn1.epicgames.com/offer/5a2ea5980ac147c195775039195a3081/EGS_STARWARSJediSurvivorStandardEdition_RespawnEntertainment_S1_2560x1440-f9e8bb0209bb9ec26636838fbc3dcd85?h=270&quality=medium&resize=1&w=480",
   },
   {
     _id: "4",
@@ -190,6 +198,8 @@ export const products = [
     description:
       "Battlefield™ 2042 marks the return to the iconic all-out warfare of the franchise. Squad up and bring a cutting-edge arsenal into massive-scale battlegrounds, set in a near-future world transformed by disorder.",
     isTrending: true,
+    landscape:
+      "https://cdn1.epicgames.com/offer/52f57f57120c440fad9bfa0e6c279317/EGS_Battlefield2042_DICE_S1_2560x1440-4fd7701f78a23c971e429093fc1f6341?h=270&quality=medium&resize=1&w=480",
   },
   {
     _id: "5",
