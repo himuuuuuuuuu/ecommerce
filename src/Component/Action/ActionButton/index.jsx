@@ -2,9 +2,16 @@ import React from "react";
 import "./ActionButton.css";
 
 function ActionButton(props) {
-  const { children, className, handleClick, style: buttonStyle, btnType } = props;
+  const {
+    children,
+    className,
+    handleClick,
+    style: buttonStyle,
+    btnType,
+    isBtnDisabled,
+  } = props;
 
-  const classes =   className + " action_button";
+  const classes = className + " action_button";
 
   return (
     <button
@@ -12,6 +19,7 @@ function ActionButton(props) {
       onClick={handleClick}
       style={{ ...buttonStyle }}
       type={btnType}
+      disabled={isBtnDisabled}
     >
       {children}
     </button>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import "./PrimaryCard.css";
@@ -35,6 +35,13 @@ function PrimaryCard(props) {
   });
 
   const starList = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
+
+  // const debounceCartClick = (callback, delay, ...args) => {
+  //   clearTimeout(cartTimerId.current);
+  //   cartTimerId.current = setTimeout(() => {
+  //     callback(...args);
+  //   }, delay);
+  // };
 
   const HandleAddCart = async () => {
     try {
@@ -120,6 +127,15 @@ function PrimaryCard(props) {
     }
   };
 
+  const addRef = useRef();
+
+  const DelayHandleAddCart = (actionHandler, duration) => {
+    clearTimeout(addRef.current);
+    addRef.current = setTimeout(() => {
+      actionHandler();
+    }, duration);
+  };
+
   return (
     <article className="primary_card">
       <img className="primary_card_img" src={thumbnail} alt={title} />
@@ -136,7 +152,7 @@ function PrimaryCard(props) {
           ) : (
             <ActionIcon
               handleClick={() => {
-                HandleAddCart();
+                DelayHandleAddCart(HandleAddCart, 600);
               }}
             >
               <ShoppingCart />

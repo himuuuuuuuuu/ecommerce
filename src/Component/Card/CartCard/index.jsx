@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ToastHandler } from "../../Utils";
 
@@ -15,23 +15,7 @@ function CartCard(props) {
   const { state, dispatch } = useData();
   const navigate = useNavigate();
   const location = useLocation();
-  const {
-    _id,
-    title,
-    rating,
-    price,
-    genre,
-    developer,
-    publisher,
-    release,
-    downloads,
-    esrb,
-    status,
-    age,
-    thumbnail,
-    logo,
-    qty,
-  } = props;
+  const { _id, title, price, thumbnail, qty } = props;
 
   // DELETE CART:
 
@@ -77,11 +61,7 @@ function CartCard(props) {
 
   // CART DECREMENT:
 
-  const HandleCartDecrement = async () => {
-    if (qty <= 1) {
-      HandleDeleteCart();
-      return;
-    }
+  const HandleCartDecrement = async (event) => {
     try {
       const incrementResponse = await UpdateCart({
         productId: _id,
@@ -145,6 +125,23 @@ function CartCard(props) {
     return currentProduct._id == _id;
   });
 
+  const incrementRef = useRef();
+  const decrementRef = useRef();
+
+  const DelayHandleCartIncrement = (actionHandler, duration) => {
+    clearTimeout(incrementRef.current);
+    incrementRef.current = setTimeout(() => {
+      actionHandler();
+    }, duration);
+  };
+
+  const DelayHandleCartDecrement = (actionHandler, duration, event) => {
+    clearTimeout(decrementRef.current);
+    decrementRef.current = setTimeout(() => {
+      actionHandler(event);
+    }, duration);
+  };
+
   return (
     <article className="cart_card">
       <div className="cart_card_img">
@@ -166,9 +163,11 @@ function CartCard(props) {
           <div className="cart_card_internal">
             <ActionButton
               className="cart_card_counter_btn"
-              handleClick={() => {
-                HandleCartDecrement();
+              handleClick={(event) => {
+                DelayHandleCartDecrement(HandleCartDecrement, 600, event);
               }}
+              isBtnDisabled={qty === 1}
+              style={{ cursor: qty === 1 ? "not-allowed" : "pointer" }}
             >
               <Remove />
             </ActionButton>
@@ -176,7 +175,7 @@ function CartCard(props) {
             <ActionButton
               className="cart_card_counter_btn"
               handleClick={() => {
-                HandleCartIncrement();
+                DelayHandleCartIncrement(HandleCartIncrement, 600);
               }}
             >
               <Add />
