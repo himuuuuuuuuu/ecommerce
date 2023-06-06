@@ -127,11 +127,35 @@ function PrimaryCard(props) {
     }
   };
 
-  const addRef = useRef();
+  const addCartRef = useRef();
+  const addWishRef = useRef();
+  const deleteWishRef = useRef();
+  const incrementCartRef = useRef();
 
   const DelayHandleAddCart = (actionHandler, duration) => {
-    clearTimeout(addRef.current);
-    addRef.current = setTimeout(() => {
+    clearTimeout(addCartRef.current);
+    addCartRef.current = setTimeout(() => {
+      actionHandler();
+    }, duration);
+  };
+
+  const DelayHandleAddWish = (actionHandler, duration) => {
+    clearTimeout(addWishRef.current);
+    addWishRef.current = setTimeout(() => {
+      actionHandler();
+    }, duration);
+  };
+
+  const DelayHandleRemoveWish = (actionHandler, duration) => {
+    clearTimeout(deleteWishRef.current);
+    deleteWishRef.current = setTimeout(() => {
+      actionHandler();
+    }, duration);
+  };
+
+  const DelayHandleCartIncrement = (actionHandler, duration) => {
+    clearTimeout(incrementCartRef.current);
+    incrementCartRef.current = setTimeout(() => {
       actionHandler();
     }, duration);
   };
@@ -160,21 +184,29 @@ function PrimaryCard(props) {
           )}
           {!isWishList &&
             (isWished !== -1 ? (
-              <ActionIcon handleClick={() => HandleDeleteWish()}>
+              <ActionIcon
+                handleClick={() => DelayHandleRemoveWish(HandleDeleteWish, 600)}
+              >
                 <Favorite style={{ color: "red" }} />
               </ActionIcon>
             ) : (
-              <ActionIcon handleClick={() => HandleAddWish()}>
+              <ActionIcon
+                handleClick={() => DelayHandleAddWish(HandleAddWish, 600)}
+              >
                 <Favorite />
               </ActionIcon>
             ))}
           {isWishList && (
-            <ActionIcon handleClick={() => HandleDeleteWish()}>
+            <ActionIcon
+              handleClick={() => DelayHandleRemoveWish(HandleDeleteWish, 600)}
+            >
               <Delete />
             </ActionIcon>
           )}
           {isCarted !== -1 && isWishList && (
-            <ActionIcon handleClick={() => HandleCartIncrement()}>
+            <ActionIcon
+              handleClick={() => DelayHandleCartIncrement(HandleCartIncrement)}
+            >
               <Add />
             </ActionIcon>
           )}

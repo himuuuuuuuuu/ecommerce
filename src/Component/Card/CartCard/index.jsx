@@ -127,6 +127,23 @@ function CartCard(props) {
 
   const incrementRef = useRef();
   const decrementRef = useRef();
+  const deleteCartRef = useRef();
+  const addWishRef = useRef();
+  const removeWishRef = useRef();
+
+  const DelayHandleAddWish = (actionHandler, duration) => {
+    clearTimeout(addWishRef.current);
+    addWishRef.current = setTimeout(() => {
+      actionHandler();
+    }, duration);
+  };
+
+  const DelayHandleRemoveWish = (actionHandler, duration) => {
+    clearTimeout(removeWishRef.current);
+    removeWishRef.current = setTimeout(() => {
+      actionHandler();
+    }, duration);
+  };
 
   const DelayHandleCartIncrement = (actionHandler, duration) => {
     clearTimeout(incrementRef.current);
@@ -138,6 +155,13 @@ function CartCard(props) {
   const DelayHandleCartDecrement = (actionHandler, duration, event) => {
     clearTimeout(decrementRef.current);
     decrementRef.current = setTimeout(() => {
+      actionHandler(event);
+    }, duration);
+  };
+
+  const DelayHandleDeleteCart = (actionHandler, duration, event) => {
+    clearTimeout(deleteCartRef.current);
+    deleteCartRef.current = setTimeout(() => {
       actionHandler(event);
     }, duration);
   };
@@ -185,7 +209,7 @@ function CartCard(props) {
             <ActionButton
               className="cart_card_remove_btn"
               handleClick={() => {
-                HandleDeleteCart();
+                DelayHandleDeleteCart(HandleDeleteCart, 600);
               }}
             >
               <Delete />
@@ -193,14 +217,14 @@ function CartCard(props) {
             {isWished !== -1 ? (
               <ActionButton
                 className="cart_card_wish_btn"
-                handleClick={HandleDeleteWish}
+                handleClick={() => DelayHandleRemoveWish(HandleDeleteWish, 600)}
               >
                 <Favorite sx={{ color: "red" }} />
               </ActionButton>
             ) : (
               <ActionButton
                 className="cart_card_wish_btn"
-                handleClick={HandleAddWish}
+                handleClick={() => DelayHandleAddWish(HandleAddWish, 600)}
               >
                 <Favorite />
               </ActionButton>
