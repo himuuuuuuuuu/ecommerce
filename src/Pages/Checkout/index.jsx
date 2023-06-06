@@ -2,6 +2,7 @@ import React from "react";
 import { Modal } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import BrandLogo from "../../Asset/Navbar/NavLogo.png";
+import { ToastHandler } from "../../Component/Utils";
 
 import "./Checkout.css";
 
@@ -97,6 +98,7 @@ function Checkout() {
       const razorpayInstance = new window.Razorpay(razorpayOptions);
       razorpayInstance.open();
     } else {
+      ToastHandler("warn", "Select Address");
     }
   };
 
@@ -187,7 +189,11 @@ function Checkout() {
               </div>
             </div>
             <div className="checkout_price_action">
-              <ActionButton handleClick={handleOrderBtn}>
+              <ActionButton
+                handleClick={() => {
+                  handleOrderBtn();
+                }}
+              >
                 PLACE ORDER
               </ActionButton>
             </div>

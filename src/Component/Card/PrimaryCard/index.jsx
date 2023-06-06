@@ -36,13 +36,6 @@ function PrimaryCard(props) {
 
   const starList = ["⭐", "⭐⭐", "⭐⭐⭐", "⭐⭐⭐⭐", "⭐⭐⭐⭐⭐"];
 
-  // const debounceCartClick = (callback, delay, ...args) => {
-  //   clearTimeout(cartTimerId.current);
-  //   cartTimerId.current = setTimeout(() => {
-  //     callback(...args);
-  //   }, delay);
-  // };
-
   const HandleAddCart = async () => {
     try {
       if (!token) {
