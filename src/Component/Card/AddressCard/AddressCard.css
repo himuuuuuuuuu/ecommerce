@@ -2,8 +2,8 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 1em;
+  gap: 24px;
+  padding: 1.5em 2em;
   border-radius: 4px;
   background: #000;
   border: 5px solid #fcaf17;
@@ -35,28 +35,26 @@
 .address_card_delete,
 .address_card_edit {
   border: none;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .address_card_delete {
-  background: red;
+  background: #ff492d;
 }
 
 .address_card_edit {
-  background: green;
-}
-
-.address_card_edit:hover {
   background: #03c04a;
 }
 
+.address_card_edit:hover {
+  background: green;
+}
+
 .address_card_delete:hover {
-  background: #ff2400;
+  background: red;
 }
 
 .address_card_edit:hover,
 .address_card_delete:hover {
-  color: #fff;
   border: none;
+  color: #fff;
 }
