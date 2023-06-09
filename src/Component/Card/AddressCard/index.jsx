@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+
 import "./AddressCard.css";
-import ActionButton from "../../Action/ActionButton";
 import { DeleteAddress } from "../../../Service/AddressService";
 import { useAuth } from "../../../Context/AuthContext";
 import { useData } from "../../../Context/DataContext";
@@ -38,9 +38,6 @@ function AddressCard(props) {
     addressFormAddress,
     addressFormAlternateNumber,
     addressFormState,
-    isEdit,
-    openEditForm,
-    closeEditForm,
   } = props;
 
   const handleRemoveAddress = async () => {
@@ -86,9 +83,15 @@ function AddressCard(props) {
           </span>
         </p>
         <p className="address_card_body_item">
-          <span className="address_card_body_item_key">State:</span>
+          <span className="address_card_body_item_key">City:</span>
           <span className="address_card_body_item_value">
             {addressFormCity}
+          </span>
+        </p>
+        <p className="address_card_body_item">
+          <span className="address_card_body_item_key">State:</span>
+          <span className="address_card_body_item_value">
+            {addressFormState}
           </span>
         </p>
         <p className="address_card_body_item">
