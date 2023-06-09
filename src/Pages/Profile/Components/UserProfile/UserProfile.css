@@ -16,10 +16,11 @@
   border-radius: 4px;
 }
 
-.user_info_img {
+.user_info svg {
   width: 100px;
   height: 100px;
   object-fit: cover;
+  color: #fff;
 }
 
 .user_info_text {
