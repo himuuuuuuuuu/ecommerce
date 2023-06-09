@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "./UserProfile.css";
 import { ActionButton } from "../../../../Component";
 import { useAuth } from "../../../../Context/AuthContext";
-import UserProfilePic from "../../../../Asset/User/UserProfileLogo.svg";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function UserProfile() {
@@ -18,7 +17,6 @@ function UserProfile() {
   return (
     <div className="user">
       <div className="user_info">
-        {/* <img className="user_info_img" src={UserProfilePic} alt="user_pic" /> */}
         <AccountCircleIcon className="user_info_img" />
         <span className="user_info_text">
           {currentUser.firstName} {currentUser?.lastName}

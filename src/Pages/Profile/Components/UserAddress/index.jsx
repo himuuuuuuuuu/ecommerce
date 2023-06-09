@@ -50,7 +50,7 @@ function UserAddress() {
 
       <div className="address_list">
         {state.addressList.length !== 0 ? (
-          state.addressList.map((currentAddress, index) => {
+          [...state.addressList].reverse().map((currentAddress, index) => {
             return <AddressCard {...currentAddress} key={index} />;
           })
         ) : (
