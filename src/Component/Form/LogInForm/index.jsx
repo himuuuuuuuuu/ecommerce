@@ -89,8 +89,8 @@ function LogInForm() {
           btnType="submit"
           handleClick={(event) =>
             setLogInData({
-              logInEmail: "adarshbalika@gmail.com",
-              logInPassword: "adarshbalika",
+              logInEmail: "vivekbhatt07@gmail.com",
+              logInPassword: "system32",
             })
           }
         >
