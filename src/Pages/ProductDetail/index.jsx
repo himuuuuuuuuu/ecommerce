@@ -166,7 +166,7 @@ function ProductDetail() {
           <div className="detail_action_thumbnail">
             <img src={getGame?.logo} alt={getGame?.title} />
           </div>
-          <span className="detail_action_price">{getGame?.price}</span>
+          <span className="detail_action_price">₹{getGame?.price}</span>
           <div className="detail_action_btn">
             {isCarted === -1 ? (
               <ActionButton handleClick={HandleAddCart}>

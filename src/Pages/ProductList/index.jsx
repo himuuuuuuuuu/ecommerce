@@ -23,7 +23,14 @@ function ProductList() {
       <SectionContainer className="product_list">
         <Filter />
         <div className="product_list_content">
-          <h3 className="product_list_content_head">GAMES</h3>
+          <h3 className="product_list_content_head">
+            <div className="product_list_content_title">
+              GAMES{" "}
+              <span className="product_list_label">
+                {searchCheckedList.length}
+              </span>
+            </div>
+          </h3>
           <div className="product_list_content_body">
             {searchCheckedList.length !== 0 ? (
               searchCheckedList.map((currentGame) => {

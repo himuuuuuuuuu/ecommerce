@@ -117,10 +117,11 @@
 }
 
 .detail_action_price {
-  font-size: 2rem;
+  font-size: 3.2rem;
   color: #fff;
   font-weight: 600;
   opacity: 0.8;
+  margin: 0 auto;
 }
 
 .detail_action_btn {

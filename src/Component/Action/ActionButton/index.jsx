@@ -9,6 +9,7 @@ function ActionButton(props) {
     style: buttonStyle,
     btnType,
     isBtnDisabled,
+    btnTitle,
   } = props;
 
   const classes = className + " action_button";
