@@ -214,7 +214,7 @@ function PrimaryCard(props) {
           <div className="primary_card_tags">
             <p className="primary_card_tag">
               <strong>Price:</strong>
-              <span>{price}</span>
+              <span>₹{price}</span>
             </p>
             <p className="primary_card_tag">
               <strong>ESRB:</strong>
