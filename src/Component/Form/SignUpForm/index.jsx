@@ -139,7 +139,8 @@ function SignUpForm() {
           {isSignPass ? (
             <button
               className="signup_password_visibility"
-              onClick={() => {
+              onClick={(event) => {
+                event.preventDefault();
                 setIsSignPass(false);
               }}
               type="button"
@@ -149,7 +150,8 @@ function SignUpForm() {
           ) : (
             <button
               className="signup_password_visibility"
-              onClick={() => {
+              onClick={(event) => {
+                event.preventDefault();
                 setIsSignPass(true);
               }}
               type="button"
@@ -173,7 +175,8 @@ function SignUpForm() {
           {isSignConfirmPass ? (
             <button
               className="signup_password_visibility"
-              onClick={() => {
+              onClick={(event) => {
+                event.preventDefault();
                 setIsSignConfirmPass(false);
               }}
               type="button"
@@ -183,7 +186,8 @@ function SignUpForm() {
           ) : (
             <button
               className="signup_password_visibility"
-              onClick={() => {
+              onClick={(event) => {
+                event.preventDefault();
                 setIsSignConfirmPass(true);
               }}
               type="button"

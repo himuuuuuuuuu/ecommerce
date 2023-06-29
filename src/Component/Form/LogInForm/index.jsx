@@ -66,6 +66,7 @@ function LogInForm() {
             <button
               className="login_password_visibility"
               onClick={(event) => {
+                event.preventDefault();
                 setShowPassword(false);
               }}
               type="button"
