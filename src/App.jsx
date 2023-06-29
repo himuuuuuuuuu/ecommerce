@@ -51,14 +51,35 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/mock" element={<MockMan />} />
-        <Route path="/profile" element={<Profile />}>
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        >
           <Route path="user" element={<UserProfile />} />
           <Route path="address" element={<UserAddress />} />
           <Route path="orders" element={<UserOrders />} />
         </Route>
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <PrivateRoute>
+              <Checkout />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<PageNotFound />} />
-        <Route path="/orderSuccess" element={<OrderSuccess />} />
+        <Route
+          path="/orderSuccess"
+          element={
+            <PrivateRoute>
+              <OrderSuccess />
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/cart"
           element={
