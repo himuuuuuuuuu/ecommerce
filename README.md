@@ -2,7 +2,7 @@
 ## How to install and run locally?
 
 ```
-$ git clone https://github.com/vivekbhatt07/ecommerce.git
+$ git clone (https://github.com/himuuuuuuuuu/ecommerce.git)
 $ cd ecommerce
 $ npm install
 $ npm start
